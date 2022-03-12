@@ -1,0 +1,21 @@
+---
+layout: posts_festival
+---
+
+<section class="posts__content">
+  {% set postslist = collections.festival %} {% for festival in postslist |
+  reverse %} {% if festival.url != page.url %}
+  <figure class="posts__card">
+    <a href="{{ festival.url | url }}" class="posts__link">
+      <img
+        src="{{festival.url}}{{festival.data.coverImage}}"
+        class="posts__image-cover"
+        alt="{{festival.data.title}} cover image"
+      />
+      <figcaption class="posts__image-caption">
+        {{ festival.data.title }}
+      </figcaption>
+    </a>
+  </figure>
+  {% endif %} {% endfor %}
+</section>

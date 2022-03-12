@@ -1,0 +1,58 @@
+locale: "hu"
+backend:
+  # Use netlify identity as backend
+  name: git-gateway
+  branch: master
+
+media_folder: "src/static/img/uploads"
+public_folder: "/static/img/uploads"
+
+# Please run "npx netlify-cms-proxy-server" for local backend
+local_backend: true
+# publish_mode: editorial_workflow
+collections:
+  - label: "Céges referenca"
+    name: "corporate"
+    folder: "src/references/corporate"
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
+    create: true
+    editor:
+      preview: true
+    fields:
+      - { label: "Cím", name: "title", widget: "string" }
+      - { label: "Borítókép", name: "coverImage", widget: "image" }
+      - label: "Galéria"
+        name: "galleryImages"
+        widget: "list"
+        summary: "Fájlnév: {{fields.image}}"
+        label_singular: "kép"
+        field: { label: Kép, name: image, widget: image }
+      - label: "layout"
+        name: "layout"
+        widget: "hidden"
+        default: "galleryLayout_corporate.html"
+
+  - label: "Fesztivál referenca"
+    name: "festival"
+    folder: "src/references/festivals"
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
+    create: true
+    editor:
+      preview: true
+    fields:
+      - { label: "Cím", name: "title", widget: "string" }
+      - { label: "Borítókép", name: "coverImage", widget: "image" }
+      - label: "Galéria"
+        name: "galleryImages"
+        widget: "list"
+        summary: "Fájlnév: {{fields.image}}"
+        label_singular: "kép"
+        field: { label: Kép, name: image, widget: image }
+      - label: "layout"
+        name: "layout"
+        widget: "hidden"
+        default: "galleryLayout_festival.html"

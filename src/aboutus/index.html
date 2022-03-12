@@ -1,0 +1,100 @@
+---
+layout: default
+title: Rólunk
+path: aboutus
+---
+
+<div class="aboutus__body">
+  <div class="aboutus__content">
+    <h2 class="aboutus__heading--hu hu">RÓLUNK</h1>
+    <h2 class="aboutus__heading--en en">ABOUT US</h1>
+    <div class="aboutus__image-wrapper">
+      <img
+        src="/static/img/about-cover.jpg"
+        class="aboutus__heading-image"
+        alt="Berecki Károly a képen."
+      />
+    </div>
+    <div class="aboutus__language-picker">
+      <p class="aboutus__language-picker--hu hu-sw orangeGrey">hu</p>
+      <p class="aboutus__language-picker--separator">/</p>
+      <p class="aboutus__language-picker--en en-sw">en</p>
+    </div>
+    <article class="aboutus__text-container--hu hu">
+      <div class="aboutus__text--hu hu">
+        <p>
+          Pályám első évtizedét a színház határozta meg, az évek során gyűjtött
+          tapasztalatok alapján az együttműködésben és a sikeres kooperációban
+          látom minden alkotófolyamat sikerének zálogát.
+        </p>
+
+        <p>
+          Ezzel a tapasztalattal kezdtem önálló projektjeimet Light Positive
+          néven, immáron intézményesített keretek között. Elkötelezett
+          kollegáimmal - a technikai háttér kiépítése mellett - olyan közösséget
+          hoztunk létre, akikkel a koncertek, rendezvények, fesztiválok sikeres
+          megvalósítását garantáljuk.
+        </p>
+
+        <p>
+          Munkáink során nem csupán technikát adunk bérbe és üzemeltetünk, hanem
+          részt veszünk az előkészítésben, tervezésben is. Ötleteinkkel is
+          hozzájárulunk a koncepció megvalósításához, a kivitelezés során pedig
+          rugalmasan reagálunk a változásokra, felmerülő problémákra.
+        </p>
+
+        <p>Gondolkodunk, tervezünk, szolgáltatunk.</p>
+
+        <p>
+          Célunk, hogy élményt nyújtsunk: a vendégeknek partnereink
+          rendezvényeivel, partnereinknek a hatékony közös munkával.
+        </p>
+      </div>
+    </article>
+    <article class="aboutus__text-container--en en">
+      <div class="aboutus__text--en en">
+        <p>Who we are?</p>
+        <p>
+          The first decade of my career in the theater determined, based on the
+          experience gathered over the years of successful collaboration and
+          co-operation I see every creative process guarantee of success.
+        </p>
+
+        <p>
+          With this experience I started my projects as stand-alone Light
+          Positive, between now institutionalized. I committed my colleagues -
+          in addition to developing technical background - we have created a
+          community with whom we can guarantee the successful implementation of
+          concerts, events and festivals.
+        </p>
+
+        <p>
+          We lease our work not only in technology and we operate, but we are
+          engaged in the preparation, planning as well. Ideas also contribute to
+          the realization of the concept, when the construction is flexibly
+          respond to changes, problems arise.
+        </p>
+
+        <p>We are thinking, we design, we provide.</p>
+
+        <p>
+          Our goal is to provide experience for the guests of event partners,
+          the partners work together effectively.
+        </p>
+      </div>
+    </article>
+  </div>
+</div>
+<script>
+  const languagePicker = document.querySelector(".aboutus__language-picker");
+  const huSw = document.querySelector(".hu-sw");
+  const enSw = document.querySelector(".en-sw");
+  const hu = document.querySelectorAll(".hu");
+  const en = document.querySelectorAll(".en");
+  languagePicker.addEventListener("click", () => {
+    hu.forEach((element) => {element.classList.toggle("hideHu")});
+    en.forEach((element) => {element.classList.toggle("showEn")});
+    huSw.classList.contains("orangeGrey") ? huSw.classList.remove("orangeGrey") : huSw.classList.add("orangeGrey");
+    enSw.classList.contains("orangeGrey") ? enSw.classList.remove("orangeGrey") : enSw.classList.add("orangeGrey");
+  })
+</script>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="28.571421mm"
+   height="25mm"
+   viewBox="0 0 28.57142 25.000001"
+   version="1.1"
+   id="svg837"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="burger_menu.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview839"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="5.1241863"
+     inkscape:cx="9.3673409"
+     inkscape:cy="58.448304"
+     inkscape:window-width="3840"
+     inkscape:window-height="2054"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs834" />
+  <g
+     inkscape:label="Réteg 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-101.24198,-128.65488)">
+    <path
+       fill="currentColor"
+       d="m 102.26238,133.24672 h 26.53061 c 0.56359,0 1.02041,-0.45683 1.02041,-1.02041 v -2.55102 c 0,-0.56359 -0.45682,-1.02041 -1.02041,-1.02041 h -26.53061 c -0.56358,0 -1.0204,0.45682 -1.0204,1.02041 v 2.55102 c 0,0.56358 0.45682,1.02041 1.0204,1.02041 z m 0,10.20408 h 26.53061 c 0.56359,0 1.02041,-0.45683 1.02041,-1.02041 v -2.55102 c 0,-0.56359 -0.45682,-1.02041 -1.02041,-1.02041 h -26.53061 c -0.56358,0 -1.0204,0.45682 -1.0204,1.02041 v 2.55102 c 0,0.56358 0.45682,1.02041 1.0204,1.02041 z m 0,10.20408 h 26.53061 c 0.56359,0 1.02041,-0.45682 1.02041,-1.02041 v -2.55102 c 0,-0.56358 -0.45682,-1.0204 -1.02041,-1.0204 h -26.53061 c -0.56358,0 -1.0204,0.45682 -1.0204,1.0204 v 2.55102 c 0,0.56359 0.45682,1.02041 1.0204,1.02041 z"
+       id="path2"
+       style="stroke-width:0.0637754;fill:#ed761b;fill-opacity:1" />
+  </g>
+</svg>

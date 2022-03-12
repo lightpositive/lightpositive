@@ -1,0 +1,128 @@
+---
+layout: default
+title: Kapcsolat
+path: contact
+---
+
+<div class="contact__body">
+  <div class="contact__content">
+
+    <h2 class="contact__heading">KAPCSOLAT</h1>
+
+    <div class="contact__block1">
+      <div class="form__body">
+        <div class="form__container">
+          <form action="/contact/success" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+            <div class="form__item">
+              <label for="form__name--input" class="form__label">Név</label>
+              <input placeholder="John Doe" type="text" name="name" id="form__name--input" required/>
+            </div>
+            <div class="form__item">
+              <label for="form__email--input" class="form__label">Email</label>
+              <input placeholder="john.doe@gmail.com" type="email" name="email" id="form__email--input" required/>
+            </div>
+            <div class="form__item">
+              <label for="form__subject--input" class="form__label">Tárgy</label>
+              <input placeholder="Ajánlatkérés" type="text" name="subject" id="form__subject--input" required/>
+            </div>
+            <div class="form__item">
+              <label for="form__message--input" class="form__label">Üzenet</label>
+              <textarea placeholder="Kedves LightPositive!&#13;&#10;&#09;Szeretnék ajánlatot kérni egy 4 lábas 8x6m alapterületű fedésre, az egy hónap múlva esedékes rendezvényünkre, egy napra, Budapesten.&#13;&#10;&#09&#09&#09&#09&#09&#09&#09Tisztelettel: John Doe" name="message" id="form__message--input" rows="5" cols="50" required /></textarea>
+            </div>
+            <div class="form__submit">
+              <input type="submit" value="Küldés" id="form__submit--input" class="captcha" />
+            </div>
+            <div class="form__item" data-netlify-recaptcha="true" required></div>
+          </form>
+        </div>
+      </div>
+      <div class="map__boody">
+        <div class="map__container">
+          <iframe
+            style="border: 0"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2118.5960782861807!2d19.16209919204149!3d47.41845533827296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dd9ffee25265%3A0x8eb0a46aeb6df938!2sLight%20Positive%20Kft.!5e1!3m2!1sen!2shu!4v1579768610275!5m2!1sen!2shu"
+            width="550"
+            height="550"
+            frameborder="0"
+            allowfullscreen="allowfullscreen"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+
+      <div class="contact__text-container">
+        <div class="contact__text-container--text">
+          <p>Light Positive Kft.</p>
+          <p>Telephely cím: 1239 Budapest, Nagykőrösi Út 353.</p>
+          <p>Postacím: 1675 Budapest, Pf.: 67</p>
+          <p>+36 1 481 9533</p>
+          <a class="card__email" href="">bereczki@lightpositive.hu</a>
+        </div>
+      </div>
+      
+      <div class="contact__block2">
+        <div class="contact__card-conatainer">
+          <div class="contact__spacer-container">
+            <img src="/static/img/spacer.png" class="contact__spacer" alt="" />
+          </div>
+<img src="/static/img/karoly_l.jpg" class="card__img" alt="" />
+          <h3 class="card__heading">Bereczki Károly</h3>
+          <div class="card__text">
+            <p>ügyvezető</p>
+            <p>+36 30 964 2062</p>
+            <a class="card__email" href="">bereczki@lightpositive.hu</a>
+          </div>
+        </div>
+        <div class="contact__card-conatainer">
+          <div class="contact__spacer-container">
+            <img src="/static/img/spacer.png" class="contact__spacer" alt="" />
+          </div>
+          <div class="card__img-wrapper"><img src="/static/img/csilla.jpg" class="card__img" alt="" /></div>
+          <h3 class="card__heading">Haróth Csilla</h3>
+          <div class="card__text">
+            <p>pénzügyi vezető</p>
+            <p>+36 30 611 0515</p>
+            <a class="card__email" href="">penzugy@lightpositive.hu</a>
+          </div>
+        </div>
+        <div class="contact__card-conatainer">
+          <div class="contact__spacer-container">
+            <img src="/static/img/spacer.png" class="contact__spacer" alt="" />
+          </div>
+          <div class="card__img-wrapper"><img src="/static/img/attila_l.jpg" class="card__img" alt="" /></div>
+            <h3 class="card__heading">Tajti Attila</h3>
+            <div class="card__text">
+              <p>marketing, értékesítés</p>
+              <p>+36 30 557 6610</p>
+              <a class="card__email" href="">tajti@lightpositive.hu</a>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+<script>
+  const submitButton = document.getElementById("form__submit--input");
+
+  submitButton.addEventListener("mouseover", (event) => {
+      if (!grecaptcha.getResponse().length > 0) {
+        submitButton.title = "Jelölje be az alábbi jelölömezőt is!";
+      } else {
+        submitButton.title = "";
+      }
+      });
+
+  submitButton.addEventListener("click", (event) => {
+    if (typeof grecaptcha === "object") {
+      if (!grecaptcha.getResponse().length > 0) {
+        event.preventDefault()
+    }
+    } else {
+      console.log("Works only when deployed.");
+    }
+  });
+</script>
+

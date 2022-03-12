@@ -1,0 +1,10 @@
+node_modules
+README.md
+.DS_Store
+.vscode/
+*git/
+package-lock.json
+.env
+
+# Local Netlify folder
+.netlify

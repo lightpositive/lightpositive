@@ -1,0 +1,21 @@
+---
+layout: posts_corporate
+---
+
+<section class="posts__content">
+  {% set postslist = collections.corporate %} {% for corporate in postslist |
+  reverse %} {% if corporate.url != page.url %}
+  <figure class="posts__card">
+    <a href="{{ corporate.url | url }}" class="posts__link">
+      <img
+        src="{{corporate.url}}{{corporate.data.coverImage}}"
+        class="posts__image-cover"
+        alt="{{ corporate.data.title }} cover image"
+      />
+      <figcaption class="posts__image-caption">
+        {{ corporate.data.title }}
+      </figcaption>
+    </a>
+  </figure>
+  {% endif %} {% endfor %}
+</section>

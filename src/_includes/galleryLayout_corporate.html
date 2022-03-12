@@ -1,0 +1,93 @@
+---
+layout: default
+---
+
+<!-- prettier-ignore -->
+<section class="post__content">
+  <div class="post__image-container">
+  </div>
+  <div class="post__scroller">
+
+  {% set postlist = collections.corporate %} 
+  {% for post in postlist %}
+  
+  {% set images = post.data.galleryImages %} 
+  {% for image in images %}
+  
+  {% if page.url == post.url %}
+
+  <div class="post__card">
+    <img src="{{image}}" class="post__image" alt="" />
+  </div>
+  
+  {% endif %}
+  
+  {% endfor %}
+
+  {% endfor %} 
+  
+  </div>
+</section>
+<script>
+  const allImage = document.querySelectorAll(".post__image");
+  const postBody = document
+    .getElementsByClassName("post__image-container")
+    .item(0);
+  let allImageSrc = [];
+  let currentIndex = { i: 0 };
+  let img = document.createElement("img");
+  allImage.forEach((element) => {
+    allImageSrc = [...allImageSrc, element.getAttribute("src")];
+  });
+  img.src = allImageSrc[currentIndex.i];
+  allImage[currentIndex.i].classList.toggle("selectedImage");
+  img.className = "post__image-selected";
+
+  let buttonLeft = document.createElement("button");
+  buttonLeft.className = "post__button-left";
+  buttonLeft.textContent = "<";
+  postBody.appendChild(buttonLeft);
+
+  postBody.appendChild(img);
+  allImage.forEach((element) => {
+    element.addEventListener("click", (e) => {
+      allImage.forEach((element) => {
+        element.classList.remove("selectedImage");
+      });
+      currentImageSrc = e.target.getAttribute("src");
+      img.src = currentImageSrc;
+      element.classList.toggle("selectedImage");
+      currentIndex.i = allImageSrc.indexOf(currentImageSrc);
+    });
+  });
+
+  let buttonRight = document.createElement("button");
+  buttonRight.className = "post__button-right";
+  buttonRight.textContent = ">";
+  postBody.appendChild(buttonRight);
+
+  buttonRight.addEventListener("click", (e) => {
+    if (currentIndex.i < allImageSrc.length - 1) {
+      allImage.forEach((element) => {
+        element.classList.remove("selectedImage");
+      });
+      currentIndex.i++;
+      img.src = allImageSrc[currentIndex.i];
+      allImage[currentIndex.i].classList.toggle("selectedImage");
+    }
+  });
+  buttonLeft.addEventListener("click", (e) => {
+    if (currentIndex.i > 0) {
+      allImage.forEach((element) => {
+        element.classList.remove("selectedImage");
+      });
+      currentIndex.i--;
+      img.src = allImageSrc[currentIndex.i];
+      allImage[currentIndex.i].classList.toggle("selectedImage");
+    }
+  });
+
+  img.addEventListener("click", (e) => {
+    img.classList.toggle("maxi");
+  });
+</script>
