@@ -2,7 +2,7 @@ locale: "hu"
 backend:
   # Use netlify identity as backend
   name: git-gateway
-  branch: master
+  branch: main
 
 media_folder: "src/static/img/uploads"
 public_folder: "/static/img/uploads"
