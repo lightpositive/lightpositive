@@ -10,6 +10,7 @@ backend:
 # cloudinary config
 media_library:
   name: cloudinary
+  multiple: true
   # output_filename_only: true
   config:
     cloud_name: lightpositive
@@ -36,10 +37,10 @@ collections:
       - { label: "Borítókép", name: "coverImage", widget: "image" }
       - label: "Galéria"
         name: "galleryImages"
-        widget: "file"
+        widget: "list"
         summary: "Fájlnév: {{fields.image}}"
         label_singular: "kép"
-        field: { label: Kép, name: image, widget: list }
+        field: { label: Kép, name: image, widget: image }
       - label: "layout"
         name: "layout"
         widget: "hidden"
