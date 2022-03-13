@@ -24,7 +24,6 @@ local_backend: true
 collections:
   - label: "Céges referenca"
     name: "corporate"
-    widget: "list"
     folder: "src/references/corporate"
     path: "{{slug}}/index"
     media_folder: ""
@@ -40,7 +39,7 @@ collections:
         widget: "list"
         summary: "Fájlnév: {{fields.image}}"
         label_singular: "kép"
-        field: { label: Kép, name: image, widget: image }
+        field: { label: Kép, name: image, widget: list }
       - label: "layout"
         name: "layout"
         widget: "hidden"
