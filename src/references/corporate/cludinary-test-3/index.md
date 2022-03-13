@@ -9,5 +9,6 @@ galleryImages:
   - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1647108642/samples/ecommerce/shoes.png
   - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1647108638/samples/ecommerce/analog-classic.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1647196692/samples/ecommerce/NM1-1024x1024_tso2qb.jpg
+  - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1647199145/NM2-1024x768_p3gnat.jpg
 layout: galleryLayout_corporate.html
 ---
