@@ -17,7 +17,10 @@ layout: default
   {% if page.url == post.url %}
 
   <div class="post__card">
-    <img src="{{image}}" class="post__image" alt="" />
+    <!-- <img src="{{image}}" class="post__image" alt="" /> -->
+    <!-- cloudinary image -->
+    <!-- <img src="https://res.cloudinary.com/<cloud_name>/<resource_type>/<type>/<transformations>/{{image}}" class="post__image" alt="" /> -->
+    <img src="https://res.cloudinary.com/lightpositive/image/upload/v1647167528/{{image}}" class="post__image" alt="" />
   </div>
   
   {% endif %}
