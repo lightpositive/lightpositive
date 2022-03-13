@@ -36,10 +36,10 @@ collections:
       - { label: "Borítókép", name: "coverImage", widget: "image" }
       - label: "Galéria"
         name: "galleryImages"
-        widget: "list"
-        # summary: "Fájlnév: {{fields.image}}"
-        # label_singular: "kép"
-        # field: { label: Kép, name: image, widget: image }
+        widget: "file"
+        summary: "Fájlnév: {{fields.image}}"
+        label_singular: "kép"
+        field: { label: Kép, name: image, widget: list }
       - label: "layout"
         name: "layout"
         widget: "hidden"
