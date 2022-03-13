@@ -20,7 +20,7 @@ layout: default
     <!-- <img src="{{image}}" class="post__image" alt="" /> -->
     <!-- cloudinary image -->
     <!-- <img src="https://res.cloudinary.com/<cloud_name>/<resource_type>/<type>/<transformations>/{{image}}" class="post__image" alt="" /> -->
-    <img src="https://res.cloudinary.com/lightpositive/image/upload/v1647167528/{{image}}" class="post__image" alt="" />
+    <img src="{{image}}" class="post__image" alt="" />
   </div>
   
   {% endif %}
@@ -32,8 +32,7 @@ layout: default
   </div>
 </section>
 <script>
-  // const allImage = document.querySelectorAll(".post__image");
-  const allImage = document.querySelectorAll("");
+  const allImage = document.querySelectorAll(".post__image");
   const postBody = document
     .getElementsByClassName("post__image-container")
     .item(0);

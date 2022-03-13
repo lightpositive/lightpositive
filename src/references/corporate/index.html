@@ -7,8 +7,9 @@ layout: posts_corporate
   reverse %} {% if corporate.url != page.url %}
   <figure class="posts__card">
     <a href="{{ corporate.url | url }}" class="posts__link">
+      <!-- src="{{corporate.url}}{{corporate.data.coverImage}}" -->
       <img
-        src="{{corporate.url}}{{corporate.data.coverImage}}"
+        src="{{corporate.data.coverImage}}"
         class="posts__image-cover"
         alt="{{ corporate.data.title }} cover image"
       />
