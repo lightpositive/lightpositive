@@ -20,7 +20,11 @@ layout: default
     <!-- <img src="{{image}}" class="post__image" alt="" /> -->
     <!-- cloudinary image -->
     <!-- <img src="https://res.cloudinary.com/<cloud_name>/<resource_type>/<type>/<transformations>/{{image}}" class="post__image" alt="" /> -->
-    <img src="{{image}}" class="post__image" alt="" />
+    <img srcset="https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto,w_256/{{image}} 256w, 
+        https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto,w_512/{{image}} 512w, 
+        https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto,w_1024/{{image}} 1024w"
+      sizes="(max-width: 30em) 30em, 100vw"
+      src="https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/{{image}}" class="post__image" alt="" />
   </div>
   
   {% endif %}

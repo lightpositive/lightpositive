@@ -10,15 +10,15 @@ backend:
 # cloudinary config
 media_library:
   name: cloudinary
-  # output_filename_only: true
+  output_filename_only: true
   config:
     cloud_name: lightpositive
     api_key: 994851172912571
     multiple: true
     max_files: 20
-    default_transformations:
-      - - fetch_format: auto
-          quality: auto
+    # default_transformations:
+    #   - - fetch_format: auto
+    #       quality: auto
 
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
@@ -39,9 +39,6 @@ collections:
       - label: "Galéria"
         name: "galleryImages"
         widget: "image"
-        # summary: "Fájlnév: {{fields.image}}"
-        # label_singular: "kép"
-        # field: { label: Kép, name: image, widget: image }
       - label: "layout"
         name: "layout"
         widget: "hidden"
