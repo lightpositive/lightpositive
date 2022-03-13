@@ -10,11 +10,12 @@ backend:
 # cloudinary config
 media_library:
   name: cloudinary
-  multiple: true
   # output_filename_only: true
   config:
     cloud_name: lightpositive
     api_key: 994851172912571
+    multiple: true
+    max_files: 20
     default_transformations:
       - - fetch_format: auto
           quality: auto
