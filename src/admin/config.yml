@@ -10,7 +10,7 @@ backend:
 # cloudinary config
 media_library:
   name: cloudinary
-  output_filename_only: true
+  # output_filename_only: true
   config:
     cloud_name: lightpositive
     api_key: 994851172912571
