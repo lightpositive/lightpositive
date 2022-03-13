@@ -24,6 +24,7 @@ local_backend: true
 collections:
   - label: "Céges referenca"
     name: "corporate"
+    widget: "list"
     folder: "src/references/corporate"
     path: "{{slug}}/index"
     media_folder: ""
