@@ -38,23 +38,23 @@ layout: default
   </div>
 </section>
 <script>
-  const allImage = document.querySelectorAll(".post__image");
+  let allImage = document.querySelectorAll(".post__image");
   const postBody = document
     .getElementsByClassName("post__image-container")
     .item(0);
+
+  let preUrl = "https://res.cloudinary.com/lightpositive/image/upload/";
   let allImageSrc = [];
   let currentIndex = { i: 0 };
   let img = document.createElement("img");
   allImage.forEach((element) => {
-    allImageSrc = [
-      ...allImageSrc,
-      concat(
-        element.getAttribute("src").match(/upload\/(?:v\d+\/)?([^\.]+)/)[0],
-        element.getAttribute("src").match(/upload\/(?:v\d+\/)?([^\.]+)/)[1]
-      ),
-    ];
+    let src = element.getAttribute("src");
+    let matched = src.match(/upload\/(?:v\d+\/)?([^\.]+)/);
+    let srcNew = preUrl.concat(matched[1]);
+    console.log(srcNew);
+    allImageSrc = [...allImageSrc, srcNew];
+    // element.setAttribute("src", srcNew);
   });
-
   // let allImageSrcDir = []
   // let allImageSrcFileName = []
   // allImageSrc.forEach((element) => {
