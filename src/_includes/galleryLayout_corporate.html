@@ -17,15 +17,6 @@ layout: default
   {% if page.url == post.url %}
 
   <div class="post__card">
-    <!-- <img src="{{image}}" class="post__image" alt="" /> -->
-    <!-- cloudinary image -->
-    <!-- <img src="https://res.cloudinary.com/<cloud_name>/<resource_type>/<type>/<transformations>/{{image}}" class="post__image" alt="" /> -->
-    <!-- <img 
-      srcset="{{image}} 256w, 
-        {{image}} 512w, 
-        {{image}} 1024w"
-      sizes="(max-width: 30em) 30em, 100vw"
-      src="{{image}}" class="post__image" alt="" /> -->
     <img src="{{image}}" loading="lazy" class="post__image" sizes="(max-width: 30em) 30em, 100vw" alt="" />
   </div>
   
@@ -68,14 +59,7 @@ layout: default
       `${srcNew} 256w, ${srcNewMid} 512w, ${srcNewHi} 1024w,`
     );
   });
-  // let allImageSrcDir = []
-  // let allImageSrcFileName = []
-  // allImageSrc.forEach((element) => {
-  //   allImageSrcDir = [...allImageSrcDir, element.match(/upload\/(?:v\d+\/)?([^\.]+)/)[0]];
-  //   allImageSrcFileName = [...allImageSrcFileName, element.match(/upload\/(?:v\d+\/)?([^\.]+)/)[1]];
-  //   });
 
-  // img.src = concat(allImageSrcDir[currentIndex.i], allImageSrcFileName[currentIndex.i]);
   img.src = allImageSrc[currentIndex.i];
   img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
     allImageSrcMid[currentIndex.i]
