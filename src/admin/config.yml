@@ -16,10 +16,10 @@ media_library:
     api_key: 994851172912571
     multiple: true
     max_files: 20
-    # default_transformations:
-    #   - - fetch_format: jpeg
-    #       quality: auto
-    #       width: 256
+    default_transformations:
+      - - fetch_format: auto
+          quality: auto
+          # width: 256
 
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
