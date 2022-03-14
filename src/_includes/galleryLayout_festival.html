@@ -29,9 +29,9 @@ layout: default
     </div>
   </section>
 <script>
-  let lowRes = "w_256,";
-  let midRes = "w_512,";
-  let hiRes = "w_1024,";
+  let lowRes = "w_256";
+  let midRes = "w_512";
+  let hiRes = "w_1024";
 
   let allImage = document.querySelectorAll(".post__image");
   const postBody = document
@@ -47,11 +47,11 @@ layout: default
   allImage.forEach((element) => {
     let src = element.getAttribute("src");
     let matched = src.match(/upload\/(?:v\d+\/)?([^\.]+)/);
-    let srcNew = preUrl.concat(lowRes, matched[1]);
+    let srcNew = preUrl.concat(lowRes, "/", matched[1]);
     allImageSrc = [...allImageSrc, srcNew];
-    let srcNewMid = preUrl.concat(midRes, matched[1]);
+    let srcNewMid = preUrl.concat(midRes, "/", matched[1]);
     allImageSrcMid = [...allImageSrcMid, srcNewMid];
-    let srcNewHi = preUrl.concat(hiRes, matched[1]);
+    let srcNewHi = preUrl.concat(hiRes, "/", matched[1]);
     allImageSrcHi = [...allImageSrcHi, srcNewHi];
     element.setAttribute("src", srcNew);
     element.setAttribute(
