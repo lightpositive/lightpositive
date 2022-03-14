@@ -10,15 +10,16 @@ backend:
 # cloudinary config
 media_library:
   name: cloudinary
-  # output_filename_only: true # does not work: bug
+  output_filename_only: false # "true" does not work: bug
   config:
     cloud_name: lightpositive
     api_key: 994851172912571
     multiple: true
     max_files: 20
     # default_transformations:
-    #   - - fetch_format: auto
+    #   - - fetch_format: jpeg
     #       quality: auto
+    #       width: 256
 
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
@@ -58,10 +59,7 @@ collections:
       - { label: "Borítókép", name: "coverImage", widget: "image" }
       - label: "Galéria"
         name: "galleryImages"
-        widget: "list"
-        summary: "Fájlnév: {{fields.image}}"
-        label_singular: "kép"
-        field: { label: Kép, name: image, widget: image }
+        widget: "image"
       - label: "layout"
         name: "layout"
         widget: "hidden"
