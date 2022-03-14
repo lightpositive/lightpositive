@@ -26,7 +26,7 @@ layout: default
         {{image}} 1024w"
       sizes="(max-width: 30em) 30em, 100vw"
       src="{{image}}" class="post__image" alt="" /> -->
-    <img src="{{image}}" class="post__image" alt="" />
+    <img src="{{image}}" class="post__image" sizes="(max-width: 30em) 30em, 100vw" alt="" />
   </div>
   
   {% endif %}
@@ -38,6 +38,10 @@ layout: default
   </div>
 </section>
 <script>
+  let lowRes = "w_256,";
+  let midRes = "w_512,";
+  let hiRes = "w_1024,";
+
   let allImage = document.querySelectorAll(".post__image");
   const postBody = document
     .getElementsByClassName("post__image-container")
@@ -45,15 +49,24 @@ layout: default
 
   let preUrl = "https://res.cloudinary.com/lightpositive/image/upload/";
   let allImageSrc = [];
+  let allImageSrcMid = [];
+  let allImageSrcHi = [];
   let currentIndex = { i: 0 };
   let img = document.createElement("img");
   allImage.forEach((element) => {
     let src = element.getAttribute("src");
     let matched = src.match(/upload\/(?:v\d+\/)?([^\.]+)/);
-    let srcNew = preUrl.concat(matched[1]);
-    console.log(srcNew);
+    let srcNew = preUrl.concat(lowRes, matched[1]);
     allImageSrc = [...allImageSrc, srcNew];
-    // element.setAttribute("src", srcNew);
+    let srcNewMid = preUrl.concat(midRes, matched[1]);
+    allImageSrcMid = [...allImageSrcMid, srcNewMid];
+    let srcNewHi = preUrl.concat(hiRes, matched[1]);
+    allImageSrcHi = [...allImageSrcHi, srcNewHi];
+    element.setAttribute("src", srcNew);
+    element.setAttribute(
+      "srcset",
+      `${srcNew} 256w, ${srcNewMid} 512w, ${srcNewHi} 1024w,`
+    );
   });
   // let allImageSrcDir = []
   // let allImageSrcFileName = []
@@ -64,6 +77,9 @@ layout: default
 
   // img.src = concat(allImageSrcDir[currentIndex.i], allImageSrcFileName[currentIndex.i]);
   img.src = allImageSrc[currentIndex.i];
+  img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
+    allImageSrcMid[currentIndex.i]
+  } 512w, ${allImageSrcHi[currentIndex.i]} 1024w,`;
   allImage[currentIndex.i].classList.toggle("selectedImage");
   img.className = "post__image-selected";
 
@@ -79,7 +95,9 @@ layout: default
         element.classList.remove("selectedImage");
       });
       currentImageSrc = e.target.getAttribute("src");
+      currentImageSrcSet = e.target.getAttribute("srcset");
       img.src = currentImageSrc;
+      img.srcset = currentImageSrcSet;
       element.classList.toggle("selectedImage");
       currentIndex.i = allImageSrc.indexOf(currentImageSrc);
     });
@@ -97,6 +115,9 @@ layout: default
       });
       currentIndex.i++;
       img.src = allImageSrc[currentIndex.i];
+      img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
+        allImageSrcMid[currentIndex.i]
+      } 512w, ${allImageSrcHi[currentIndex.i]} 1024w,`;
       allImage[currentIndex.i].classList.toggle("selectedImage");
     }
   });
@@ -107,6 +128,9 @@ layout: default
       });
       currentIndex.i--;
       img.src = allImageSrc[currentIndex.i];
+      img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
+        allImageSrcMid[currentIndex.i]
+      } 512w, ${allImageSrcHi[currentIndex.i]} 1024w,`;
       allImage[currentIndex.i].classList.toggle("selectedImage");
     }
   });
