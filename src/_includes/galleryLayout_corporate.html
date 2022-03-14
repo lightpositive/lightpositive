@@ -20,11 +20,13 @@ layout: default
     <!-- <img src="{{image}}" class="post__image" alt="" /> -->
     <!-- cloudinary image -->
     <!-- <img src="https://res.cloudinary.com/<cloud_name>/<resource_type>/<type>/<transformations>/{{image}}" class="post__image" alt="" /> -->
-    <img srcset="https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto,w_256/{{image}} 256w, 
-        https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto,w_512/{{image}} 512w, 
-        https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto,w_1024/{{image}} 1024w"
+    <!-- <img 
+      srcset="{{image}} 256w, 
+        {{image}} 512w, 
+        {{image}} 1024w"
       sizes="(max-width: 30em) 30em, 100vw"
-      src="https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/{{image}}" class="post__image" alt="" />
+      src="{{image}}" class="post__image" alt="" /> -->
+    <img src="{{image}}" class="post__image" alt="" />
   </div>
   
   {% endif %}
@@ -44,8 +46,23 @@ layout: default
   let currentIndex = { i: 0 };
   let img = document.createElement("img");
   allImage.forEach((element) => {
-    allImageSrc = [...allImageSrc, element.getAttribute("src")];
+    allImageSrc = [
+      ...allImageSrc,
+      concat(
+        element.getAttribute("src").match(/upload\/(?:v\d+\/)?([^\.]+)/)[0],
+        element.getAttribute("src").match(/upload\/(?:v\d+\/)?([^\.]+)/)[1]
+      ),
+    ];
   });
+
+  // let allImageSrcDir = []
+  // let allImageSrcFileName = []
+  // allImageSrc.forEach((element) => {
+  //   allImageSrcDir = [...allImageSrcDir, element.match(/upload\/(?:v\d+\/)?([^\.]+)/)[0]];
+  //   allImageSrcFileName = [...allImageSrcFileName, element.match(/upload\/(?:v\d+\/)?([^\.]+)/)[1]];
+  //   });
+
+  // img.src = concat(allImageSrcDir[currentIndex.i], allImageSrcFileName[currentIndex.i]);
   img.src = allImageSrc[currentIndex.i];
   allImage[currentIndex.i].classList.toggle("selectedImage");
   img.className = "post__image-selected";
