@@ -2,6 +2,7 @@
 title: VOLT - 2019
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561192/uploads/VOLT%20-%202019/Volt4.jpg
+date: 2020-02-28 14:54:00
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561190/uploads/VOLT%20-%202019/Volt2.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561190/uploads/VOLT%20-%202019/Volt5.jpg

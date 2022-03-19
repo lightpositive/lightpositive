@@ -2,6 +2,7 @@
 title: Hegyalja - 2013
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560737/uploads/Hegyalja%20-%202013/Light_Positive_hegyalja2013_5.jpg
+date: 2016-12-19 11:02:13
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560736/uploads/Hegyalja%20-%202013/Light_Positive_hegyalja_280.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560736/uploads/Hegyalja%20-%202013/Light_Positive_hegyalja2013_2.jpg

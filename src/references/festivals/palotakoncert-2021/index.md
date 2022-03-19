@@ -2,6 +2,7 @@
 title: Palotakoncert - 2021
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561232/uploads/Palotakoncert%20-%202021/pa1.jpg
+date: 2022-01-07 08:11:56
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561231/uploads/Palotakoncert%20-%202021/pa3.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561231/uploads/Palotakoncert%20-%202021/pa5.jpg

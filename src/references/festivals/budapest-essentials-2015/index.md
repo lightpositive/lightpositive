@@ -2,6 +2,7 @@
 title: Budapest Essentials - 2015
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560758/uploads/Budapest%20Essentials%20-%202015/Bp-Ess-fesztival4.jpg
+date: 2016-12-19 19:44:15
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560757/uploads/Budapest%20Essentials%20-%202015/Bp-Ess-fesztival2.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560758/uploads/Budapest%20Essentials%20-%202015/Bp-Ess-fesztival4.jpg

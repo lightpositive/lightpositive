@@ -2,6 +2,7 @@
 title: SZIN - 2015
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560759/uploads/SZIN%20-%202015/SZIN-fesztival10.jpg
+date: 2016-12-19 19:45:37
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560758/uploads/SZIN%20-%202015/SZIN-fesztival2.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560758/uploads/SZIN%20-%202015/SZIN-fesztival3.jpg

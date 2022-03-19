@@ -2,6 +2,7 @@
 title: Brains - 2017 nyár
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560996/uploads/Brains%20-%202017%20ny%C3%A1r/Brainsny%C3%A1r4.jpg
+date: 2017-09-12 12:49:16
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560994/uploads/Brains%20-%202017%20ny%C3%A1r/Brainsny%C3%A1r6.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560994/uploads/Brains%20-%202017%20ny%C3%A1r/Brains-strand5.jpg

@@ -2,6 +2,7 @@
 title: Lenovo Legion Kupa - Hungexpo 2018
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561118/uploads/Lenovo%20Legion%20Kupa%20-%20Hungexpo%202018/lenovo7.jpg
+date: 2019-01-10 12:39:49
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561118/uploads/Lenovo%20Legion%20Kupa%20-%20Hungexpo%202018/lenovo4.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561118/uploads/Lenovo%20Legion%20Kupa%20-%20Hungexpo%202018/lenovo6.jpg

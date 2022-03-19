@@ -2,6 +2,7 @@
 title: MÜPA - Bandaloop 2019
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561189/uploads/M%C3%9CPA%20-%20Bandaloop%202019/bandaloop2.jpg
+date: 2020-02-28 13:02:00
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561188/uploads/M%C3%9CPA%20-%20Bandaloop%202019/bandaloop1.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561188/uploads/M%C3%9CPA%20-%20Bandaloop%202019/bandaloop4.jpg

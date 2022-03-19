@@ -2,6 +2,7 @@
 title: VOLT - 2016
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560760/uploads/VOLT%20-%202016/volt9.jpg
+date: 2016-12-19 19:58:57
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560760/uploads/VOLT%20-%202016/volt7.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560760/uploads/VOLT%20-%202016/volt3.jpg

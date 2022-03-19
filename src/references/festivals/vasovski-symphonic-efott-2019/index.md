@@ -2,6 +2,7 @@
 title: Vasovski Symphonic - EFOTT 2019
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561186/uploads/Vasovski%20Symphonic%20-%20EFOTT%202019/vasovski5.jpg
+date: 2020-02-24 13:51:10
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561185/uploads/Vasovski%20Symphonic%20-%20EFOTT%202019/vasovski1.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561185/uploads/Vasovski%20Symphonic%20-%20EFOTT%202019/vasovski2.jpg

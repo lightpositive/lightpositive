@@ -2,6 +2,7 @@
 title: Balaton Sound - 2016
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560764/uploads/Balaton%20Sound%20-%202016/balatonsound8.jpg
+date: 2016-12-19 19:59:13
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560763/uploads/Balaton%20Sound%20-%202016/balatonsound3.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560763/uploads/Balaton%20Sound%20-%202016/balatonsound5.jpg

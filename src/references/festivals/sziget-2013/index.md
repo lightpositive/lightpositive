@@ -2,6 +2,7 @@
 title: Sziget - 2013
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560740/uploads/Sziget%20-%202013/Sziget-2013.jpg
+date: 2016-12-19 11:01:38
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560739/uploads/Sziget%20-%202013/Light_Positive_sziget2013_9.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560739/uploads/Sziget%20-%202013/Light_Positive_sziget2013_8.jpg

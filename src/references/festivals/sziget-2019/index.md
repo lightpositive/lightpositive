@@ -2,6 +2,7 @@
 title: Sziget - 2019
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561199/uploads/Sziget%20-%202019/Sziget9.jpg
+date: 2020-03-02 14:12:04
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561196/uploads/Sziget%20-%202019/Sziget8.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561196/uploads/Sziget%20-%202019/Sziget6.jpg

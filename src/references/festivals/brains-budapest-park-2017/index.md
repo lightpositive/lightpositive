@@ -2,6 +2,7 @@
 title: Brains - Budapest Park 2017
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560973/uploads/Brains%20-%20Budapest%20Park%202017/BR2.jpg
+date: 2017-05-15 13:30:28
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560973/uploads/Brains%20-%20Budapest%20Park%202017/BR4.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560973/uploads/Brains%20-%20Budapest%20Park%202017/BR.jpg

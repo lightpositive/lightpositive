@@ -2,6 +2,7 @@
 title: Geotermikus Projekt - Bőny
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560811/uploads/Geotermikus%20Projekt%20-%20B%C5%91ny/vallalati_rendezveny_bony8.jpg
+date: 2016-12-19 20:04:57
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560811/uploads/Geotermikus%20Projekt%20-%20B%C5%91ny/vallalati_rendezveny_bony4.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560811/uploads/Geotermikus%20Projekt%20-%20B%C5%91ny/vallalati_rendezveny_bony2.jpg

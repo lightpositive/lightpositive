@@ -2,6 +2,7 @@
 title: Schneider konferencia és gálaest
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560774/uploads/Schneider%20konferencia%20%C3%A9s%20g%C3%A1laest/Schneider-konferencia4.jpg
+date: 2016-12-19 19:58:26
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560773/uploads/Schneider%20konferencia%20%C3%A9s%20g%C3%A1laest/Schneider-konferencia3.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560774/uploads/Schneider%20konferencia%20%C3%A9s%20g%C3%A1laest/Schneider-konferencia2.jpg

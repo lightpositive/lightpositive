@@ -2,6 +2,7 @@
 title: Aegon - 2013
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560785/uploads/Aegon%20-%202013/Light_positive_Aegon_2013.jpg
+date: 2016-12-19 20:01:50
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560784/uploads/Aegon%20-%202013/Light_Positive_aegon_10.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560784/uploads/Aegon%20-%202013/Light_Positive_aegon_11.jpg

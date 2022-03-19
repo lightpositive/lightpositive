@@ -2,6 +2,7 @@
 title: Blind Myself - Dürer 2018
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561130/uploads/Blind%20Myself%20-%20D%C3%BCrer%202018/046.jpg
+date: 2019-01-10 12:58:28
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561127/uploads/Blind%20Myself%20-%20D%C3%BCrer%202018/103.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561127/uploads/Blind%20Myself%20-%20D%C3%BCrer%202018/018.jpg

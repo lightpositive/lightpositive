@@ -2,6 +2,7 @@
 title: Wellhello - 2018
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561069/uploads/Wellhello%20-%202018/WH.jpg
+date: 2019-01-02 12:47:36
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561066/uploads/Wellhello%20-%202018/WH4.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561068/uploads/Wellhello%20-%202018/WH3.jpg

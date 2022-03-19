@@ -2,6 +2,7 @@
 title: Punnany Massif 2014 nyári turné
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560686/uploads/Punnany%20Massif%202014%20ny%C3%A1ri%20turn%C3%A9/MG_8872.jpg
+date: 2016-12-19 16:07:31
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560685/uploads/Punnany%20Massif%202014%20ny%C3%A1ri%20turn%C3%A9/MG_8844.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647560685/uploads/Punnany%20Massif%202014%20ny%C3%A1ri%20turn%C3%A9/MG_8930.jpg
