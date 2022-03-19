@@ -58,7 +58,7 @@ collections:
     fields:
       - { label: "Cím", name: "title", widget: "string" }
       - { label: "Borítókép", name: "coverImage", widget: "image" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Dátum", name: "date", widget: "datetime" }
       - label: "Galéria"
         name: "galleryImages"
         widget: "image"
