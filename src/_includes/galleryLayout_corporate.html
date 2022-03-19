@@ -4,7 +4,9 @@ layout: default
 
 <!-- prettier-ignore -->
 <section class="post__content">
-  <div class="post__image-container">
+  <div class="post__image-extra">
+    <div class="post__image-container">
+    </div>
   </div>
   <div class="post__scroller">
 
@@ -34,6 +36,10 @@ layout: default
   let hiRes = "w_1024";
 
   let allImage = document.querySelectorAll(".post__image");
+  const postExtra = document
+    .getElementsByClassName("post__image-extra")
+    .item(0);
+  const postContent = document.getElementsByClassName("post__content").item(0);
   const postBody = document
     .getElementsByClassName("post__image-container")
     .item(0);
@@ -68,12 +74,7 @@ layout: default
   allImage[currentIndex.i].classList.toggle("selectedImage");
   img.className = "post__image-selected";
 
-  let buttonLeft = document.createElement("button");
-  buttonLeft.className = "post__button-left";
-  buttonLeft.textContent = "<";
-  postBody.appendChild(buttonLeft);
-
-  postBody.appendChild(img);
+  postExtra.appendChild(img);
   allImage.forEach((element) => {
     element.addEventListener("click", (e) => {
       allImage.forEach((element) => {
@@ -88,6 +89,10 @@ layout: default
     });
   });
 
+  let buttonLeft = document.createElement("button");
+  buttonLeft.className = "post__button-left";
+  buttonLeft.textContent = "<";
+  postBody.appendChild(buttonLeft);
   let buttonRight = document.createElement("button");
   buttonRight.className = "post__button-right";
   buttonRight.textContent = ">";
@@ -120,7 +125,7 @@ layout: default
     }
   });
 
-  img.addEventListener("click", (e) => {
-    img.classList.toggle("maxi");
-  });
+  // img.addEventListener("click", (e) => {
+  //   img.classList.toggle("maxi");
+  // });
 </script>
