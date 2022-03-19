@@ -746,7 +746,7 @@ form > * {
   height: 100%;
 }
 .post__content {
-  /* height: 100vh; */
+  height: 100vh;
   max-width: 128rem;
   padding: 3vh 0;
   display: grid;
@@ -763,7 +763,8 @@ form > * {
   display: flex;
   justify-content: center;
   position: relative;
-  height: 73vh;
+  height: 100%;
+  max-height: 73vh;
 }
 .post__scroller {
   height: 12rem;
