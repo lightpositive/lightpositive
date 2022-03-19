@@ -34,6 +34,7 @@ layout: default
   let hiRes = "w_1024";
 
   let allImage = document.querySelectorAll(".post__image");
+  const postContent = document.getElementsByClassName("post__content").item(0);
   const postBody = document
     .getElementsByClassName("post__image-container")
     .item(0);
@@ -68,12 +69,7 @@ layout: default
   allImage[currentIndex.i].classList.toggle("selectedImage");
   img.className = "post__image-selected";
 
-  let buttonLeft = document.createElement("button");
-  buttonLeft.className = "post__button-left";
-  buttonLeft.textContent = "<";
-  postBody.appendChild(buttonLeft);
-
-  postBody.appendChild(img);
+  postContent.appendChild(img);
   allImage.forEach((element) => {
     element.addEventListener("click", (e) => {
       allImage.forEach((element) => {
@@ -87,7 +83,10 @@ layout: default
       currentIndex.i = allImageSrc.indexOf(currentImageSrc);
     });
   });
-
+  let buttonLeft = document.createElement("button");
+  buttonLeft.className = "post__button-left";
+  buttonLeft.textContent = "<";
+  postBody.appendChild(buttonLeft);
   let buttonRight = document.createElement("button");
   buttonRight.className = "post__button-right";
   buttonRight.textContent = ">";
