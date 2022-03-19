@@ -46,7 +46,8 @@ layout: default
   let img = document.createElement("img");
   allImage.forEach((element) => {
     let src = element.getAttribute("src");
-    let matched = src.match(/upload\/(?:v\d+\/)?([^\.]+)/);
+    // let matched = src.match(/upload\/(?:v\d+\/)?([^\.]+)/);
+    let matched = src.match(/upload\/(?:v\d+\/)([^]+)\.(?!.*\.)/);
     let srcNew = preUrl.concat(lowRes, "/", matched[1]);
     allImageSrc = [...allImageSrc, srcNew];
     let srcNewMid = preUrl.concat(midRes, "/", matched[1]);
