@@ -742,22 +742,24 @@ form > * {
 }
 
 /* POST - SINGLE*/
+
 .content__conatainer {
-  height: 100%;
+  /* height: 100%; */
+  height: 0;
 }
 .post__content {
   height: 100vh;
   max-width: 128rem;
-  padding: 3vh 0;
+  /* padding: 3vh 0; */
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto 18rem;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  /* gap: 0.5rem; */
   margin: 0 auto;
   /* position: relative; */
-  height: 100%;
+  /* height: 100%; */
 }
 .post__image-extra {
   display: flex;
@@ -765,6 +767,18 @@ form > * {
   position: relative;
   height: 100%;
   max-height: 73vh;
+}
+.post__image-extra-mobile {
+  /* height: 100vh; */
+  max-width: 100vw;
+  /* padding: 3vh 0; */
+  display: felx;
+  justify-content: center;
+  align-items: center;
+  /* gap: 0.5rem; */
+  /* margin: 0 auto; */
+  /* position: relative; */
+  /* height: 100%; */
 }
 .post__scroller {
   height: 12rem;
@@ -784,9 +798,35 @@ form > * {
   scrollbar-color: var(--font-orange), var(--font-grey);
   scrollbar-width: thin;
 }
+.post__image-selected-mobile {
+  /* height: max-content; */
+  /* bottom: 10px; */
+  max-width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100vw;
+  background-color: var(--bg-dark);
+  padding: 0.3rem;
+  /* margin: 3vh auto; */
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 2rem;
+  scrollbar-color: var(--font-orange), var(--font-grey);
+  scrollbar-width: thin;
+}
 .post__card {
   display: grid;
   grid-template-rows: min-content;
+  inline-size: min(100% - 0.5rem, 100%);
+  margin-inline: auto;
+  scroll-snap-align: start;
+}
+.post__card-mobile {
+  display: grid;
+  grid-template-rows: min-content;
+  max-width: 100vw;
   inline-size: min(100% - 0.5rem, 100%);
   margin-inline: auto;
   scroll-snap-align: start;
@@ -795,6 +835,12 @@ form > * {
   inline-size: 99%;
   aspect-ratio: 16/9;
   object-fit: cover;
+}
+.post__image-mobile {
+  max-height: 100vh;
+  inline-size: 99%;
+  /* aspect-ratio: 16/9; */
+  object-fit: contain;
 }
 .post__button-left {
   display: grid;
@@ -896,6 +942,7 @@ form > * {
   overflow: hidden;
 }
 .post__image-selected {
+  display: none;
   max-width: 128rem;
   align-self: center;
   grid-row-start: 1;
@@ -903,6 +950,10 @@ form > * {
   width: 100vw;
   object-fit: contain;
   height: 100%;
+}
+
+.post__image-selected-mobile {
+  /* display: none; */
 }
 
 /* .post__scroller::-webkit-scrollbar {

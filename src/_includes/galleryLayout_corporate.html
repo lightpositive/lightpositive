@@ -4,11 +4,34 @@ layout: default
 
 <!-- prettier-ignore -->
 <section class="post__content">
-  <div class="post__image-extra">
+  <!-- <div class="post__image-extra">
     <div class="post__image-container">
     </div>
+  </div> -->
+  <div class="post__image-extra-mobile">
+  <div class="post__image-selected-mobile">
+
+    {% set postlist = collections.corporate %} 
+    {% for post in postlist %}
+    
+    {% set images = post.data.galleryImages %} 
+    {% for image in images %}
+    
+    {% if page.url == post.url %}
+  
+    <div class="post__card-mobile">
+      <img src="{{image}}" loading="lazy" class="post__image-mobile" sizes="(max-width: 30em) 30em, 100vw" alt="" />
+    </div>
+    
+    {% endif %}
+    
+    {% endfor %}
+  
+    {% endfor %} 
+  
+    </div>
   </div>
-  <div class="post__scroller">
+  <!-- <div class="post__scroller">
 
   {% set postlist = collections.corporate %} 
   {% for post in postlist %}
@@ -28,9 +51,16 @@ layout: default
 
   {% endfor %} 
 
-  </div>
+  </div> -->
 </section>
 <script>
+  let isMobile = false;
+  if (
+    "ontouchstart" in document.documentElement &&
+    /mobi/i.test(navigator.userAgent)
+  )
+    isMobile = true;
+
   let lowRes = "w_256";
   let midRes = "w_512";
   let hiRes = "w_1024";
@@ -43,7 +73,7 @@ layout: default
   const postBody = document
     .getElementsByClassName("post__image-container")
     .item(0);
-
+  // create
   let preUrl = "https://res.cloudinary.com/lightpositive/image/upload/";
   let allImageSrc = [];
   let allImageSrcMid = [];
@@ -66,7 +96,7 @@ layout: default
       `${srcNew} 256w, ${srcNewMid} 512w, ${srcNewHi} 1024w,`
     );
   });
-
+  // create selected image desktop
   img.src = allImageSrc[currentIndex.i];
   img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
     allImageSrcMid[currentIndex.i]
@@ -89,76 +119,80 @@ layout: default
     });
   });
 
-  let div1 = document.createElement("div");
-  let div2 = document.createElement("div");
-  let BackLink = document.createElement("a");
-  let buttonMid = document.createElement("button");
-  BackLink.setAttribute("href", "/references/corporate");
-  BackLink.textContent = "X";
-  buttonMid.className = "post__button-mid";
-  buttonMid.appendChild(BackLink);
-  let buttonLeft = document.createElement("button");
-  buttonLeft.className = "post__button-left";
-  buttonLeft.appendChild(div1);
-  div1.textContent = "<";
-  postBody.appendChild(buttonLeft);
-  postBody.appendChild(buttonMid);
-  let buttonRight = document.createElement("button");
-  buttonRight.className = "post__button-right";
-  buttonRight.appendChild(div2);
-  div2.textContent = ">";
-  postBody.appendChild(buttonRight);
+  // // add navigation buttons
+  // let div1 = document.createElement("div");
+  // let div2 = document.createElement("div");
+  // let BackLink = document.createElement("a");
+  // let buttonMid = document.createElement("button");
+  // BackLink.setAttribute("href", "/references/corporate");
+  // BackLink.textContent = "X";
+  // buttonMid.className = "post__button-mid";
+  // buttonMid.appendChild(BackLink);
+  // let buttonLeft = document.createElement("button");
+  // buttonLeft.className = "post__button-left";
+  // buttonLeft.appendChild(div1);
+  // div1.textContent = "<";
+  // postBody.appendChild(buttonLeft);
+  // postBody.appendChild(buttonMid);
+  // let buttonRight = document.createElement("button");
+  // buttonRight.className = "post__button-right";
+  // buttonRight.appendChild(div2);
+  // div2.textContent = ">";
+  // postBody.appendChild(buttonRight);
 
-  buttonRight.addEventListener("click", (e) => {
-    if (currentIndex.i < allImageSrc.length - 1) {
-      allImage.forEach((element) => {
-        element.classList.remove("selectedImage");
-      });
-      currentIndex.i++;
-      img.src = allImageSrc[currentIndex.i];
-      img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
-        allImageSrcMid[currentIndex.i]
-      } 512w, ${allImageSrcHi[currentIndex.i]} 1024w,`;
-      allImage[currentIndex.i].classList.toggle("selectedImage");
-    }
-  });
-  buttonLeft.addEventListener("click", (e) => {
-    if (currentIndex.i > 0) {
-      allImage.forEach((element) => {
-        element.classList.remove("selectedImage");
-      });
-      currentIndex.i--;
-      img.src = allImageSrc[currentIndex.i];
-      img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
-        allImageSrcMid[currentIndex.i]
-      } 512w, ${allImageSrcHi[currentIndex.i]} 1024w,`;
-      allImage[currentIndex.i].classList.toggle("selectedImage");
-    }
-  });
+  // // button navigation
+  // buttonRight.addEventListener("click", (e) => {
+  //   if (currentIndex.i < allImageSrc.length - 1) {
+  //     allImage.forEach((element) => {
+  //       element.classList.remove("selectedImage");
+  //     });
+  //     currentIndex.i++;
+  //     img.src = allImageSrc[currentIndex.i];
+  //     img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
+  //       allImageSrcMid[currentIndex.i]
+  //     } 512w, ${allImageSrcHi[currentIndex.i]} 1024w,`;
+  //     allImage[currentIndex.i].classList.toggle("selectedImage");
+  //   }
+  // });
+  // buttonLeft.addEventListener("click", (e) => {
+  //   if (currentIndex.i > 0) {
+  //     allImage.forEach((element) => {
+  //       element.classList.remove("selectedImage");
+  //     });
+  //     currentIndex.i--;
+  //     img.src = allImageSrc[currentIndex.i];
+  //     img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
+  //       allImageSrcMid[currentIndex.i]
+  //     } 512w, ${allImageSrcHi[currentIndex.i]} 1024w,`;
+  //     allImage[currentIndex.i].classList.toggle("selectedImage");
+  //   }
+  // });
 
-  window.addEventListener("load", (e) => {
-    buttonLeft.classList.add("fadeIn");
-    buttonMid.classList.add("fadeIn");
-    buttonRight.classList.add("fadeIn");
-    setTimeout(() => {
-      buttonLeft.classList.toggle("fade");
-      buttonMid.classList.toggle("fade");
-      buttonRight.classList.toggle("fade");
-    }, 3000);
-  });
-  window.addEventListener("mousemove", (e) => {
-    let tempE = e;
-    buttonLeft.classList.toggle("fade");
-    buttonMid.classList.toggle("fade");
-    buttonRight.classList.toggle("fade");
-    if (e == tempE) {
-      setTimeout(() => {
-        buttonLeft.classList.toggle("fade");
-        buttonMid.classList.toggle("fade");
-        buttonRight.classList.toggle("fade");
-      }, 3000);
-    }
-  });
+  // // hide navigation buttons
+  // window.addEventListener("load", (e) => {
+  //   buttonLeft.classList.add("fadeIn");
+  //   buttonMid.classList.add("fadeIn");
+  //   buttonRight.classList.add("fadeIn");
+  //   setTimeout(() => {
+  //     buttonLeft.classList.toggle("fade");
+  //     buttonMid.classList.toggle("fade");
+  //     buttonRight.classList.toggle("fade");
+  //   }, 3000);
+  // });
+  // window.addEventListener("mousemove", (e) => {
+  //   let tempE = e;
+  //   buttonLeft.classList.toggle("fade");
+  //   buttonMid.classList.toggle("fade");
+  //   buttonRight.classList.toggle("fade");
+  //   if (e == tempE) {
+  //     setTimeout(() => {
+  //       buttonLeft.classList.toggle("fade");
+  //       buttonMid.classList.toggle("fade");
+  //       buttonRight.classList.toggle("fade");
+  //     }, 3000);
+  //   }
+  // });
+
   // img.addEventListener("click", (e) => {
   //   img.classList.toggle("maxi");
   // });
