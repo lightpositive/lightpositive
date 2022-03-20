@@ -27,7 +27,7 @@ layout: default
   {% endfor %}
 
   {% endfor %} 
-  
+
   </div>
 </section>
 <script>
@@ -89,13 +89,24 @@ layout: default
     });
   });
 
+  let div1 = document.createElement("div");
+  let div2 = document.createElement("div");
+  let BackLink = document.createElement("a");
+  let buttonMid = document.createElement("button");
+  BackLink.setAttribute("href", "/references/corporate");
+  BackLink.textContent = "X";
+  buttonMid.className = "post__button-mid";
+  buttonMid.appendChild(BackLink);
   let buttonLeft = document.createElement("button");
   buttonLeft.className = "post__button-left";
-  buttonLeft.textContent = "<";
+  buttonLeft.appendChild(div1);
+  div1.textContent = "<";
   postBody.appendChild(buttonLeft);
+  postBody.appendChild(buttonMid);
   let buttonRight = document.createElement("button");
   buttonRight.className = "post__button-right";
-  buttonRight.textContent = ">";
+  buttonRight.appendChild(div2);
+  div2.textContent = ">";
   postBody.appendChild(buttonRight);
 
   buttonRight.addEventListener("click", (e) => {
@@ -125,6 +136,29 @@ layout: default
     }
   });
 
+  window.addEventListener("load", (e) => {
+    buttonLeft.classList.add("fadeIn");
+    buttonMid.classList.add("fadeIn");
+    buttonRight.classList.add("fadeIn");
+    setTimeout(() => {
+      buttonLeft.classList.toggle("fade");
+      buttonMid.classList.toggle("fade");
+      buttonRight.classList.toggle("fade");
+    }, 3000);
+  });
+  window.addEventListener("mousemove", (e) => {
+    let tempE = e;
+    buttonLeft.classList.toggle("fade");
+    buttonMid.classList.toggle("fade");
+    buttonRight.classList.toggle("fade");
+    if (e == tempE) {
+      setTimeout(() => {
+        buttonLeft.classList.toggle("fade");
+        buttonMid.classList.toggle("fade");
+        buttonRight.classList.toggle("fade");
+      }, 3000);
+    }
+  });
   // img.addEventListener("click", (e) => {
   //   img.classList.toggle("maxi");
   // });
