@@ -4,10 +4,7 @@ layout: default
 
 <!-- prettier-ignore -->
 <section class="post__content">
-  <!-- <div class="post__image-extra">
-    <div class="post__image-container">
-    </div>
-  </div> -->
+
   <div class="post__image-extra-mobile">
   <div class="post__image-selected-mobile">
 
@@ -31,7 +28,11 @@ layout: default
   
     </div>
   </div>
-  <!-- <div class="post__scroller">
+    <div class="post__image-extra">
+    <div class="post__image-container">
+    </div>
+  </div>
+  <div class="post__scroller">
 
   {% set postlist = collections.corporate %} 
   {% for post in postlist %}
@@ -51,15 +52,16 @@ layout: default
 
   {% endfor %} 
 
-  </div> -->
+  </div>
 </section>
 <script>
-  let isMobile = false;
+  let isDesktop = true;
   if (
     "ontouchstart" in document.documentElement &&
     /mobi/i.test(navigator.userAgent)
-  )
-    isMobile = true;
+  ) {
+    isDesktop = false;
+  }
 
   let lowRes = "w_256";
   let midRes = "w_512";
@@ -96,29 +98,78 @@ layout: default
       `${srcNew} 256w, ${srcNewMid} 512w, ${srcNewHi} 1024w,`
     );
   });
-  // create selected image desktop
-  img.src = allImageSrc[currentIndex.i];
-  img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
-    allImageSrcMid[currentIndex.i]
-  } 512w, ${allImageSrcHi[currentIndex.i]} 1024w,`;
-  allImage[currentIndex.i].classList.toggle("selectedImage");
-  img.className = "post__image-selected";
 
-  postExtra.appendChild(img);
+  const scrollMobile = document
+    .getElementsByClassName("post__image-selected-mobile")
+    .item(0);
+
   allImage.forEach((element) => {
     element.addEventListener("click", (e) => {
       allImage.forEach((element) => {
         element.classList.remove("selectedImage");
       });
       currentImageSrc = e.target.getAttribute("src");
-      currentImageSrcSet = e.target.getAttribute("srcset");
-      img.src = currentImageSrc;
-      img.srcset = currentImageSrcSet;
+      // currentImageSrcSet = e.target.getAttribute("srcset");
+      // img.src = currentImageSrc;
+      // img.srcset = currentImageSrcSet;
       element.classList.toggle("selectedImage");
       currentIndex.i = allImageSrc.indexOf(currentImageSrc);
+      scrollMobile.scrollTo({
+        top: 0,
+        left: window.innerWidth * currentIndex.i,
+        behavior: "smooth",
+      });
     });
   });
 
+  window.addEventListener("resize", () => {
+    scrollMobile.scrollTo({
+      top: 0,
+      left: window.innerWidth * currentIndex.i,
+      behavior: "smooth",
+    });
+  });
+  scrollMobile.addEventListener("scroll", (e) => {
+    currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
+    allImage.forEach((element) => {
+      element.classList.remove("selectedImage");
+    });
+    allImage.forEach((e) => {
+      currentImageSrc = e.getAttribute("src");
+      if (currentImageSrc == allImageSrc[currentIndex.i]) {
+        e.classList.add("selectedImage");
+      }
+    });
+  });
+
+  //   // create selected image desktop
+  // img.src = allImageSrc[currentIndex.i];
+  // img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
+  //   allImageSrcMid[currentIndex.i]
+  // } 512w, ${allImageSrcHi[currentIndex.i]} 1024w,`;
+  // allImage[currentIndex.i].classList.toggle("selectedImage");
+  // img.className = "post__image-selected";
+
+  // postExtra.appendChild(img);
+  // allImage.forEach((element) => {
+  //   element.addEventListener("click", (e) => {
+  //     allImage.forEach((element) => {
+  //       element.classList.remove("selectedImage");
+  //     });
+  //     currentImageSrc = e.target.getAttribute("src");
+  //     currentImageSrcSet = e.target.getAttribute("srcset");
+  //     img.src = currentImageSrc;
+  //     img.srcset = currentImageSrcSet;
+  //     element.classList.toggle("selectedImage");
+  //     currentIndex.i = allImageSrc.indexOf(currentImageSrc);
+  //   });
+  // });
+
+  if (isDesktop) {
+    console.log("desktop");
+  } else {
+    alert("mobile");
+  }
   // // add navigation buttons
   // let div1 = document.createElement("div");
   // let div2 = document.createElement("div");

@@ -758,7 +758,7 @@ form > * {
   align-items: center;
   /* gap: 0.5rem; */
   margin: 0 auto;
-  /* position: relative; */
+  /* position: absolute; */
   /* height: 100%; */
 }
 .post__image-extra {
@@ -780,6 +780,7 @@ form > * {
   /* position: relative; */
   /* height: 100%; */
 }
+
 .post__scroller {
   height: 12rem;
   bottom: 10px;
@@ -815,6 +816,7 @@ form > * {
   scroll-padding-inline: 2rem;
   scrollbar-color: var(--font-orange), var(--font-grey);
   scrollbar-width: thin;
+  /* position: absolute; */
 }
 .post__card {
   display: grid;
@@ -842,12 +844,22 @@ form > * {
   /* aspect-ratio: 16/9; */
   object-fit: contain;
 }
+.post__buttons {
+  position: absolute;
+  height: 100%;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+}
 .post__button-left {
   display: grid;
   justify-content: start;
   align-items: center;
   padding-left: 2rem;
   text-align: start;
+  grid-column-start: 1;
+  grid-column-end: span 1;
 }
 .post__button-mid {
   display: grid;
@@ -855,6 +867,8 @@ form > * {
   align-items: flex-end;
   padding-bottom: 2rem;
   text-align: start;
+  grid-column-start: 2;
+  grid-column-end: span 1;
 }
 .post__button-right {
   display: grid;
