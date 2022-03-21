@@ -812,7 +812,7 @@ form > * {
   background-color: rgba(0, 0, 0, 0);
   color: var(--font-orange);
   padding-bottom: 2rem;
-  left: calc(50% - 3rem);
+  left: calc(50% - 3.5rem);
   opacity: 100%;
 }
 .post__button-right {
