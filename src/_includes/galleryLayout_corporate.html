@@ -126,16 +126,20 @@ layout: default
   //   });
   // });
 
-  window.addEventListener("resize", () => {
+  // window.addEventListener("resize", () => {
+  //   scrollMobile.scrollTo({
+  //     top: 0,
+  //     left: window.innerWidth * currentIndex.i,
+  //     behavior: "smooth",
+  //   });
+  // });
+  // let originalWidth = window.innerWidth;
+  // let newWidth = window.innerWidth;
+  window.addEventListener("resize orientationchange", () => {
+    // newWidth = window.innerWidth
+    window.scrollTo(0, window.innerHeight);
     scrollMobile.scrollTo({
       top: 0,
-      left: window.innerWidth * currentIndex.i,
-      behavior: "smooth",
-    });
-  });
-  window.addEventListener("resize", () => {
-    scrollMobile.scrollTo({
-      top: window.innerWidth * currentIndex.i,
       left: window.innerWidth * currentIndex.i,
       behavior: "smooth",
     });
