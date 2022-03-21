@@ -60,7 +60,8 @@ layout: default
 <script>
   // navBar.style.top = "-90px";
   // navBar.classList.add("fade");
-  window.scrollTo = window.innerHeight;
+  // window.scrollTo = window.innerHeight;
+  document.body.scrollTop = document.body.scrollHeight;
   //check dvice type for content match
   let isDesktop = true;
   if (
@@ -236,7 +237,7 @@ layout: default
   buttonMid.addEventListener("mouseout", (e) => {
     isMooseOver = false;
   });
-  window.addEventListener("click", (e) => {
+  scrollMobile.addEventListener("click", (e) => {
     buttonLeft.classList.remove("fade");
     buttonMid.classList.remove("fade");
     buttonRight.classList.remove("fade");
