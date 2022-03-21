@@ -121,11 +121,13 @@ layout: default
   // });
 
   window.addEventListener("resize", () => {
-    scrollMobile.scrollTo({
-      top: 0,
-      left: window.innerWidth * currentIndex.i,
-      behavior: "smooth",
-    });
+    if (window.innerWidth != 0) {
+      scrollMobile.scrollTo({
+        top: 0,
+        left: window.innerWidth * currentIndex.i,
+        behavior: "smooth",
+      });
+    }
   });
   // scrollMobile.addEventListener("scroll", (e) => {
   //   currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
@@ -163,6 +165,14 @@ layout: default
   //   });
   // });
 
+  let BackLink = document.createElement("a");
+  let buttonMid = document.createElement("button");
+  BackLink.setAttribute("href", "/references/corporate");
+  BackLink.textContent = "X";
+  buttonMid.className = "post__button-mid";
+  buttonMid.appendChild(BackLink);
+  postContent.appendChild(buttonMid);
+
   if (isDesktop) {
     scrollMobile.addEventListener("scroll", (e) => {
       currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
@@ -170,18 +180,13 @@ layout: default
     // add navigation buttons
     let div1 = document.createElement("div");
     let div2 = document.createElement("div");
-    let BackLink = document.createElement("a");
-    let buttonMid = document.createElement("button");
-    BackLink.setAttribute("href", "/references/corporate");
-    BackLink.textContent = "X";
-    buttonMid.className = "post__button-mid";
-    buttonMid.appendChild(BackLink);
+
     let buttonLeft = document.createElement("button");
     buttonLeft.className = "post__button-left";
     buttonLeft.appendChild(div1);
     div1.textContent = "<";
     postContent.appendChild(buttonLeft);
-    postContent.appendChild(buttonMid);
+
     let buttonRight = document.createElement("button");
     buttonRight.className = "post__button-right";
     buttonRight.appendChild(div2);
@@ -249,13 +254,6 @@ layout: default
         }, 3000);
       }
     });
-  } else {
-    let BackLink = document.createElement("a");
-    let buttonMid = document.createElement("button");
-    BackLink.setAttribute("href", "/references/corporate");
-    BackLink.textContent = "X";
-    buttonMid.className = "post__button-mid";
-    postContent.appendChild(buttonMid);
   }
 
   // img.addEventListener("click", (e) => {
