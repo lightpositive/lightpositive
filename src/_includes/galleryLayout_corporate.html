@@ -135,19 +135,15 @@ layout: default
   // });
   // let originalWidth = window.innerWidth;
   // let newWidth = window.innerWidth;
-  window.addEventListener(
-    "resize orientationchange",
-    () => {
-      // newWidth = window.innerWidth
-      window.scrollTo(0, window.innerHeight);
-      scrollMobile.scrollTo({
-        top: 0,
-        left: window.innerWidth * currentIndex.i,
-        behavior: "smooth",
-      });
-    },
-    false
-  );
+  window.addEventListener("resize orientationchange", () => {
+    // newWidth = window.innerWidth
+    window.scrollTo(0, window.innerHeight);
+    scrollMobile.scrollTo({
+      top: 0,
+      left: window.innerWidth * currentIndex.i,
+      behavior: "smooth",
+    });
+  });
   // scrollMobile.addEventListener("scroll", (e) => {
   //   currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
   //   allImage.forEach((element) => {
