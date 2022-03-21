@@ -23,33 +23,7 @@ layout: default
 
       {% endif %} {% endfor %} {% endfor %}
     </div>
-    <!-- <div class="post__buttons"></div> -->
   </div>
-  <!-- <div class="post__image-extra">
-    <div class="post__image-container">
-    </div>
-  </div> -->
-  <!-- <div class="post__scroller">
-
-  {% set postlist = collections.corporate %} 
-  {% for post in postlist %}
-  
-  {% set images = post.data.galleryImages %} 
-  {% for image in images %}
-  
-  {% if page.url == post.url %}
-
-  <div class="post__card">
-    <img src="{{image}}" loading="lazy" class="post__image" sizes="(max-width: 30em) 30em, 100vw" alt="" />
-  </div>
-  
-  {% endif %}
-  
-  {% endfor %}
-
-  {% endfor %} 
-
-  </div> -->
 </section>
 <style>
   .nav__container {
@@ -58,11 +32,8 @@ layout: default
   }
 </style>
 <script>
-  // navBar.style.top = "-90px";
-  // navBar.classList.add("fade");
   window.scrollTo(0, window.innerHeight);
-  // window.scrollTo = (0, window.innerHeight);
-  // window.onload.body.scrollTop = document.body.scrollHeight;
+
   //check dvice type for content match
   let isDesktop = true;
   if (
@@ -110,75 +81,19 @@ layout: default
     .getElementsByClassName("post__image-selected-mobile")
     .item(0);
 
-  // allImage.forEach((element) => {
-  //   element.addEventListener("click", (e) => {
-  //     allImage.forEach((element) => {
-  //       element.classList.remove("selectedImage");
-  //     });
-  //     currentImageSrc = e.target.getAttribute("src");
-  //     element.classList.toggle("selectedImage");
-  //     currentIndex.i = allImageSrc.indexOf(currentImageSrc);
-  //     scrollMobile.scrollTo({
-  //       top: 0,
-  //       left: window.innerWidth * currentIndex.i,
-  //       behavior: "smooth",
-  //     });
-  //   });
-  // });
-
-  // window.addEventListener("resize", () => {
-  //   scrollMobile.scrollTo({
-  //     top: 0,
-  //     left: window.innerWidth * currentIndex.i,
-  //     behavior: "smooth",
-  //   });
-  // });
-  // let originalWidth = window.innerWidth;
-  // let newWidth = window.innerWidth;
-  window.addEventListener("resize orientationchange", () => {
-    // newWidth = window.innerWidth
-    window.scrollTo(0, window.innerHeight);
-    scrollMobile.scrollTo({
-      top: 0,
-      left: window.innerWidth * currentIndex.i,
-      behavior: "smooth",
-    });
-  });
-  // scrollMobile.addEventListener("scroll", (e) => {
-  //   currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
-  //   allImage.forEach((element) => {
-  //     element.classList.remove("selectedImage");
-  //   });
-  //   allImage.forEach((e) => {
-  //     currentImageSrc = e.getAttribute("src");
-  //     if (currentImageSrc == allImageSrc[currentIndex.i]) {
-  //       e.classList.add("selectedImage");
-  //     }
-  //   });
-  // });
-
-  // // create selected image desktop
-  // img.src = allImageSrc[currentIndex.i];
-  // img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
-  //   allImageSrcMid[currentIndex.i]
-  // } 512w, ${allImageSrcHi[currentIndex.i]} 1024w,`;
-  // allImage[currentIndex.i].classList.toggle("selectedImage");
-  // img.className = "post__image-selected";
-
-  // postExtra.appendChild(img);
-  // allImage.forEach((element) => {
-  //   element.addEventListener("click", (e) => {
-  //     allImage.forEach((element) => {
-  //       element.classList.remove("selectedImage");
-  //     });
-  //     currentImageSrc = e.target.getAttribute("src");
-  //     currentImageSrcSet = e.target.getAttribute("srcset");
-  //     img.src = currentImageSrc;
-  //     img.srcset = currentImageSrcSet;
-  //     element.classList.toggle("selectedImage");
-  //     currentIndex.i = allImageSrc.indexOf(currentImageSrc);
-  //   });
-  // });
+  window.addEventListener(
+    "resize orientationchange",
+    () => {
+      // newWidth = window.innerWidth
+      window.scrollTo(0, window.innerHeight);
+      scrollMobile.scrollTo({
+        top: 0,
+        left: window.innerWidth * currentIndex.i,
+        behavior: "smooth",
+      });
+    },
+    false
+  );
 
   let BackLink = document.createElement("a");
   let buttonMid = document.createElement("button");
@@ -280,8 +195,4 @@ layout: default
       }
     });
   }
-
-  // img.addEventListener("click", (e) => {
-  //   img.classList.toggle("maxi");
-  // });
 </script>
