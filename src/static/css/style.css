@@ -103,7 +103,6 @@ figure {
 /* LAYOUT */
 
 body {
-  width: 100vw;
   margin: 0;
   background-color: var(--bg-mid);
   overflow-x: hidden;
