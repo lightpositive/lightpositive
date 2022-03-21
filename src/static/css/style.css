@@ -782,12 +782,12 @@ form > * {
 }
 
 .post__scroller {
-  height: 12rem;
+  height: 6rem;
   bottom: 10px;
   max-width: 100%;
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 20rem;
+  grid-auto-columns: 10rem;
   background-color: var(--bg-dark);
   padding: 0.3rem;
   margin: 3vh auto;
@@ -967,6 +967,7 @@ form > * {
 }
 
 .post__image-selected-mobile {
+  align-items: center;
   /* display: none; */
 }
 
