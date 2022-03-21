@@ -3,32 +3,29 @@ layout: default
 ---
 
 <!-- prettier-ignore -->
+
 <section class="post__content">
   <div class="post__image-extra-mobile">
     <div class="post__image-selected-mobile">
-      
-      {% set postlist = collections.corporate %} 
-      {% for post in postlist %}
-      
-      {% set images = post.data.galleryImages %} 
-      {% for image in images %}
-      
-      {% if page.url == post.url %}
-      
+      {% set postlist = collections.corporate %} {% for post in postlist %} {%
+      set images = post.data.galleryImages %} {% for image in images %} {% if
+      page.url == post.url %}
+
       <div class="post__card-mobile">
-        <img src="{{image}}" loading="lazy" class="post__image-mobile" sizes="(max-width: 30em) 30em, 100vw" alt="" />
+        <img
+          src="{{image}}"
+          loading="lazy"
+          class="post__image-mobile"
+          sizes="(max-width: 30em) 30em, 100vw"
+          alt=""
+        />
       </div>
-      
-      {% endif %}
-      
-      {% endfor %}
-      
-      {% endfor %} 
-      
+
+      {% endif %} {% endfor %} {% endfor %}
     </div>
     <!-- <div class="post__buttons"></div> -->
   </div>
-    <!-- <div class="post__image-extra">
+  <!-- <div class="post__image-extra">
     <div class="post__image-container">
     </div>
   </div> -->
@@ -54,6 +51,12 @@ layout: default
 
   </div> -->
 </section>
+<style>
+  .nav__container {
+    top: -90px;
+    transition: all 0.3s ease-out;
+  }
+</style>
 <script>
   // navBar.style.top = "-90px";
   // navBar.classList.add("fade");
@@ -121,13 +124,11 @@ layout: default
   // });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth != 0) {
-      scrollMobile.scrollTo({
-        top: 0,
-        left: window.innerWidth * currentIndex.i,
-        behavior: "smooth",
-      });
-    }
+    scrollMobile.scrollTo({
+      top: 0,
+      left: window.innerWidth * currentIndex.i,
+      behavior: "smooth",
+    });
   });
   // scrollMobile.addEventListener("scroll", (e) => {
   //   currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
@@ -173,88 +174,98 @@ layout: default
   buttonMid.appendChild(BackLink);
   postContent.appendChild(buttonMid);
 
-  if (isDesktop) {
-    scrollMobile.addEventListener("scroll", (e) => {
-      currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
+  // if (isDesktop) {
+  scrollMobile.addEventListener("scroll", (e) => {
+    currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
+  });
+  // add navigation buttons
+  let div1 = document.createElement("div");
+  let div2 = document.createElement("div");
+
+  let buttonLeft = document.createElement("button");
+  buttonLeft.className = "post__button-left";
+  buttonLeft.appendChild(div1);
+  div1.textContent = "<";
+  postContent.appendChild(buttonLeft);
+
+  let buttonRight = document.createElement("button");
+  buttonRight.className = "post__button-right";
+  buttonRight.appendChild(div2);
+  div2.textContent = ">";
+  postContent.appendChild(buttonRight);
+
+  // button navigation
+  buttonRight.addEventListener("click", (e) => {
+    scrollMobile.scrollBy({
+      top: 0,
+      left: window.innerWidth,
+      behavior: "smooth",
     });
-    // add navigation buttons
-    let div1 = document.createElement("div");
-    let div2 = document.createElement("div");
-
-    let buttonLeft = document.createElement("button");
-    buttonLeft.className = "post__button-left";
-    buttonLeft.appendChild(div1);
-    div1.textContent = "<";
-    postContent.appendChild(buttonLeft);
-
-    let buttonRight = document.createElement("button");
-    buttonRight.className = "post__button-right";
-    buttonRight.appendChild(div2);
-    div2.textContent = ">";
-    postContent.appendChild(buttonRight);
-
-    // button navigation
-    buttonRight.addEventListener("click", (e) => {
-      scrollMobile.scrollBy({
-        top: 0,
-        left: window.innerWidth,
-        behavior: "smooth",
-      });
+  });
+  buttonLeft.addEventListener("click", (e) => {
+    scrollMobile.scrollBy({
+      top: 0,
+      left: -window.innerWidth,
+      behavior: "smooth",
     });
-    buttonLeft.addEventListener("click", (e) => {
-      scrollMobile.scrollBy({
-        top: 0,
-        left: -window.innerWidth,
-        behavior: "smooth",
-      });
-    });
-    // hide navigation buttons
-    let timer;
-    let isMooseOver = false;
-
+  });
+  // hide navigation buttons
+  let timer;
+  let isMooseOver = false;
+  timer = setTimeout(() => {
+    buttonLeft.classList.add("fade");
+    buttonMid.classList.add("fade");
+    buttonRight.classList.add("fade");
+  }, 3000);
+  buttonLeft.addEventListener("mouseover", (e) => {
+    isMooseOver = true;
+  });
+  buttonLeft.addEventListener("mouseout", (e) => {
+    isMooseOver = false;
+  });
+  buttonRight.addEventListener("mouseover", (e) => {
+    isMooseOver = true;
+  });
+  buttonRight.addEventListener("mouseout", (e) => {
+    isMooseOver = false;
+  });
+  buttonMid.addEventListener("mouseover", (e) => {
+    isMooseOver = true;
+  });
+  buttonMid.addEventListener("mouseout", (e) => {
+    isMooseOver = false;
+  });
+  window.addEventListener("click", (e) => {
+    buttonLeft.classList.remove("fade");
+    buttonMid.classList.remove("fade");
+    buttonRight.classList.remove("fade");
+    clearTimeout(timer);
     timer = setTimeout(() => {
       buttonLeft.classList.add("fade");
       buttonMid.classList.add("fade");
       buttonRight.classList.add("fade");
     }, 3000);
-    buttonLeft.addEventListener("mouseover", (e) => {
-      isMooseOver = true;
-    });
-    buttonLeft.addEventListener("mouseout", (e) => {
-      isMooseOver = false;
-    });
-    buttonRight.addEventListener("mouseover", (e) => {
-      isMooseOver = true;
-    });
-    buttonRight.addEventListener("mouseout", (e) => {
-      isMooseOver = false;
-    });
-    buttonMid.addEventListener("mouseover", (e) => {
-      isMooseOver = true;
-    });
-    buttonMid.addEventListener("mouseout", (e) => {
-      isMooseOver = false;
-    });
-    const mouse = window.addEventListener("mousemove", (e) => {
+  });
+  const mouse = window.addEventListener("mousemove", (e) => {
+    buttonLeft.classList.remove("fade");
+    buttonMid.classList.remove("fade");
+    buttonRight.classList.remove("fade");
+    if (isMooseOver) {
+      clearTimeout(timer);
       buttonLeft.classList.remove("fade");
       buttonMid.classList.remove("fade");
       buttonRight.classList.remove("fade");
-      if (isMooseOver) {
-        clearTimeout(timer);
-        buttonLeft.classList.remove("fade");
-        buttonMid.classList.remove("fade");
-        buttonRight.classList.remove("fade");
-      }
-      if (!isMooseOver) {
-        clearTimeout(timer);
-        timer = setTimeout(() => {
-          buttonLeft.classList.add("fade");
-          buttonMid.classList.add("fade");
-          buttonRight.classList.add("fade");
-        }, 3000);
-      }
-    });
-  }
+    }
+    if (!isMooseOver) {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        buttonLeft.classList.add("fade");
+        buttonMid.classList.add("fade");
+        buttonRight.classList.add("fade");
+      }, 3000);
+    }
+  });
+  // }
 
   // img.addEventListener("click", (e) => {
   //   img.classList.toggle("maxi");
