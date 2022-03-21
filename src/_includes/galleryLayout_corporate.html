@@ -26,8 +26,8 @@ layout: default
       {% endfor %} 
       
     </div>
+    <!-- <div class="post__buttons"></div> -->
   </div>
-  <div class="post__buttons"></div>
     <!-- <div class="post__image-extra">
     <div class="post__image-container">
     </div>
@@ -55,6 +55,9 @@ layout: default
   </div> -->
 </section>
 <script>
+  navBar.style.top = "-90px";
+
+  //check dvice type for content match
   let isDesktop = true;
   if (
     "ontouchstart" in document.documentElement &&
@@ -62,14 +65,16 @@ layout: default
   ) {
     isDesktop = false;
   }
-
+  //definie image resolutions for srcset
   let lowRes = "w_256";
   let midRes = "w_512";
   let hiRes = "w_1024";
 
   let allImage = document.querySelectorAll("post__image-mobile");
 
-  const postContent = document.getElementsByClassName("post__buttons").item(0);
+  const postContent = document
+    .getElementsByClassName("post__image-extra-mobile")
+    .item(0);
 
   // create
   let preUrl = "https://res.cloudinary.com/lightpositive/image/upload/";
@@ -99,21 +104,21 @@ layout: default
     .getElementsByClassName("post__image-selected-mobile")
     .item(0);
 
-  allImage.forEach((element) => {
-    element.addEventListener("click", (e) => {
-      allImage.forEach((element) => {
-        element.classList.remove("selectedImage");
-      });
-      currentImageSrc = e.target.getAttribute("src");
-      element.classList.toggle("selectedImage");
-      currentIndex.i = allImageSrc.indexOf(currentImageSrc);
-      scrollMobile.scrollTo({
-        top: 0,
-        left: window.innerWidth * currentIndex.i,
-        behavior: "smooth",
-      });
-    });
-  });
+  // allImage.forEach((element) => {
+  //   element.addEventListener("click", (e) => {
+  //     allImage.forEach((element) => {
+  //       element.classList.remove("selectedImage");
+  //     });
+  //     currentImageSrc = e.target.getAttribute("src");
+  //     element.classList.toggle("selectedImage");
+  //     currentIndex.i = allImageSrc.indexOf(currentImageSrc);
+  //     scrollMobile.scrollTo({
+  //       top: 0,
+  //       left: window.innerWidth * currentIndex.i,
+  //       behavior: "smooth",
+  //     });
+  //   });
+  // });
 
   window.addEventListener("resize", () => {
     scrollMobile.scrollTo({
@@ -122,18 +127,18 @@ layout: default
       behavior: "smooth",
     });
   });
-  scrollMobile.addEventListener("scroll", (e) => {
-    currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
-    allImage.forEach((element) => {
-      element.classList.remove("selectedImage");
-    });
-    allImage.forEach((e) => {
-      currentImageSrc = e.getAttribute("src");
-      if (currentImageSrc == allImageSrc[currentIndex.i]) {
-        e.classList.add("selectedImage");
-      }
-    });
-  });
+  // scrollMobile.addEventListener("scroll", (e) => {
+  //   currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
+  //   allImage.forEach((element) => {
+  //     element.classList.remove("selectedImage");
+  //   });
+  //   allImage.forEach((e) => {
+  //     currentImageSrc = e.getAttribute("src");
+  //     if (currentImageSrc == allImageSrc[currentIndex.i]) {
+  //       e.classList.add("selectedImage");
+  //     }
+  //   });
+  // });
 
   // // create selected image desktop
   // img.src = allImageSrc[currentIndex.i];
@@ -159,6 +164,9 @@ layout: default
   // });
 
   if (isDesktop) {
+    scrollMobile.addEventListener("scroll", (e) => {
+      currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
+    });
     // add navigation buttons
     let div1 = document.createElement("div");
     let div2 = document.createElement("div");
@@ -182,56 +190,73 @@ layout: default
 
     // button navigation
     buttonRight.addEventListener("click", (e) => {
-      if (currentIndex.i < allImageSrc.length - 1) {
-        allImage.forEach((element) => {
-          element.classList.remove("selectedImage");
-        });
-        currentIndex.i++;
-        img.src = allImageSrc[currentIndex.i];
-        img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
-          allImageSrcMid[currentIndex.i]
-        } 512w, ${allImageSrcHi[currentIndex.i]} 1024w,`;
-        allImage[currentIndex.i].classList.toggle("selectedImage");
-      }
+      scrollMobile.scrollBy({
+        top: 0,
+        left: window.innerWidth,
+        behavior: "smooth",
+      });
     });
     buttonLeft.addEventListener("click", (e) => {
-      if (currentIndex.i > 0) {
-        allImage.forEach((element) => {
-          element.classList.remove("selectedImage");
-        });
-        currentIndex.i--;
-        img.src = allImageSrc[currentIndex.i];
-        img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
-          allImageSrcMid[currentIndex.i]
-        } 512w, ${allImageSrcHi[currentIndex.i]} 1024w,`;
-        allImage[currentIndex.i].classList.toggle("selectedImage");
+      scrollMobile.scrollBy({
+        top: 0,
+        left: -window.innerWidth,
+        behavior: "smooth",
+      });
+    });
+    // hide navigation buttons
+    let timer;
+    let isMooseOver = false;
+
+    timer = setTimeout(() => {
+      buttonLeft.classList.add("fade");
+      buttonMid.classList.add("fade");
+      buttonRight.classList.add("fade");
+    }, 3000);
+    buttonLeft.addEventListener("mouseover", (e) => {
+      isMooseOver = true;
+    });
+    buttonLeft.addEventListener("mouseout", (e) => {
+      isMooseOver = false;
+    });
+    buttonRight.addEventListener("mouseover", (e) => {
+      isMooseOver = true;
+    });
+    buttonRight.addEventListener("mouseout", (e) => {
+      isMooseOver = false;
+    });
+    buttonMid.addEventListener("mouseover", (e) => {
+      isMooseOver = true;
+    });
+    buttonMid.addEventListener("mouseout", (e) => {
+      isMooseOver = false;
+    });
+    const mouse = window.addEventListener("mousemove", (e) => {
+      buttonLeft.classList.remove("fade");
+      buttonMid.classList.remove("fade");
+      buttonRight.classList.remove("fade");
+      if (isMooseOver) {
+        clearTimeout(timer);
+        buttonLeft.classList.remove("fade");
+        buttonMid.classList.remove("fade");
+        buttonRight.classList.remove("fade");
+      }
+      if (!isMooseOver) {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          buttonLeft.classList.add("fade");
+          buttonMid.classList.add("fade");
+          buttonRight.classList.add("fade");
+        }, 3000);
       }
     });
+  } else {
+    let BackLink = document.createElement("a");
+    let buttonMid = document.createElement("button");
+    BackLink.setAttribute("href", "/references/corporate");
+    BackLink.textContent = "X";
+    buttonMid.className = "post__button-mid";
+    postContent.appendChild(buttonMid);
   }
-  // // hide navigation buttons
-  // window.addEventListener("load", (e) => {
-  //   buttonLeft.classList.add("fadeIn");
-  //   buttonMid.classList.add("fadeIn");
-  //   buttonRight.classList.add("fadeIn");
-  //   setTimeout(() => {
-  //     buttonLeft.classList.toggle("fade");
-  //     buttonMid.classList.toggle("fade");
-  //     buttonRight.classList.toggle("fade");
-  //   }, 3000);
-  // });
-  // window.addEventListener("mousemove", (e) => {
-  //   let tempE = e;
-  //   buttonLeft.classList.toggle("fade");
-  //   buttonMid.classList.toggle("fade");
-  //   buttonRight.classList.toggle("fade");
-  //   if (e == tempE) {
-  //     setTimeout(() => {
-  //       buttonLeft.classList.toggle("fade");
-  //       buttonMid.classList.toggle("fade");
-  //       buttonRight.classList.toggle("fade");
-  //     }, 3000);
-  //   }
-  // });
 
   // img.addEventListener("click", (e) => {
   //   img.classList.toggle("maxi");
