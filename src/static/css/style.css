@@ -101,12 +101,6 @@ figure {
 }
 
 /* LAYOUT */
-html {
-  /* scroll-behavior: smooth; */
-  /* overscroll-behavior-y: none;
-  overscroll-behavior-block: none; */
-  /* -webkit-overflow-scrolling: touch; */
-}
 
 body {
   margin: 0;
@@ -755,9 +749,6 @@ form > * {
 .post__image-extra-mobile {
   height: 100vh;
   max-width: 100vw;
-  display: felx;
-  justify-content: center;
-  align-items: center;
   position: relative;
 }
 
