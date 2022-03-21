@@ -102,19 +102,19 @@ figure {
 
 /* LAYOUT */
 html {
-  scroll-behavior: smooth;
-  overscroll-behavior-y: none;
-  overscroll-behavior-block: none;
-  -webkit-overflow-scrolling: touch;
+  /* scroll-behavior: smooth; */
+  /* overscroll-behavior-y: none;
+  overscroll-behavior-block: none; */
+  /* -webkit-overflow-scrolling: touch; */
 }
 
 body {
   margin: 0;
   background-color: var(--bg-mid);
   overflow-x: hidden;
-  overscroll-behavior-y: none;
+  /* overscroll-behavior-y: none;
   overscroll-behavior-block: none;
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch; */
 }
 
 button,
