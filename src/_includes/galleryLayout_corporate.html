@@ -133,6 +133,13 @@ layout: default
       behavior: "smooth",
     });
   });
+  window.addEventListener("resize", () => {
+    scrollMobile.scrollTo({
+      top: window.innerWidth * currentIndex.i,
+      left: window.innerWidth * currentIndex.i,
+      behavior: "smooth",
+    });
+  });
   // scrollMobile.addEventListener("scroll", (e) => {
   //   currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
   //   allImage.forEach((element) => {
