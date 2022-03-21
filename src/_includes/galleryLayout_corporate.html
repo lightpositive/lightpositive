@@ -4,35 +4,35 @@ layout: default
 
 <!-- prettier-ignore -->
 <section class="post__content">
-
   <div class="post__image-extra-mobile">
-  <div class="post__image-selected-mobile">
-
-    {% set postlist = collections.corporate %} 
-    {% for post in postlist %}
-    
-    {% set images = post.data.galleryImages %} 
-    {% for image in images %}
-    
-    {% if page.url == post.url %}
-  
-    <div class="post__card-mobile">
-      <img src="{{image}}" loading="lazy" class="post__image-mobile" sizes="(max-width: 30em) 30em, 100vw" alt="" />
-    </div>
-    
-    {% endif %}
-    
-    {% endfor %}
-  
-    {% endfor %} 
-  
+    <div class="post__image-selected-mobile">
+      
+      {% set postlist = collections.corporate %} 
+      {% for post in postlist %}
+      
+      {% set images = post.data.galleryImages %} 
+      {% for image in images %}
+      
+      {% if page.url == post.url %}
+      
+      <div class="post__card-mobile">
+        <img src="{{image}}" loading="lazy" class="post__image-mobile" sizes="(max-width: 30em) 30em, 100vw" alt="" />
+      </div>
+      
+      {% endif %}
+      
+      {% endfor %}
+      
+      {% endfor %} 
+      
     </div>
   </div>
+  <div class="post__buttons"></div>
     <!-- <div class="post__image-extra">
     <div class="post__image-container">
     </div>
   </div> -->
-  <div class="post__scroller">
+  <!-- <div class="post__scroller">
 
   {% set postlist = collections.corporate %} 
   {% for post in postlist %}
@@ -52,7 +52,7 @@ layout: default
 
   {% endfor %} 
 
-  </div>
+  </div> -->
 </section>
 <script>
   let isDesktop = true;
@@ -67,14 +67,10 @@ layout: default
   let midRes = "w_512";
   let hiRes = "w_1024";
 
-  let allImage = document.querySelectorAll(".post__image");
-  const postExtra = document
-    .getElementsByClassName("post__image-extra")
-    .item(0);
-  const postContent = document.getElementsByClassName("post__content").item(0);
-  const postBody = document
-    .getElementsByClassName("post__image-container")
-    .item(0);
+  let allImage = document.querySelectorAll("post__image-mobile");
+
+  const postContent = document.getElementsByClassName("post__buttons").item(0);
+
   // create
   let preUrl = "https://res.cloudinary.com/lightpositive/image/upload/";
   let allImageSrc = [];
@@ -109,9 +105,6 @@ layout: default
         element.classList.remove("selectedImage");
       });
       currentImageSrc = e.target.getAttribute("src");
-      // currentImageSrcSet = e.target.getAttribute("srcset");
-      // img.src = currentImageSrc;
-      // img.srcset = currentImageSrcSet;
       element.classList.toggle("selectedImage");
       currentIndex.i = allImageSrc.indexOf(currentImageSrc);
       scrollMobile.scrollTo({
@@ -142,7 +135,7 @@ layout: default
     });
   });
 
-  //   // create selected image desktop
+  // // create selected image desktop
   // img.src = allImageSrc[currentIndex.i];
   // img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
   //   allImageSrcMid[currentIndex.i]
@@ -166,59 +159,55 @@ layout: default
   // });
 
   if (isDesktop) {
-    console.log("desktop");
-  } else {
-    alert("mobile");
+    // add navigation buttons
+    let div1 = document.createElement("div");
+    let div2 = document.createElement("div");
+    let BackLink = document.createElement("a");
+    let buttonMid = document.createElement("button");
+    BackLink.setAttribute("href", "/references/corporate");
+    BackLink.textContent = "X";
+    buttonMid.className = "post__button-mid";
+    buttonMid.appendChild(BackLink);
+    let buttonLeft = document.createElement("button");
+    buttonLeft.className = "post__button-left";
+    buttonLeft.appendChild(div1);
+    div1.textContent = "<";
+    postContent.appendChild(buttonLeft);
+    postContent.appendChild(buttonMid);
+    let buttonRight = document.createElement("button");
+    buttonRight.className = "post__button-right";
+    buttonRight.appendChild(div2);
+    div2.textContent = ">";
+    postContent.appendChild(buttonRight);
+
+    // button navigation
+    buttonRight.addEventListener("click", (e) => {
+      if (currentIndex.i < allImageSrc.length - 1) {
+        allImage.forEach((element) => {
+          element.classList.remove("selectedImage");
+        });
+        currentIndex.i++;
+        img.src = allImageSrc[currentIndex.i];
+        img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
+          allImageSrcMid[currentIndex.i]
+        } 512w, ${allImageSrcHi[currentIndex.i]} 1024w,`;
+        allImage[currentIndex.i].classList.toggle("selectedImage");
+      }
+    });
+    buttonLeft.addEventListener("click", (e) => {
+      if (currentIndex.i > 0) {
+        allImage.forEach((element) => {
+          element.classList.remove("selectedImage");
+        });
+        currentIndex.i--;
+        img.src = allImageSrc[currentIndex.i];
+        img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
+          allImageSrcMid[currentIndex.i]
+        } 512w, ${allImageSrcHi[currentIndex.i]} 1024w,`;
+        allImage[currentIndex.i].classList.toggle("selectedImage");
+      }
+    });
   }
-  // // add navigation buttons
-  // let div1 = document.createElement("div");
-  // let div2 = document.createElement("div");
-  // let BackLink = document.createElement("a");
-  // let buttonMid = document.createElement("button");
-  // BackLink.setAttribute("href", "/references/corporate");
-  // BackLink.textContent = "X";
-  // buttonMid.className = "post__button-mid";
-  // buttonMid.appendChild(BackLink);
-  // let buttonLeft = document.createElement("button");
-  // buttonLeft.className = "post__button-left";
-  // buttonLeft.appendChild(div1);
-  // div1.textContent = "<";
-  // postBody.appendChild(buttonLeft);
-  // postBody.appendChild(buttonMid);
-  // let buttonRight = document.createElement("button");
-  // buttonRight.className = "post__button-right";
-  // buttonRight.appendChild(div2);
-  // div2.textContent = ">";
-  // postBody.appendChild(buttonRight);
-
-  // // button navigation
-  // buttonRight.addEventListener("click", (e) => {
-  //   if (currentIndex.i < allImageSrc.length - 1) {
-  //     allImage.forEach((element) => {
-  //       element.classList.remove("selectedImage");
-  //     });
-  //     currentIndex.i++;
-  //     img.src = allImageSrc[currentIndex.i];
-  //     img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
-  //       allImageSrcMid[currentIndex.i]
-  //     } 512w, ${allImageSrcHi[currentIndex.i]} 1024w,`;
-  //     allImage[currentIndex.i].classList.toggle("selectedImage");
-  //   }
-  // });
-  // buttonLeft.addEventListener("click", (e) => {
-  //   if (currentIndex.i > 0) {
-  //     allImage.forEach((element) => {
-  //       element.classList.remove("selectedImage");
-  //     });
-  //     currentIndex.i--;
-  //     img.src = allImageSrc[currentIndex.i];
-  //     img.srcset = `${allImageSrc[currentIndex.i]} 256w, ${
-  //       allImageSrcMid[currentIndex.i]
-  //     } 512w, ${allImageSrcHi[currentIndex.i]} 1024w,`;
-  //     allImage[currentIndex.i].classList.toggle("selectedImage");
-  //   }
-  // });
-
   // // hide navigation buttons
   // window.addEventListener("load", (e) => {
   //   buttonLeft.classList.add("fadeIn");
