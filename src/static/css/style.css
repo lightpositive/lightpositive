@@ -799,7 +799,7 @@ form > * {
 
 .post__button-left {
   font-size: x-large;
-  top: calc(50% - 2.5rem);
+  top: calc(50% - 5rem);
   position: absolute;
   background-color: rgba(0, 0, 0, 0);
   color: var(--font-orange);
@@ -812,12 +812,12 @@ form > * {
   background-color: rgba(0, 0, 0, 0);
   color: var(--font-orange);
   padding-bottom: 2rem;
-  left: calc(50% - 2.5rem);
+  left: calc(50% - 5rem);
   opacity: 100%;
 }
 .post__button-right {
   font-size: x-large;
-  top: calc(50% - 2.5rem);
+  top: calc(50% - 5rem);
   right: 0;
   position: absolute;
   background-color: rgba(0, 0, 0, 0);
