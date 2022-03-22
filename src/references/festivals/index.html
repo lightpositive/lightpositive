@@ -24,7 +24,7 @@ layout: posts_festival
   let allImage = document.querySelectorAll(".posts__image-cover");
 
   // create
-  let preUrl = "https://res.cloudinary.com/lightpositive/";
+  let preUrl = "https://res.cloudinary.com/lightpositive/image/upload/";
   let allImageSrc = [];
   let allImageSrcMid = [];
   let allImageSrcHi = [];
@@ -32,7 +32,7 @@ layout: posts_festival
   allImage.forEach((element) => {
     let src = element.getAttribute("src");
     // let matched = src.match(/upload\/(?:v\d+\/)?([^\.]+)/);
-    let matched = src.match(/lightpositive\/(?:v\d+\/)([^]+)\.(?!.*\.)/);
+    let matched = src.match(/upload\/(?:v\d+\/)([^]+)\.(?!.*\.)/);
     let srcNew = preUrl.concat(lowRes, "/", matched[1]);
     allImageSrc = [...allImageSrc, srcNew];
     element.setAttribute("src", srcNew);
