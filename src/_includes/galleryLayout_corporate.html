@@ -47,7 +47,7 @@ layout: default
   let midRes = "w_512";
   let hiRes = "w_1024";
 
-  let allImage = document.querySelectorAll("post__image-mobile");
+  let allImage = document.querySelectorAll(".post__image-mobile");
 
   const postContent = document
     .getElementsByClassName("post__image-extra-mobile")
@@ -59,7 +59,6 @@ layout: default
   let allImageSrcMid = [];
   let allImageSrcHi = [];
   let currentIndex = { i: 0 };
-  let img = document.createElement("img");
   allImage.forEach((element) => {
     let src = element.getAttribute("src");
     // let matched = src.match(/upload\/(?:v\d+\/)?([^\.]+)/);

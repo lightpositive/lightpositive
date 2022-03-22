@@ -20,3 +20,16 @@ layout: posts_corporate
   </figure>
   {% endif %} {% endfor %}
 </section>
+<script>
+  let lowRes = "w_256";
+  const coverImage = document
+    .getElementsByClassName("posts__image-cover")
+    .item(0);
+  let preUrl = "https://res.cloudinary.com/lightpositive/image/upload/";
+  let src = coverImage.getAttribute("src");
+  // let matched = src.match(/upload\/(?:v\d+\/)?([^\.]+)/);
+  let matched = src.match(/upload\/(?:v\d+\/)([^]+)\.(?!.*\.)/);
+  let srcNew = preUrl.concat(lowRes, "/", matched[1]);
+  coverImage.setAttribute("src", srcNew);
+  console.log(coverImage);
+</script>
