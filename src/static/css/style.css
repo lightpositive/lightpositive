@@ -251,7 +251,7 @@ form > * {
 .footer__conatiner {
   background-color: var(--bg-dark);
   color: var(--font-grey);
-  position: fixed;
+  position: device-fixed;
   bottom: 0;
   width: 100vw;
 }
