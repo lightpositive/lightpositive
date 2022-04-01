@@ -26,9 +26,5 @@ layout: posts_corporate
 {% set js %} {% include "src/static/js/posts.js" %} {% endset %}
 <!-- feed it through our jsmin filter to minify -->
 <script>
-  {
-    {
-      js | safe;
-    }
-  }
+  {{  js | safe }}
 </script>
