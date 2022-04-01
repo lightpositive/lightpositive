@@ -26,16 +26,3 @@ window.addEventListener("resize", () => {
   });
   navList.classList.remove("show");
 });
-
-// const navBar = document.querySelector(".nav__container");
-
-// let prevOffset = window.pageYOffset;
-// document.addEventListener("scroll", () => {
-//   let currOffset = window.pageYOffset;
-//   if (prevOffset > currOffset) {
-//     navBar.style.top = "0px";
-//   } else {
-//     navBar.style.top = "-90px";
-//   }
-//   prevOffset = currOffset;
-// });

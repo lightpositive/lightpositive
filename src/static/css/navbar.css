@@ -1,0 +1,129 @@
+/* NAVIGATION BAR */
+
+.nav__container {
+  background-color: var(--bg-dark);
+  color: var(--font-grey);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  overscroll-behavior-y: none;
+  overscroll-behavior-block: none;
+}
+
+.nav__nav {
+  max-width: 128rem;
+  margin: auto;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.3s ease-out;
+  overscroll-behavior-y: none;
+  overscroll-behavior-block: none;
+}
+
+.nav__logo-warper {
+  flex-grow: 5;
+}
+
+.nav__logo-img {
+  height: 35px;
+  padding: 25px;
+}
+.nav__logo-img:hover,
+.nav__logo-img:focus {
+  transition: all 0.5s ease-out;
+  filter: drop-shadow(0px 0px 6px var(--font-orange));
+}
+
+.nav__list-item {
+  padding: 25px;
+}
+.nav__list-link {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.nav__list-link:hover,
+.nav__list-link:focus {
+  color: var(--font-orange);
+  transition: all 0.5s ease-out;
+  filter: drop-shadow(0px 0px 6px var(--font-orange));
+}
+.nav__button {
+  display: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.nav__button-image:hover,
+.nav__button-image:focus {
+  transition: all 0.5s ease-out;
+  filter: drop-shadow(0px 0px 6px var(--font-orange));
+}
+.nav__button-image {
+  height: 27px;
+  padding: 25px;
+}
+
+@media screen and (max-width: 700px) {
+  .nav__list {
+    display: none;
+    flex-direction: column;
+    background-color: var(--bg-dark);
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+  }
+  .nav__nav {
+    flex-direction: column;
+  }
+  .nav__container {
+    position: sticky;
+    top: -90px;
+    transition: all 0.3s ease-out;
+  }
+  .nav__list-container {
+    display: none;
+  }
+  .nav__list-item {
+    text-align: center;
+    padding: 0;
+    background-color: var(--bg-dark);
+    border-top: 1px solid var(--font-dark-grey);
+    height: 0;
+  }
+  .nav__list-item:last-of-type {
+    border-bottom: 1px solid var(--bg-mid);
+  }
+  .nav__list-item:first-of-type {
+    border-top: 1px solid var(--font-orange);
+  }
+  .nav__nav {
+    border-bottom: 1px solid var(--font-orange);
+  }
+  .nav__list-item:hover,
+  .nav__list-item:focus {
+    transition: all 0.5s ease-out;
+    filter: drop-shadow(0px 0px 6px var(--font-orange));
+  }
+  .nav__list-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 2.5rem 0;
+  }
+
+  .nav-menu__conteiner {
+    position: absolute;
+    top: 0;
+    right: 5px;
+  }
+  .nav__button {
+    display: block;
+  }
+  .show {
+    display: block;
+    height: initial;
+    transition: all 1s ease-out;
+  }
+}

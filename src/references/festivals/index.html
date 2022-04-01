@@ -2,6 +2,8 @@
 layout: posts_festival
 ---
 
+<!-- prettier-ignore -->
+
 <section class="posts__content">
   {% set postslist = collections.festival %} {% for festival in postslist |
   reverse %} {% if festival.url != page.url %}
@@ -19,22 +21,13 @@ layout: posts_festival
   </figure>
   {% endif %} {% endfor %}
 </section>
+<!-- capture the JS content as a Nunjucks variable -->
+{% set js %} {% include "src/static/js/posts.js" %} {% endset %}
+<!-- feed it through our jsmin filter to minify -->
 <script>
-  let lowRes = "w_400";
-  let allImage = document.querySelectorAll(".posts__image-cover");
-
-  // create
-  let preUrl = "https://res.cloudinary.com/lightpositive/image/upload/";
-  let allImageSrc = [];
-  let allImageSrcMid = [];
-  let allImageSrcHi = [];
-  let currentIndex = { i: 0 };
-  allImage.forEach((element) => {
-    let src = element.getAttribute("src");
-    // let matched = src.match(/upload\/(?:v\d+\/)?([^\.]+)/);
-    let matched = src.match(/upload\/(?:v\d+\/)([^]+)\.(?!.*\.)/);
-    let srcNew = preUrl.concat(lowRes, "/", matched[1]);
-    allImageSrc = [...allImageSrc, srcNew];
-    element.setAttribute("src", srcNew);
-  });
+  {
+    {
+      js | safe;
+    }
+  }
 </script>

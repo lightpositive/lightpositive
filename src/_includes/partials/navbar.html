@@ -1,3 +1,12 @@
+<!-- prettier-ignore -->
+<!-- capture the CSS content as a Nunjucks variable -->
+{% set css %}
+{% include "src/static/css/navbar.css" %}
+{% endset %}
+  <!-- feed it through our cssmin filter to minify -->
+<style>
+  {{ css | safe }}
+</style>
 <div class="nav__container">
   <nav class="nav__nav">
     <div class="nav__logo-warper">

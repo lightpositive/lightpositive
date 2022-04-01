@@ -3,7 +3,13 @@ layout: default
 title: Kapcsolat
 path: contact
 ---
-
+<!-- prettier-ignore -->
+<!-- capture the CSS content as a Nunjucks variable -->
+{% set css %} {% include "src/static/css/contact.css" %} {% endset %}
+<!-- feed it through our cssmin filter to minify -->
+<style>
+  {{ css | safe }}
+</style>
 <div class="contact__body">
   <div class="contact__content">
 
@@ -101,28 +107,10 @@ path: contact
       </div>
   </div>
 </div>
-
-
-
+<!-- capture the JS content as a Nunjucks variable -->
+{% set js %} {% include "src/static/js/contact.js" %} {% endset %}
+<!-- feed it through our jsmin filter to minify -->
 <script>
-  const submitButton = document.getElementById("form__submit--input");
-
-  submitButton.addEventListener("mouseover", (event) => {
-      if (!grecaptcha.getResponse().length > 0) {
-        submitButton.title = "Jelölje be az alábbi jelölömezőt is!";
-      } else {
-        submitButton.title = "";
-      }
-      });
-
-  submitButton.addEventListener("click", (event) => {
-    if (typeof grecaptcha === "object") {
-      if (!grecaptcha.getResponse().length > 0) {
-        event.preventDefault()
-    }
-    } else {
-      console.log("Works only when deployed.");
-    }
-  });
+  {{ js | safe }}
 </script>
 

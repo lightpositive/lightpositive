@@ -1,0 +1,19 @@
+/* FOOTER */
+
+.footer__conatiner {
+  background-color: var(--bg-dark);
+  color: var(--font-grey);
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}
+
+.footer__footer {
+  height: 20px;
+  text-align: center;
+}
+
+.footer__text {
+  color: var(--font-grey);
+  text-align: center;
+}

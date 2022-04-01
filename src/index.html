@@ -4,6 +4,13 @@ title: LightPositive
 path: home
 ---
 
+<!-- prettier-ignore -->
+<!-- capture the CSS content as a Nunjucks variable -->
+{% set css %} {% include "src/static/css/home.css" %} {% endset %}
+<!-- feed it through our cssmin filter to minify -->
+<style>
+  {{ css | safe }}
+</style>
 <div class="logo-menu__container">
   <a href="/aboutus" class="logo-menu__card">
     <img

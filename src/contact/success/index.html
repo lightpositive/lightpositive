@@ -3,11 +3,9 @@ layout: default
 ---
 
 <h2 class="succesMessage">Az üzenetet sikersen elküldük!</h2>
-
+<!-- capture the JS content as a Nunjucks variable -->
+{% set js %} {% include "src/static/js/formsuccess.js" %} {% endset %}
+<!-- feed it through our jsmin filter to minify -->
 <script>
-  window.onload = (event) => {
-    setTimeout(() => {
-      window.location.assign("/contact/index.html");
-    }, 5000);
-  };
+  {{ js | safe }}
 </script>

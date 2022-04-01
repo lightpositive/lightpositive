@@ -1,0 +1,201 @@
+/* POSTS - COLLECTION*/
+
+.posts__body {
+  max-width: 128rem;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+  padding-top: 3vh;
+}
+.posts__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.posts__heading-title {
+  text-align: center;
+}
+.posts__heading-subtitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.posts__content {
+  padding: 3vh 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.posts__card {
+  min-width: 30rem;
+  max-width: 40rem;
+  width: 30vw;
+  aspect-ratio: 16/9;
+  padding: 0.3rem;
+  background-color: var(--bg-dark);
+  border-radius: 3px;
+  margin: 1rem;
+}
+
+.posts__card:hover,
+.posts__card:focus {
+  transition: all 0.5s ease-out;
+  transform: scale(1.02);
+  filter: drop-shadow(0px 0px 6px var(--font-orange));
+}
+.posts__link {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.posts__image-cover {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+}
+.posts__image-caption {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+}
+
+/* POST - SINGLE*/
+
+.post__content {
+  max-width: 128rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-height: 100vh;
+}
+
+.post__image-extra-mobile {
+  height: 100vh;
+  max-width: 100vw;
+  position: relative;
+}
+
+.post__image-selected-mobile {
+  align-items: center;
+  height: 100vh;
+  max-width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100vw;
+  padding: 0.3rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 2rem;
+  scrollbar-color: var(--font-orange), var(--font-grey);
+  scrollbar-width: none;
+}
+.post__image-selected-mobile::-webkit-scrollbar {
+  display: none;
+}
+
+.post__card-mobile {
+  display: grid;
+  grid-template-rows: min-content;
+  max-width: 100vw;
+  inline-size: min(100% - 0.5rem, 100%);
+  margin-inline: auto;
+  scroll-snap-align: center;
+}
+
+.post__image-mobile {
+  max-height: 100vh;
+  inline-size: 100%;
+  /* aspect-ratio: 16/9; */
+  object-fit: contain;
+}
+
+.post__button-left {
+  font-size: x-large;
+  top: calc(50% - 3rem);
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--font-orange);
+  padding-left: 2rem;
+  opacity: 100%;
+}
+.post__button-mid {
+  bottom: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--font-orange);
+  padding-bottom: 2rem;
+  left: calc(50% - 3.5rem);
+  opacity: 100%;
+}
+.post__button-right {
+  font-size: x-large;
+  top: calc(50% - 3rem);
+  right: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--font-orange);
+  padding-right: 2rem;
+  opacity: 100%;
+}
+
+.post__button-left > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  text-align: center;
+}
+.post__button-mid > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-family: "Open Sans", sans-serif;
+  font-size: 2rem;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.fade {
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+.post__button-left > div:hover,
+.post__button-left > div:focus {
+  transition: all 0.5s ease-out;
+  filter: drop-shadow(0px 0px 1px var(--font-grey));
+}
+.post__button-mid > a:hover,
+.post__button-mid > a:focus {
+  transition: all 0.5s ease-out;
+  filter: drop-shadow(0px 0px 1px var(--font-grey));
+}
+.post__button-right > div:hover,
+.post__button-right > div:focus {
+  transition: all 0.5s ease-out;
+  filter: drop-shadow(0px 0px 1px var(--font-grey));
+}
+.post__button-right > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  text-align: center;
+}

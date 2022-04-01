@@ -4,6 +4,13 @@ title: Rólunk
 path: aboutus
 ---
 
+<!-- prettier-ignore -->
+<!-- capture the CSS content as a Nunjucks variable -->
+{% set css %} {% include "src/static/css/about.css" %} {% endset %}
+<!-- feed it through our cssmin filter to minify -->
+<style>
+  {{ css | safe }}
+</style>
 <div class="aboutus__body">
   <div class="aboutus__content">
     <h2 class="aboutus__heading--hu hu">RÓLUNK</h1>
@@ -85,16 +92,9 @@ path: aboutus
     </article>
   </div>
 </div>
+<!-- capture the JS content as a Nunjucks variable -->
+{% set js %} {% include "src/static/js/about.js" %} {% endset %}
+<!-- feed it through our jsmin filter to minify -->
 <script>
-  const languagePicker = document.querySelector(".aboutus__language-picker");
-  const huSw = document.querySelector(".hu-sw");
-  const enSw = document.querySelector(".en-sw");
-  const hu = document.querySelectorAll(".hu");
-  const en = document.querySelectorAll(".en");
-  languagePicker.addEventListener("click", () => {
-    hu.forEach((element) => {element.classList.toggle("hideHu")});
-    en.forEach((element) => {element.classList.toggle("showEn")});
-    huSw.classList.contains("orangeGrey") ? huSw.classList.remove("orangeGrey") : huSw.classList.add("orangeGrey");
-    enSw.classList.contains("orangeGrey") ? enSw.classList.remove("orangeGrey") : enSw.classList.add("orangeGrey");
-  })
+  {{ js | safe }}
 </script>

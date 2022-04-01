@@ -2,6 +2,13 @@
 layout: default
 ---
 
+<!-- prettier-ignore -->
+<!-- capture the CSS content as a Nunjucks variable -->
+{% set css %} {% include "src/static/css/posts.css" %} {% endset %}
+<!-- feed it through our cssmin filter to minify -->
+<style>
+  {{ css | safe }}
+</style>
 <div class="posts__body">
   <div class="posts__heading">
     <h2 class="posts__heading-title">FESZTIVÁLOK - KONCERTEK</h2>
