@@ -3,10 +3,11 @@ layout: default
 title: LightPositive
 path: home
 ---
-
 <!-- prettier-ignore -->
 <!-- capture the CSS content as a Nunjucks variable -->
-{% set css %} {% include "src/static/css/home.css" %} {% endset %}
+{% set css %} 
+{% include "src/static/css/home.css" %} 
+{% endset %}
 <!-- feed it through our cssmin filter to minify -->
 <style>
   {{ css | safe }}
