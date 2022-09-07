@@ -31,12 +31,19 @@ window.addEventListener(
   () => {
     if(window.orientation !== previousOrientation) {
       previousOrientation = window.orientation;
-      if (window.orientation<0) {previousOrientation = 0};
+      if (window.orientation == 0) {
         scrollMobile.scrollTo({
           top: 0,
           left: scrollMobile.clientWidth * currentIndex.i,
           behavior: "smooth",
         });
+      } else {
+        scrollMobile.scrollTo({
+          top: 0,
+          left: scrollMobile.clientHeight * currentIndex.i,
+          behavior: "smooth",
+        });
+      }
   }
   },
   false
