@@ -30,6 +30,11 @@ window.addEventListener(
   () => {
     if(window.orientation !== previousOrientation) {
       previousOrientation = window.orientation;
+      scrollMobile.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
         scrollMobile.scrollTo({
           top: 0,
           left: window.innerWidth * currentIndex.i,
