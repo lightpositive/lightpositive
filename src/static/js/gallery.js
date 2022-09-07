@@ -19,20 +19,22 @@ const scrollMobile = document
   .getElementsByClassName("post__image-selected-mobile")
   .item(0);
 
-let previousOrientation = window.orientation;
+scrollMobile.addEventListener("scroll", (e) => {
+    currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
+  });
 
+let previousOrientation = window.orientation;
 window.addEventListener(
   "orientationchange",
   () => {
     if(window.orientation !== previousOrientation) {
-      console.log("orientation change");
       previousOrientation = window.orientation;
     window.scrollTo(0, window.innerHeight);
-    scrollMobile.scrollTo({
-      top: 0,
-      left: window.innerWidth * currentIndex.i,
-      behavior: "smooth",
-    });
+      scrollMobile.scrollTo({
+        top: 0,
+        left: window.innerWidth * currentIndex.i,
+        behavior: "smooth",
+      });
   }
   },
   false
@@ -43,12 +45,10 @@ window.addEventListener(
   "resize",
   () => {
     if(window.innerHeight*window.innerWidth !== previousSize) {
-      console.log("resize");
       previousSize = window.innerHeight*window.innerWidth;
     window.scrollTo(0, window.innerHeight);
     scrollMobile.scrollTo({
       top: 0,
-      left: window.innerWidth * currentIndex.i,
       behavior: "smooth",
     });
   }
