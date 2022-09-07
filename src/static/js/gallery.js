@@ -34,13 +34,13 @@ window.addEventListener(
       if (window.orientation>0) {
         scrollMobile.scrollTo({
           top: 0,
-          left: window.innerWidth * currentIndex.i,
+          left: window.innerHeight * currentIndex.i,
           behavior: "smooth",
         });
       } else {
         scrollMobile.scrollTo({
           top: 0,
-          left: window.innerHeight * currentIndex.i,
+          left: window.innerWidth * currentIndex.i,
           behavior: "smooth",
         });
       }
