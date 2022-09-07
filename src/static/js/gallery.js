@@ -20,6 +20,9 @@ const scrollMobile = document
   .item(0);
 
 scrollMobile.addEventListener("scroll", (e) => {
+    if (currentIndex.i != Math.round(e.target.scrollLeft / window.innerWidth)) {
+      alert(currentIndex.i)
+    }
     currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
   });
 
@@ -34,20 +37,11 @@ window.addEventListener(
     window.scrollTo(0, window.innerHeight);
     // alert(window.innerWidth)
     // alert(currentIndex.i)
-    if (window.orientation>0) {
       scrollMobile.scrollTo({
         top: 0,
         left: window.innerWidth * currentIndex.i,
         behavior: "smooth",
       });
-    } else {
-      scrollMobile.scrollTo({
-        top: 0,
-        left: window.innerHeight * currentIndex.i,
-        behavior: "smooth",
-      });
-    }
-
   }
   },
   false
