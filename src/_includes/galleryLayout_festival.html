@@ -8,6 +8,9 @@ layout: default
 <style>
   {{ css | safe }}
 </style>
+{% gallery %}
+text
+{% endgallery %}
 <section class="post__content">
   <div class="post__image-extra-mobile">
     <div class="post__image-selected-mobile">
@@ -19,7 +22,6 @@ layout: default
       <div class="post__card-mobile">
         <img
           src="{{image}}"
-          loading="lazy"
           class="post__image-mobile"
           sizes="(max-width: 30em) 30em, 100vw"
           alt=""

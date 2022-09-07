@@ -5,13 +5,13 @@ layout: posts_corporate
 <!-- prettier-ignore -->
 
 <section class="posts__content">
-  {% set postslist = collections.corporate %} {% for corporate in postslist |
-  reverse %} {% if corporate.url != page.url %}
+  {% set postslist = collections.corporate %}
+  {% for corporate in postslist | reverse %}
+  {% if corporate.url != page.url %}
   <figure class="posts__card">
     <a href="{{ corporate.url | url }}" class="posts__link">
-      <!-- src="{{corporate.url}}{{corporate.data.coverImage}}" -->
       <img
-        src="{{corporate.data.coverImage}}"
+        src='{% filter replace("upload/", "upload/w_512/") %}{{ corporate.data.coverImage }}{% endfilter %}'
         class="posts__image-cover"
         alt="{{ corporate.data.title }} cover image"
       />
@@ -20,11 +20,6 @@ layout: posts_corporate
       </figcaption>
     </a>
   </figure>
-  {% endif %} {% endfor %}
+  {% endif %}
+  {% endfor %}
 </section>
-<!-- capture the JS content as a Nunjucks variable -->
-{% set js %} {% include "src/static/js/posts.js" %} {% endset %}
-<!-- feed it through our jsmin filter to minify -->
-<script>
-  {{  js | safe }}
-</script>

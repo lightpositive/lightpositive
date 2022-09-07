@@ -8,43 +8,10 @@ if (
 ) {
   isDesktop = false;
 }
-//definie image resolutions for srcset
-let lowRes = "w_256";
-let midRes = "w_512";
-let hiRes = "w_1024";
-
-let allImage = document.querySelectorAll(".post__image-mobile");
 
 const postContent = document
   .getElementsByClassName("post__image-extra-mobile")
   .item(0);
-
-// create
-let preUrl = "https://res.cloudinary.com/lightpositive/image/upload/";
-let allImageSrc = [];
-let allImageSrcMid = [];
-let allImageSrcHi = [];
-let allImageSrcFull = [];
-let currentIndex = { i: 0 };
-// let img = document.createElement("img");
-allImage.forEach((element) => {
-  let src = element.getAttribute("src");
-  // let matched = src.match(/upload\/(?:v\d+\/)?([^\.]+)/);
-  let matched = src.match(/upload\/(?:v\d+\/)([^]+)\.(?!.*\.)/);
-  let srcNew = preUrl.concat(lowRes, "/", matched[1]);
-  allImageSrc = [...allImageSrc, srcNew];
-  let srcNewMid = preUrl.concat(midRes, "/", matched[1]);
-  allImageSrcMid = [...allImageSrcMid, srcNewMid];
-  let srcNewHi = preUrl.concat(hiRes, "/", matched[1]);
-  allImageSrcHi = [...allImageSrcHi, srcNewHi];
-  let srcNewFull = preUrl.concat(matched[1]);
-  allImageSrcFull = [...allImageSrcFull, srcNewFull];
-  element.setAttribute("src", srcNew);
-  element.setAttribute(
-    "srcset",
-    `${srcNew} 256w, ${srcNewMid} 512w, ${srcNewHi} 1024w, ${srcNewFull} 1280w,`
-  );
-});
 
 const scrollMobile = document
   .getElementsByClassName("post__image-selected-mobile")

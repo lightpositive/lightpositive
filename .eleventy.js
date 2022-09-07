@@ -1,9 +1,15 @@
 // jshint esversion: 6
 const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
+const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
+
 
 // Access Eleventy configuration object
 module.exports = function (eleventyConfig) {
+
+  // include lazy loading of images via plugin:  https://github.com/liamfiddler/eleventy-plugin-lazyimages
+  eleventyConfig.addPlugin(lazyImagesPlugin);
+
   // Disable automatic use of your .gitignore
   eleventyConfig.setUseGitIgnore(false);
 
@@ -44,6 +50,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/**/*.webp");
   eleventyConfig.addPassthroughCopy("./src/**/*.bmp");
   eleventyConfig.addPassthroughCopy("./src/**/*.tiff");
+
+  // let content = "text";
+  eleventyConfig.addPairedShortcode("gallery", function(content) {
+    return `<div>${content}</div>`;
+  });
 
   // Let Eleventy transform HTML files as nunjucks
   // So that we can use .html instead of .njk

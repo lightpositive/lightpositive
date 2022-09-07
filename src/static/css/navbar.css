@@ -28,6 +28,7 @@
 .nav__logo-img {
   height: 35px;
   padding: 25px;
+  width: 108px;
 }
 .nav__logo-img:hover,
 .nav__logo-img:focus {

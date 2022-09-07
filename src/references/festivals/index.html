@@ -5,12 +5,13 @@ layout: posts_festival
 <!-- prettier-ignore -->
 
 <section class="posts__content">
-  {% set postslist = collections.festival %} {% for festival in postslist |
-  reverse %} {% if festival.url != page.url %}
+  {% set postslist = collections.festival %}
+  {% for festival in postslist | reverse %} 
+  {% if festival.url != page.url %}
   <figure class="posts__card">
     <a href="{{ festival.url | url }}" class="posts__link">
       <img
-        src="{{festival.data.coverImage}}"
+        src='{% filter replace("upload/", "upload/w_512/") %}{{ festival.data.coverImage }}{% endfilter %}'
         class="posts__image-cover"
         alt="{{festival.data.title}} cover image"
       />
@@ -19,11 +20,7 @@ layout: posts_festival
       </figcaption>
     </a>
   </figure>
-  {% endif %} {% endfor %}
+  {% endif %}
+  {% endfor %}  
 </section>
-<!-- capture the JS content as a Nunjucks variable -->
-{% set js %} {% include "src/static/js/posts.js" %} {% endset %}
-<!-- feed it through our jsmin filter to minify -->
-<script>
-  {{js | safe}}
-</script>
+
