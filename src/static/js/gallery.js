@@ -9,6 +9,8 @@ if (
   isDesktop = false;
 }
 
+let currentIndex = { i: 0 };
+
 const postContent = document
   .getElementsByClassName("post__image-extra-mobile")
   .item(0);
@@ -17,16 +19,39 @@ const scrollMobile = document
   .getElementsByClassName("post__image-selected-mobile")
   .item(0);
 
+let previousOrientation = window.orientation;
+
 window.addEventListener(
-  "resize orientationchange",
+  "orientationchange",
   () => {
-    // newWidth = window.innerWidth
+    if(window.orientation !== previousOrientation) {
+      console.log("orientation change");
+      previousOrientation = window.orientation;
     window.scrollTo(0, window.innerHeight);
     scrollMobile.scrollTo({
       top: 0,
       left: window.innerWidth * currentIndex.i,
       behavior: "smooth",
     });
+  }
+  },
+  false
+);
+
+let previousSize = window.innerHeight*window.innerWidth;
+window.addEventListener(
+  "resize",
+  () => {
+    if(window.innerHeight*window.innerWidth !== previousSize) {
+      console.log("resize");
+      previousSize = window.innerHeight*window.innerWidth;
+    window.scrollTo(0, window.innerHeight);
+    scrollMobile.scrollTo({
+      top: 0,
+      left: window.innerWidth * currentIndex.i,
+      behavior: "smooth",
+    });
+  }
   },
   false
 );
