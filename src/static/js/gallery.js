@@ -23,16 +23,27 @@ scrollMobile.addEventListener("scroll", (e) => {
     currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
   });
 
+let previousDistance = window.innerWidth;
 let previousOrientation = window.orientation;
+if (previousOrientation<0) {previousOrientation = 0};
 window.addEventListener(
   "orientationchange",
   () => {
     if(window.orientation !== previousOrientation) {
       previousOrientation = window.orientation;
+      if (previousOrientation<0) {previousOrientation = 0};
     window.scrollTo(0, window.innerHeight);
+    if (previousDistance != window.innerWidth) {
+      previousDistance = window.innerHeight;
+    }
+    // scrollMobile.scrollTo({
+    //   top: 0,
+    //   left: window.innerWidth * currentIndex.i,
+    //   behavior: "smooth",
+    // });
       scrollMobile.scrollTo({
         top: 0,
-        left: window.innerWidth * currentIndex.i,
+        left: previousDistance * currentIndex.i,
         behavior: "smooth",
       });
   }
