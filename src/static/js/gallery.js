@@ -28,21 +28,15 @@ if (previousOrientation<0) {previousOrientation = 0};
 window.addEventListener(
   "orientationchange",
   () => {
-    scrollMobile.removeEventListener("scroll", (e) => {
-      currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
-    });
     if(window.orientation !== previousOrientation) {
       previousOrientation = window.orientation;
-      if (previousOrientation<0) {previousOrientation = 0};
+      if (window.orientation<0) {previousOrientation = 0};
         scrollMobile.scrollTo({
           top: 0,
-          left: window.innerWidth * currentIndex.i,
+          left: scrollMobile.clientWidth * currentIndex.i,
           behavior: "smooth",
         });
   }
-  scrollMobile.addEventListener("scroll", (e) => {
-    currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
-  });
   },
   false
 );
