@@ -32,13 +32,22 @@ window.addEventListener(
       previousOrientation = window.orientation;
       if (previousOrientation<0) {previousOrientation = 0};
     window.scrollTo(0, window.innerHeight);
-    alert(window.innerWidth)
-    alert(currentIndex.i)
-    scrollMobile.scrollTo({
-      top: 0,
-      left: window.innerWidth * currentIndex.i,
-      behavior: "smooth",
-    });
+    // alert(window.innerWidth)
+    // alert(currentIndex.i)
+    if (window.orientation>0) {
+      scrollMobile.scrollTo({
+        top: 0,
+        left: window.innerHeight * currentIndex.i,
+        behavior: "smooth",
+      });
+    } else {
+      scrollMobile.scrollTo({
+        top: 0,
+        left: window.innerWidth * currentIndex.i,
+        behavior: "smooth",
+      });
+    }
+
   }
   },
   false
