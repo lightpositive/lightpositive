@@ -20,7 +20,7 @@ const scrollMobile = document
   .item(0);
 
 scrollMobile.addEventListener("scroll", (e) => {
-    currentIndex.i = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
+    currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
     // alert(`i:${currentIndex.i} wo:${window.orientation} cw:${scrollMobile.clientWidth} ch:${scrollMobile.clientHeight} iw:${window.innerWidth} ih${window.innerHeight}`)
   });
 
@@ -30,19 +30,11 @@ window.addEventListener(
   () => {
     if(window.orientation !== previousOrientation) {
       previousOrientation = window.orientation;
-      if (window.orientation == 0) {
         scrollMobile.scrollTo({
           top: 0,
-          left: scrollMobile.clientWidth * currentIndex.i,
+          left: window.innerWidth * currentIndex.i,
           behavior: "smooth",
         });
-      } else {
-        scrollMobile.scrollTo({
-          top: 0,
-          left: scrollMobile.clientHeight * currentIndex.i,
-          behavior: "smooth",
-        });
-      }
   }
   },
   false
@@ -73,9 +65,9 @@ buttonMid.appendChild(BackLink);
 postContent.appendChild(buttonMid);
 
 if (isDesktop) {
-  scrollMobile.addEventListener("scroll", (e) => {
-    currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
-  });
+  // scrollMobile.addEventListener("scroll", (e) => {
+  //   currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
+  // });
   // add navigation buttons
   let div1 = document.createElement("div");
   let div2 = document.createElement("div");
