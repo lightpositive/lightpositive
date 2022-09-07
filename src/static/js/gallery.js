@@ -20,9 +20,6 @@ const scrollMobile = document
   .item(0);
 
 scrollMobile.addEventListener("scroll", (e) => {
-    if (currentIndex.i != Math.round(e.target.scrollLeft / window.innerWidth)) {
-      alert(currentIndex.i)
-    }
     currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
   });
 
@@ -34,7 +31,7 @@ window.addEventListener(
     if(window.orientation !== previousOrientation) {
       previousOrientation = window.orientation;
       if (previousOrientation<0) {previousOrientation = 0};
-    window.scrollTo(0, window.innerHeight);
+    // window.scrollTo(0, window.innerHeight);
     // alert(window.innerWidth)
     // alert(currentIndex.i)
       scrollMobile.scrollTo({
