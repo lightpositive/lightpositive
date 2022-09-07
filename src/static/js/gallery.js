@@ -20,7 +20,8 @@ const scrollMobile = document
   .item(0);
 
 scrollMobile.addEventListener("scroll", (e) => {
-    currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
+    currentIndex.i = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
+    alert(`i:${currentIndex.i} wo:${window.orientation} cw:${scrollMobile.clientWidth} iw:${window.innerWidth} ih${window.innerHeight}`)
   });
 
 let previousOrientation = window.orientation;
