@@ -21,11 +21,10 @@ const scrollMobile = document
 
 scrollMobile.addEventListener("scroll", (e) => {
     currentIndex.i = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
-    alert(`i:${currentIndex.i} wo:${window.orientation} cw:${scrollMobile.clientWidth} ch:${scrollMobile.clientHeight} iw:${window.innerWidth} ih${window.innerHeight}`)
+    // alert(`i:${currentIndex.i} wo:${window.orientation} cw:${scrollMobile.clientWidth} ch:${scrollMobile.clientHeight} iw:${window.innerWidth} ih${window.innerHeight}`)
   });
 
 let previousOrientation = window.orientation;
-if (previousOrientation<0) {previousOrientation = 0};
 window.addEventListener(
   "orientationchange",
   () => {
