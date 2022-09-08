@@ -37,7 +37,7 @@ window.addEventListener(
       // });
 
 
-      scrollMobile.scrollTo(0,0);
+      scrollMobile.scrollTo(window.innerWidth * currentIndex.i,0);
 
 
         // scrollMobile.scrollTo({
