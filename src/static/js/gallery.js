@@ -30,16 +30,25 @@ window.addEventListener(
   () => {
     if(window.orientation !== previousOrientation) {
       previousOrientation = window.orientation;
+
+      // scrollMobile.removeEventListener("scroll", (e) => {
+      //   currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
+      //   alert(`i:${currentIndex.i} wo:${window.orientation} cw:${scrollMobile.clientWidth} ch:${scrollMobile.clientHeight} iw:${window.innerWidth} ih${window.innerHeight}`)
+      // });
+
+
       scrollMobile.scrollTo({
         top: 0,
         left: 0,
         behavior: "smooth",
       });
-        scrollMobile.scrollTo({
-          top: 0,
-          left: window.innerWidth * currentIndex.i,
-          behavior: "smooth",
-        });
+
+
+        // scrollMobile.scrollTo({
+        //   top: 0,
+        //   left: window.innerWidth * currentIndex.i,
+        //   behavior: "smooth",
+        // });
   }
   },
   false
