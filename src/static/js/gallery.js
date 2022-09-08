@@ -37,11 +37,7 @@ window.addEventListener(
       // });
 
 
-      scrollMobile.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
+      scrollMobile.scrollTo(0,0);
 
 
         // scrollMobile.scrollTo({
