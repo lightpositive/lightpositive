@@ -35,25 +35,14 @@ window.addEventListener(
       previousOrientation = window.orientation;
 
       scrollMobile.removeEventListener("scroll", getScrollIndex);
-      // scrollMobile.addEventListener("scroll", (e) => {
-      //   currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
-      //   console.log("added")
-      // });
 
-// alert(`i:${currentIndex.i} wo:${window.orientation} cw:${scrollMobile.clientWidth} ch:${scrollMobile.clientHeight} iw:${window.innerWidth} ih${window.innerHeight}`)
-// if (window.orientation == 0){
-//   console.log(window.innerWidth,window.innerHeight)
+if (window.orientation == 0){
       scrollMobile.scrollTo(window.innerWidth * currentIndex.i,0);
-      scrollMobile.addEventListener("scroll", getScrollIndex );
-//   console.log(window.innerWidth,window.innerHeight)
-//   scrollMobile.scrollTo(window.innerHeight * currentIndex.i,0);
-// }
+    } else {
+  scrollMobile.scrollTo(window.innerHeight * currentIndex.i,0);
+}
+scrollMobile.addEventListener("scroll", getScrollIndex );
 
-        // scrollMobile.scrollTo({
-        //   top: 0,
-        //   left: window.innerWidth * currentIndex.i,
-        //   behavior: "smooth",
-        // });
   }
   },
   false
