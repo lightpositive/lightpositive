@@ -19,10 +19,13 @@ const scrollMobile = document
   .getElementsByClassName("post__image-selected-mobile")
   .item(0);
 
-scrollMobile.addEventListener("scroll", (e) => {
-    currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
-    
-  });
+function getScrollIndex (e) {
+  currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
+  console.log(currentIndex.i)
+}
+
+scrollMobile.addEventListener("scroll", getScrollIndex );
+
 
 let previousOrientation = window.orientation;
 window.addEventListener(
@@ -31,18 +34,20 @@ window.addEventListener(
     if(window.orientation !== previousOrientation) {
       previousOrientation = window.orientation;
 
-      // scrollMobile.removeEventListener("scroll", (e) => {
+      scrollMobile.removeEventListener("scroll", getScrollIndex);
+      // scrollMobile.addEventListener("scroll", (e) => {
       //   currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
-      //   alert(`i:${currentIndex.i} wo:${window.orientation} cw:${scrollMobile.clientWidth} ch:${scrollMobile.clientHeight} iw:${window.innerWidth} ih${window.innerHeight}`)
+      //   console.log("added")
       // });
+
 // alert(`i:${currentIndex.i} wo:${window.orientation} cw:${scrollMobile.clientWidth} ch:${scrollMobile.clientHeight} iw:${window.innerWidth} ih${window.innerHeight}`)
-if (window.orientation == 0){
-  console.log(window.innerWidth,window.innerHeight)
-      scrollMobile.scrollTo(window.outerWidth* currentIndex.i,0);
-} else {
-  console.log(window.innerWidth,window.innerHeight)
-  scrollMobile.scrollTo(window.outerHeight * currentIndex.i,0);
-}
+// if (window.orientation == 0){
+//   console.log(window.innerWidth,window.innerHeight)
+      scrollMobile.scrollTo(window.innerWidth * currentIndex.i,0);
+      scrollMobile.addEventListener("scroll", getScrollIndex );
+//   console.log(window.innerWidth,window.innerHeight)
+//   scrollMobile.scrollTo(window.innerHeight * currentIndex.i,0);
+// }
 
         // scrollMobile.scrollTo({
         //   top: 0,
