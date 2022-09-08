@@ -36,13 +36,13 @@ window.addEventListener(
       //   alert(`i:${currentIndex.i} wo:${window.orientation} cw:${scrollMobile.clientWidth} ch:${scrollMobile.clientHeight} iw:${window.innerWidth} ih${window.innerHeight}`)
       // });
 // alert(`i:${currentIndex.i} wo:${window.orientation} cw:${scrollMobile.clientWidth} ch:${scrollMobile.clientHeight} iw:${window.innerWidth} ih${window.innerHeight}`)
-// if (window.orientation == 0){
-//   console.log(window.innerWidth,window.innerHeight)
+if (window.orientation == 0){
+  console.log(window.innerWidth,window.innerHeight)
       scrollMobile.scrollTo(window.outerWidth* currentIndex.i,0);
-// } else {
-//   console.log(window.innerWidth,window.innerHeight)
-//   scrollMobile.scrollTo(window.innerHeight * currentIndex.i,0);
-// }
+} else {
+  console.log(window.innerWidth,window.innerHeight)
+  scrollMobile.scrollTo(window.outerHeight * currentIndex.i,0);
+}
 
         // scrollMobile.scrollTo({
         //   top: 0,
