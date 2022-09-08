@@ -36,9 +36,11 @@ window.addEventListener(
       //   alert(`i:${currentIndex.i} wo:${window.orientation} cw:${scrollMobile.clientWidth} ch:${scrollMobile.clientHeight} iw:${window.innerWidth} ih${window.innerHeight}`)
       // });
 // alert(`i:${currentIndex.i} wo:${window.orientation} cw:${scrollMobile.clientWidth} ch:${scrollMobile.clientHeight} iw:${window.innerWidth} ih${window.innerHeight}`)
-
+if (window.orientation == 0){
       scrollMobile.scrollTo(window.innerHeight* currentIndex.i,0);
-
+} else {
+  scrollMobile.scrollTo(window.innerWidth* currentIndex.i,0);
+}
 
         // scrollMobile.scrollTo({
         //   top: 0,
