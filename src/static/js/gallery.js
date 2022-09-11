@@ -9,7 +9,8 @@ if (
   isDesktop = false;
 }
 
-let currentIndex = { i: 0 };
+// let currentIndex = { i: 0 };
+let currentIndex = 0;
 
 const postContent = document
   .getElementsByClassName("post__image-extra-mobile")
@@ -20,8 +21,8 @@ const scrollMobile = document
   .item(0);
 
 function getScrollIndex (e) {
-  currentIndex.i = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
-  alert(`scroll ${scrollMobile.clientWidth}, ${currentIndex.i}`)
+  currentIndex = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
+  alert(`scroll ${scrollMobile.clientWidth}, ${currentIndex}`)
 }
 
 scrollMobile.addEventListener("scroll", getScrollIndex );
