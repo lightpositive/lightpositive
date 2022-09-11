@@ -21,8 +21,7 @@ const scrollMobile = document
 
 function getScrollIndex (e) {
   currentIndex.i = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
-  scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex.i,0);
-  // alert(`scroll ${scrollMobile.clientWidth}, ${currentIndex.i}`)
+  alert(`scroll ${scrollMobile.clientWidth}, ${currentIndex.i}`)
 }
 
 scrollMobile.addEventListener("scroll", getScrollIndex );
