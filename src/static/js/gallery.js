@@ -38,17 +38,17 @@ window.addEventListener(
       previousOrientation = window.orientation;
       // scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
       // alert(`orientation ${scrollMobile.clientWidth}, ${currentIndex.i}`)
-      // scrollMobile.removeEventListener("scroll", getScrollIndex);
+      scrollMobile.removeEventListener("scroll", getScrollIndex);
 if (window.orientation == 0 || window.orientation == 180){
       scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndexWidth,0);
-      // alert(`scroll ${scrollMobile.clientWidth}, ${currentIndex}`)
+      alert(`scroll ${scrollMobile.clientWidth}, ${currentIndexWidth}, ${currentIndexHeight}`)
       // alert(`zero, ${window.innerWidth}, ${currentIndex.i}, ${window.innerWidth * currentIndex.i}`)
     } else {
   scrollMobile.scrollTo(scrollMobile.clientHeight * currentIndexHeight,0);
-  // alert(`scroll ${scrollMobile.clientHeight}, ${currentIndex}`)
+  alert(`scroll ${scrollMobile.clientHeight}, ${currentIndexHeight}, ${currentIndexWidth}`)
   // alert(`non zero, ${window.innerHeight}, ${currentIndex.i}, ${window.innerHeight * currentIndex.i}`)
 }
-// scrollMobile.addEventListener("scroll", getScrollIndex );
+scrollMobile.addEventListener("scroll", getScrollIndex );
 
   }
   },
