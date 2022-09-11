@@ -36,23 +36,23 @@ window.addEventListener(
     previousIndex = currentIndex
     if(window.orientation !== previousOrientation) {
       previousOrientation = window.orientation;
-      setTimeout(() => {
-        scrollMobile.scrollTo(scrollMobile.clientWidth * previousIndex,0);
-        alert("scroll to")
-      }, 1000);
+
       
       // alert(`orientation ${scrollMobile.clientWidth}, ${currentIndex.i}`)
 
-// if (window.orientation == 0 || window.orientation == 180){
-//       scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
-//       // alert(`scroll ${scrollMobile.clientWidth}, ${currentIndexWidth}, ${currentIndexHeight}`)
-//       // alert(`zero, ${window.innerWidth}, ${currentIndex.i}, ${window.innerWidth * currentIndex.i}`)
-//     } else {
-//   scrollMobile.scrollTo(scrollMobile.clientHeight * previousIndex,0);
-//   // alert(`scroll ${scrollMobile.clientHeight}, ${currentIndexHeight}, ${currentIndexWidth}`)
-//   // alert(`non zero, ${window.innerHeight}, ${currentIndex.i}, ${window.innerHeight * currentIndex.i}`)
-// }
-
+if (window.orientation == 0 || window.orientation == 180){
+      scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
+      // alert(`scroll ${scrollMobile.clientWidth}, ${currentIndexWidth}, ${currentIndexHeight}`)
+      // alert(`zero, ${window.innerWidth}, ${currentIndex.i}, ${window.innerWidth * currentIndex.i}`)
+    } else {
+      setTimeout(() => {
+        scrollMobile.scrollTo(scrollMobile.clientHeight* previousIndex,0);
+        alert(`scroll to ${scrollMobile.clientWidth}, ${scrollMobile.clientHeight}, ${currentIndex}, ${previousIndex}`)
+      }, 1000);
+  // scrollMobile.scrollTo(scrollMobile.clientHeight * previousIndex,0);
+  // alert(`scroll ${scrollMobile.clientHeight}, ${currentIndexHeight}, ${currentIndexWidth}`)
+  // alert(`non zero, ${window.innerHeight}, ${currentIndex.i}, ${window.innerHeight * currentIndex.i}`)
+}
 }
 // scrollMobile.addEventListener("scroll", getScrollIndex );
 // scrollMobile.removeEventListener("scroll", getScrollIndex);
