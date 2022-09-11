@@ -37,9 +37,12 @@ window.addEventListener(
       scrollMobile.removeEventListener("scroll", getScrollIndex);
 
 if (window.orientation == 0 || window.orientation == 180){
+  alert("zero")
       scrollMobile.scrollTo(window.innerWidth * currentIndex.i,0);
+      alert(`zero, ${window.innerWidth}, ${currentIndex.i}, ${window.innerWidth * currentIndex.i}`)
     } else {
   scrollMobile.scrollTo(window.innerHeight * currentIndex.i,0);
+  alert(`non zero, ${window.innerHeight}, ${currentIndex.i}, ${window.innerHeight * currentIndex.i}`)
 }
 scrollMobile.addEventListener("scroll", getScrollIndex );
 
