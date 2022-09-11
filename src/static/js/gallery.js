@@ -21,7 +21,6 @@ const scrollMobile = document
 
 function getScrollIndex (e) {
   currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
-  console.log(currentIndex.i)
 }
 
 scrollMobile.addEventListener("scroll", getScrollIndex );
@@ -54,6 +53,7 @@ let previousSize = window.innerHeight*window.innerWidth;
 window.addEventListener(
   "resize",
   () => {
+    alert("resize")
     if(window.innerHeight*window.innerWidth !== previousSize) {
       previousSize = window.innerHeight*window.innerWidth;
     window.scrollTo(0, window.innerHeight);
