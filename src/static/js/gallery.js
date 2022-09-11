@@ -33,8 +33,9 @@ window.addEventListener(
   () => {
     if(window.orientation !== previousOrientation) {
       previousOrientation = window.orientation;
+      scrollMobile.removeEventListener("scroll", getScrollIndex);
       alert(`orientation ${scrollMobile.clientWidth}, ${currentIndex.i}`)
-//       scrollMobile.removeEventListener("scroll", getScrollIndex);
+
 
 // if (window.orientation == 0 || window.orientation == 180){
 //       scrollMobile.scrollTo(window.innerWidth * currentIndex.i,0);
