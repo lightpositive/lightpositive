@@ -48,7 +48,7 @@ if (window.orientation == 0 || window.orientation == 180){
   // alert(`scroll ${scrollMobile.clientHeight}, ${currentIndex}`)
   // alert(`non zero, ${window.innerHeight}, ${currentIndex.i}, ${window.innerHeight * currentIndex.i}`)
 }
-scrollMobile.addEventListener("scroll", getScrollIndex );
+// scrollMobile.addEventListener("scroll", getScrollIndex );
 
   }
   },
