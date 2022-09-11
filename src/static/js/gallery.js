@@ -10,7 +10,8 @@ if (
 }
 
 // let currentIndex = { i: 0 };
-let currentIndex = 0;
+let currentIndexWidth = 0;
+let currentIndexHeight = 0;
 
 const postContent = document
   .getElementsByClassName("post__image-extra-mobile")
@@ -21,7 +22,8 @@ const scrollMobile = document
   .item(0);
 
 function getScrollIndex (e) {
-  currentIndex = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
+  currentIndexWidth = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
+  currentIndexHeight = Math.round(e.target.scrollLeft / scrollMobile.clientHeight);
   // alert(`scroll ${scrollMobile.clientWidth}, ${currentIndex}`)
 }
 
@@ -38,11 +40,11 @@ window.addEventListener(
       // alert(`orientation ${scrollMobile.clientWidth}, ${currentIndex.i}`)
       // scrollMobile.removeEventListener("scroll", getScrollIndex);
 if (window.orientation == 0 || window.orientation == 180){
-      scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
+      scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndexWidth,0);
       // alert(`scroll ${scrollMobile.clientWidth}, ${currentIndex}`)
       // alert(`zero, ${window.innerWidth}, ${currentIndex.i}, ${window.innerWidth * currentIndex.i}`)
     } else {
-  scrollMobile.scrollTo(scrollMobile.clientHeight * currentIndex,0);
+  scrollMobile.scrollTo(scrollMobile.clientHeight * currentIndexHeight,0);
   // alert(`scroll ${scrollMobile.clientHeight}, ${currentIndex}`)
   // alert(`non zero, ${window.innerHeight}, ${currentIndex.i}, ${window.innerHeight * currentIndex.i}`)
 }
