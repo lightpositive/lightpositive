@@ -20,8 +20,8 @@ const scrollMobile = document
   .item(0);
 
 function getScrollIndex (e) {
-  currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
-  alert("scroll")
+  currentIndex.i = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
+  alert(`scroll ${scrollMobile.clientWidth}, ${currentIndex.i}`)
 }
 
 scrollMobile.addEventListener("scroll", getScrollIndex );
@@ -33,7 +33,7 @@ window.addEventListener(
   () => {
     if(window.orientation !== previousOrientation) {
       previousOrientation = window.orientation;
-      alert(`${window.innerWidth}, ${window.innerHeight}, ${currentIndex.i}, `)
+      alert(`orientation ${scrollMobile.clientWidth}, ${currentIndex.i}`)
 //       scrollMobile.removeEventListener("scroll", getScrollIndex);
 
 // if (window.orientation == 0 || window.orientation == 180){
