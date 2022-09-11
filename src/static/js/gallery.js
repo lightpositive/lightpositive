@@ -12,6 +12,7 @@ if (
 // let currentIndex = { i: 0 };
 let currentIndexWidth = 0;
 let currentIndexHeight = 0;
+let
 
 const postContent = document
   .getElementsByClassName("post__image-extra-mobile")
@@ -24,7 +25,7 @@ const scrollMobile = document
 function getScrollIndex (e) {
   currentIndexWidth = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
   currentIndexHeight = Math.round(e.target.scrollLeft / scrollMobile.clientHeight);
-  // alert(`scroll ${scrollMobile.clientWidth}, ${currentIndex}`)
+  alert(`scroll ${scrollMobile.clientWidth}, ${scrollMobile.clientHeight}, ${currentIndexWidth}, ${currentIndexHeight}`)
 }
 
 scrollMobile.addEventListener("scroll", getScrollIndex );
@@ -38,14 +39,15 @@ window.addEventListener(
       previousOrientation = window.orientation;
       // scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
       // alert(`orientation ${scrollMobile.clientWidth}, ${currentIndex.i}`)
+      currentIndexHeight = currentIndexWidth
       scrollMobile.removeEventListener("scroll", getScrollIndex);
 if (window.orientation == 0 || window.orientation == 180){
       scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndexWidth,0);
-      alert(`scroll ${scrollMobile.clientWidth}, ${currentIndexWidth}, ${currentIndexHeight}`)
+      // alert(`scroll ${scrollMobile.clientWidth}, ${currentIndexWidth}, ${currentIndexHeight}`)
       // alert(`zero, ${window.innerWidth}, ${currentIndex.i}, ${window.innerWidth * currentIndex.i}`)
     } else {
   scrollMobile.scrollTo(scrollMobile.clientHeight * currentIndexHeight,0);
-  alert(`scroll ${scrollMobile.clientHeight}, ${currentIndexHeight}, ${currentIndexWidth}`)
+  // alert(`scroll ${scrollMobile.clientHeight}, ${currentIndexHeight}, ${currentIndexWidth}`)
   // alert(`non zero, ${window.innerHeight}, ${currentIndex.i}, ${window.innerHeight * currentIndex.i}`)
 }
 scrollMobile.addEventListener("scroll", getScrollIndex );
