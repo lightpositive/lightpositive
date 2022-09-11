@@ -21,6 +21,7 @@ const scrollMobile = document
 
 function getScrollIndex (e) {
   currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
+  alert("scroll")
 }
 
 scrollMobile.addEventListener("scroll", getScrollIndex );
@@ -49,22 +50,22 @@ window.addEventListener(
   false
 );
 
-let previousSize = window.innerHeight*window.innerWidth;
-window.addEventListener(
-  "resize",
-  () => {
-    alert("resize")
-    if(window.innerHeight*window.innerWidth !== previousSize) {
-      previousSize = window.innerHeight*window.innerWidth;
-    window.scrollTo(0, window.innerHeight);
-    scrollMobile.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
-  },
-  false
-);
+// let previousSize = window.innerHeight*window.innerWidth;
+// window.addEventListener(
+//   "resize",
+//   () => {
+//     alert("resize")
+//     if(window.innerHeight*window.innerWidth !== previousSize) {
+//       previousSize = window.innerHeight*window.innerWidth;
+//     window.scrollTo(0, window.innerHeight);
+//     scrollMobile.scrollTo({
+//       top: 0,
+//       behavior: "smooth",
+//     });
+//   }
+//   },
+//   false
+// );
 
 let BackLink = document.createElement("a");
 let buttonMid = document.createElement("button");
