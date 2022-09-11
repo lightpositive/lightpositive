@@ -11,7 +11,7 @@ if (
 
 // let currentIndex = { i: 0 };
 let currentIndex = 0;
-let previousIndex = 0;
+// let previousIndex = 0;
 
 const postContent = document
   .getElementsByClassName("post__image-extra-mobile")
@@ -21,24 +21,27 @@ const scrollMobile = document
   .getElementsByClassName("post__image-selected-mobile")
   .item(0);
 
-// function getScrollIndex (e) {
-//   currentIndex = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
-//   alert(`scroll ${scrollMobile.clientWidth}, ${scrollMobile.clientHeight}, ${currentIndex}, ${previousIndex}`)
-// }
+function getScrollIndex (e) {
+  currentIndex = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
+  // console.log(`scroll ${scrollMobile.clientWidth}, ${scrollMobile.clientHeight}, ${currentIndex}, ${previousIndex}`)
+}
 
-// scrollMobile.addEventListener("scroll", getScrollIndex );
+scrollMobile.addEventListener("scroll", getScrollIndex );
 
 
-// let previousOrientation = window.orientation;
-// window.addEventListener(
-//   "orientationchange",
-//   () => {
-//     previousIndex = currentIndex
-//     // scrollMobile.removeEventListener("scroll", getScrollIndex);
-//     if(window.orientation !== previousOrientation) {
-//       previousOrientation = window.orientation;
-//       // scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
-//       // alert(`orientation ${scrollMobile.clientWidth}, ${currentIndex.i}`)
+let previousOrientation = window.orientation;
+window.addEventListener(
+  "orientationchange",
+  () => {
+    // previousIndex = currentIndex
+    if(window.orientation !== previousOrientation) {
+      previousOrientation = window.orientation;
+      setTimeout(() => {
+        scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
+        console.log("scroll to")
+      }, 1000);
+      
+      // alert(`orientation ${scrollMobile.clientWidth}, ${currentIndex.i}`)
 
 // if (window.orientation == 0 || window.orientation == 180){
 //       scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
@@ -50,11 +53,12 @@ const scrollMobile = document
 //   // alert(`non zero, ${window.innerHeight}, ${currentIndex.i}, ${window.innerHeight * currentIndex.i}`)
 // }
 
-// }
-// // scrollMobile.addEventListener("scroll", getScrollIndex );
-//   },
-//   false
-// );
+}
+// scrollMobile.addEventListener("scroll", getScrollIndex );
+// scrollMobile.removeEventListener("scroll", getScrollIndex);
+  },
+  false
+);
 
 // let previousSize = window.innerHeight*window.innerWidth;
 // window.addEventListener(
