@@ -10,8 +10,8 @@ if (
 }
 
 // let currentIndex = { i: 0 };
-let currentIndexWidth = 0;
-let currentIndexHeight = 0;
+let currentIndex = 0;
+let previousIndex = 0;
 
 const postContent = document
   .getElementsByClassName("post__image-extra-mobile")
@@ -22,9 +22,8 @@ const scrollMobile = document
   .item(0);
 
 function getScrollIndex (e) {
-  currentIndexWidth = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
-  currentIndexHeight = Math.round(e.target.scrollLeft / scrollMobile.clientHeight);
-  alert(`scroll ${scrollMobile.clientWidth}, ${scrollMobile.clientHeight}, ${currentIndexWidth}, ${currentIndexHeight}`)
+  currentIndex = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
+  alert(`scroll ${scrollMobile.clientWidth}, ${scrollMobile.clientHeight}, ${currentIndex}, ${previousIndex}`)
 }
 
 scrollMobile.addEventListener("scroll", getScrollIndex );
@@ -34,24 +33,25 @@ let previousOrientation = window.orientation;
 window.addEventListener(
   "orientationchange",
   () => {
+    previousIndex = currentIndex
+    scrollMobile.removeEventListener("scroll", getScrollIndex);
     if(window.orientation !== previousOrientation) {
       previousOrientation = window.orientation;
       // scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
       // alert(`orientation ${scrollMobile.clientWidth}, ${currentIndex.i}`)
-      currentIndexHeight = currentIndexWidth
-      scrollMobile.removeEventListener("scroll", getScrollIndex);
+
 if (window.orientation == 0 || window.orientation == 180){
-      scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndexWidth,0);
+      scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
       // alert(`scroll ${scrollMobile.clientWidth}, ${currentIndexWidth}, ${currentIndexHeight}`)
       // alert(`zero, ${window.innerWidth}, ${currentIndex.i}, ${window.innerWidth * currentIndex.i}`)
     } else {
-  scrollMobile.scrollTo(scrollMobile.clientHeight * currentIndexHeight,0);
+  scrollMobile.scrollTo(scrollMobile.clientHeight * previousIndex,0);
   // alert(`scroll ${scrollMobile.clientHeight}, ${currentIndexHeight}, ${currentIndexWidth}`)
   // alert(`non zero, ${window.innerHeight}, ${currentIndex.i}, ${window.innerHeight * currentIndex.i}`)
 }
-scrollMobile.addEventListener("scroll", getScrollIndex );
 
-  }
+}
+scrollMobile.addEventListener("scroll", getScrollIndex );
   },
   false
 );
