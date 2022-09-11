@@ -34,16 +34,16 @@ window.addEventListener(
   () => {
     if(window.orientation !== previousOrientation) {
       previousOrientation = window.orientation;
-      scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
+      // scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
       // alert(`orientation ${scrollMobile.clientWidth}, ${currentIndex.i}`)
       // scrollMobile.removeEventListener("scroll", getScrollIndex);
 if (window.orientation == 0 || window.orientation == 180){
-      scrollMobile.scrollTo(scrollMobile.clientHeight * currentIndex,0);
-      alert(`scroll ${scrollMobile.clientHeight}, ${currentIndex}`)
+      scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
+      // alert(`scroll ${scrollMobile.clientWidth}, ${currentIndex}`)
       // alert(`zero, ${window.innerWidth}, ${currentIndex.i}, ${window.innerWidth * currentIndex.i}`)
     } else {
-  scrollMobile.scrollTo(scrollMobile.clientWidth* currentIndex,0);
-  alert(`scroll ${scrollMobile.clientWidth}, ${currentIndex}`)
+  scrollMobile.scrollTo(scrollMobile.clientHeight * currentIndex,0);
+  // alert(`scroll ${scrollMobile.clientHeight}, ${currentIndex}`)
   // alert(`non zero, ${window.innerHeight}, ${currentIndex.i}, ${window.innerHeight * currentIndex.i}`)
 }
 scrollMobile.addEventListener("scroll", getScrollIndex );
