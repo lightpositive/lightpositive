@@ -11,7 +11,7 @@ if (
 
 // let currentIndex = { i: 0 };
 let currentIndex = 0;
-let previousIndex = scrollMobile.clientWidth/scrollMobile.clientHeight;
+
 
 const postContent = document
   .getElementsByClassName("post__image-extra-mobile")
@@ -20,6 +20,8 @@ const postContent = document
 const scrollMobile = document
   .getElementsByClassName("post__image-selected-mobile")
   .item(0);
+
+let previousIndex = scrollMobile.clientWidth/scrollMobile.clientHeight;
 
 function getScrollIndex (e) {
   currentIndex = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
