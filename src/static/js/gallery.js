@@ -12,7 +12,6 @@ if (
 // let currentIndex = { i: 0 };
 let currentIndexWidth = 0;
 let currentIndexHeight = 0;
-let
 
 const postContent = document
   .getElementsByClassName("post__image-extra-mobile")
