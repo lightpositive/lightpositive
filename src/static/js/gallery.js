@@ -22,34 +22,36 @@ const scrollMobile = document
 
 function getScrollIndex (e) {
   currentIndex = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
-  alert(`scroll ${scrollMobile.clientWidth}, ${currentIndex}`)
+  // alert(`scroll ${scrollMobile.clientWidth}, ${currentIndex}`)
 }
 
 scrollMobile.addEventListener("scroll", getScrollIndex );
 
 
-// let previousOrientation = window.orientation;
-// window.addEventListener(
-//   "orientationchange",
-//   () => {
-//     if(window.orientation !== previousOrientation) {
-//       previousOrientation = window.orientation;
-//       // scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex.i,0);
-//       // alert(`orientation ${scrollMobile.clientWidth}, ${currentIndex.i}`)
-//       // scrollMobile.removeEventListener("scroll", getScrollIndex);
-// // if (window.orientation == 0 || window.orientation == 180){
-// //       scrollMobile.scrollTo(window.innerWidth * currentIndex.i,0);
-// //       alert(`zero, ${window.innerWidth}, ${currentIndex.i}, ${window.innerWidth * currentIndex.i}`)
-// //     } else {
-// //   scrollMobile.scrollTo(window.innerHeight * currentIndex.i,0);
-// //   alert(`non zero, ${window.innerHeight}, ${currentIndex.i}, ${window.innerHeight * currentIndex.i}`)
-// // }
-// // scrollMobile.addEventListener("scroll", getScrollIndex );
+let previousOrientation = window.orientation;
+window.addEventListener(
+  "orientationchange",
+  () => {
+    if(window.orientation !== previousOrientation) {
+      previousOrientation = window.orientation;
+      scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
+      // alert(`orientation ${scrollMobile.clientWidth}, ${currentIndex.i}`)
+      // scrollMobile.removeEventListener("scroll", getScrollIndex);
+if (window.orientation == 0 || window.orientation == 180){
+      scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
+      alert(`scroll ${scrollMobile.clientWidth}, ${currentIndex}`)
+      // alert(`zero, ${window.innerWidth}, ${currentIndex.i}, ${window.innerWidth * currentIndex.i}`)
+    } else {
+  scrollMobile.scrollTo(scrollMobile.clientHeight * currentIndex,0);
+  alert(`scroll ${scrollMobile.clientHeight}, ${currentIndex}`)
+  // alert(`non zero, ${window.innerHeight}, ${currentIndex.i}, ${window.innerHeight * currentIndex.i}`)
+}
+scrollMobile.addEventListener("scroll", getScrollIndex );
 
-//   }
-//   },
-//   false
-// );
+  }
+  },
+  false
+);
 
 // let previousSize = window.innerHeight*window.innerWidth;
 // window.addEventListener(
