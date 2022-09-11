@@ -21,7 +21,7 @@ const scrollMobile = document
   .getElementsByClassName("post__image-selected-mobile")
   .item(0);
 
-let previousIndex = scrollMobile.clientWidth/scrollMobile.clientHeight;
+let previousIndex = Math.round(scrollMobile.clientWidth/scrollMobile.clientHeight);
 
 function getScrollIndex (e) {
   currentIndex = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
@@ -47,7 +47,7 @@ if (window.orientation == 0 || window.orientation == 180){
       // alert(`scroll ${scrollMobile.clientWidth}, ${currentIndexWidth}, ${currentIndexHeight}`)
       // alert(`zero, ${window.innerWidth}, ${currentIndex.i}, ${window.innerWidth * currentIndex.i}`)
       setTimeout(() => {
-        scrollMobile.scrollTo(scrollMobile.clientHeight / previousIndex * currentIndex,0);
+        scrollMobile.scrollTo(scrollMobile.clientHeight * currentIndex*0.7 ,0);
         alert(`scroll to ${scrollMobile.clientWidth}, ${scrollMobile.clientHeight}, ${currentIndex}, ${previousIndex}`)
       }, 1000);
     } else {
