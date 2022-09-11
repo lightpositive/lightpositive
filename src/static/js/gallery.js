@@ -40,7 +40,7 @@ window.addEventListener(
       
       // alert(`orientation ${scrollMobile.clientWidth}, ${currentIndex.i}`)
 
-if (window.orientation == 0 || window.orientation == 180){
+if (window.orientation != 0 || window.orientation != 180){
       scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
       // alert(`scroll ${scrollMobile.clientWidth}, ${currentIndexWidth}, ${currentIndexHeight}`)
       // alert(`zero, ${window.innerWidth}, ${currentIndex.i}, ${window.innerWidth * currentIndex.i}`)
