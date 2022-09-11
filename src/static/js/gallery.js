@@ -45,7 +45,7 @@ if (window.orientation == 0 || window.orientation == 180){
       // alert(`scroll ${scrollMobile.clientWidth}, ${currentIndexWidth}, ${currentIndexHeight}`)
       // alert(`zero, ${window.innerWidth}, ${currentIndex.i}, ${window.innerWidth * currentIndex.i}`)
       setTimeout(() => {
-        scrollMobile.scrollTo(scrollMobile.clientWidth* previousIndex-3,0);
+        scrollMobile.scrollTo(scrollMobile.clientHeight* previousIndex-3,0);
         alert(`scroll to ${scrollMobile.clientWidth}, ${scrollMobile.clientHeight}, ${currentIndex}, ${previousIndex}`)
       }, 1000);
     } else {
