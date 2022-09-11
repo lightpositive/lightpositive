@@ -11,7 +11,7 @@ if (
 
 // let currentIndex = { i: 0 };
 let currentIndex = 0;
-// let previousIndex = 0;
+let previousIndex = 0;
 
 const postContent = document
   .getElementsByClassName("post__image-extra-mobile")
@@ -33,12 +33,12 @@ let previousOrientation = window.orientation;
 window.addEventListener(
   "orientationchange",
   () => {
-    // previousIndex = currentIndex
+    previousIndex = currentIndex
     if(window.orientation !== previousOrientation) {
       previousOrientation = window.orientation;
       setTimeout(() => {
-        scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
-        console.log("scroll to")
+        scrollMobile.scrollTo(scrollMobile.clientWidth * previousIndex,0);
+        alert("scroll to")
       }, 1000);
       
       // alert(`orientation ${scrollMobile.clientWidth}, ${currentIndex.i}`)
