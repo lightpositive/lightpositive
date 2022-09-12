@@ -21,47 +21,47 @@ const scrollMobile = document
   .getElementsByClassName("post__image-selected-mobile")
   .item(0);
 
-let previousIndex = Math.round(scrollMobile.clientWidth/scrollMobile.clientHeight);
+// let previousIndex = Math.round(scrollMobile.clientWidth/scrollMobile.clientHeight);
 
 function getScrollIndex (e) {
   currentIndex = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
-  // console.log(`scroll ${scrollMobile.clientWidth}, ${scrollMobile.clientHeight}, ${currentIndex}, ${previousIndex}`)
+  alert(`scroll ${scrollMobile.clientWidth}, ${scrollMobile.clientHeight}, ${currentIndex}`)
 }
 
 scrollMobile.addEventListener("scroll", getScrollIndex );
 
 
-let previousOrientation = window.orientation;
-window.addEventListener(
-  "orientationchange",
-  () => {
-    // previousIndex = currentIndex
-    if(window.orientation !== previousOrientation) {
-      previousOrientation = window.orientation;
+// let previousOrientation = window.orientation;
+// window.addEventListener(
+//   "orientationchange",
+//   () => {
+//     // previousIndex = currentIndex
+//     if(window.orientation !== previousOrientation) {
+//       previousOrientation = window.orientation;
 
       
-      // alert(`orientation ${scrollMobile.clientWidth}, ${currentIndex.i}`)
+//       // alert(`orientation ${scrollMobile.clientWidth}, ${currentIndex.i}`)
 
-if (window.orientation == 0 || window.orientation == 180){
+// if (window.orientation == 0 || window.orientation == 180) {
 
-      // alert(`scroll ${scrollMobile.clientWidth}, ${currentIndexWidth}, ${currentIndexHeight}`)
-      // alert(`zero, ${window.innerWidth}, ${currentIndex.i}, ${window.innerWidth * currentIndex.i}`)
-      setTimeout(() => {
-        scrollMobile.scrollTo(scrollMobile.clientWidth * Math.round(currentIndex*0.7) ,0);
-        alert(`scroll to ${scrollMobile.clientWidth}, ${scrollMobile.clientHeight}, ${currentIndex}, ${Math.round(currentIndex*0.7)}`)
-      }, 1000);
-    } else {
-      scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
-  // scrollMobile.scrollTo(scrollMobile.clientHeight * previousIndex,0);
-  // alert(`scroll ${scrollMobile.clientHeight}, ${currentIndexHeight}, ${currentIndexWidth}`)
-  // alert(`non zero, ${window.innerHeight}, ${currentIndex.i}, ${window.innerHeight * currentIndex.i}`)
-}
-}
-// scrollMobile.addEventListener("scroll", getScrollIndex );
-// scrollMobile.removeEventListener("scroll", getScrollIndex);
-  },
-  false
-);
+//       // alert(`scroll ${scrollMobile.clientWidth}, ${currentIndexWidth}, ${currentIndexHeight}`)
+//       // alert(`zero, ${window.innerWidth}, ${currentIndex.i}, ${window.innerWidth * currentIndex.i}`)
+//       setTimeout(() => {
+//         scrollMobile.scrollTo(scrollMobile.clientWidth * Math.round(currentIndex*0.7) ,0);
+//         alert(`scroll to ${scrollMobile.clientWidth}, ${scrollMobile.clientHeight}, ${currentIndex}, ${Math.round(currentIndex*0.7)}`)
+//       }, 1000);
+//     } else {
+//       scrollMobile.scrollTo(scrollMobile.clientWidth * currentIndex,0);
+//   // scrollMobile.scrollTo(scrollMobile.clientHeight * previousIndex,0);
+//   // alert(`scroll ${scrollMobile.clientHeight}, ${currentIndexHeight}, ${currentIndexWidth}`)
+//   // alert(`non zero, ${window.innerHeight}, ${currentIndex.i}, ${window.innerHeight * currentIndex.i}`)
+// }
+// }
+// // scrollMobile.addEventListener("scroll", getScrollIndex );
+// // scrollMobile.removeEventListener("scroll", getScrollIndex);
+//   },
+//   false
+// );
 
 // let previousSize = window.innerHeight*window.innerWidth;
 // window.addEventListener(
