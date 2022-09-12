@@ -25,7 +25,8 @@ const scrollMobile = document
 
 function getScrollIndex (e) {
   currentIndex = Math.round(e.target.scrollLeft / scrollMobile.clientWidth);
-  alert(`scroll ${scrollMobile.clientWidth}, ${scrollMobile.clientHeight}, ${currentIndex}`)
+  // console.log(`scroll ${Math.ceil{e.target.scrollLeft}}, ${scrollMobile.clientWidth}, ${scrollMobile.clientHeight}, ${currentIndex}`)
+  alert(`scroll ${Math.ceil{e.target.scrollLeft}}, ${scrollMobile.clientWidth}, ${scrollMobile.clientHeight}, ${currentIndex}`)
 }
 
 scrollMobile.addEventListener("scroll", getScrollIndex );
