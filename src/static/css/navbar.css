@@ -1,3 +1,27 @@
+/* NAVIGATION GINOP LOGO */
+
+.nav__ginoplogo {
+  height: 64px;
+  width: 243px;
+  min-width: 243px;
+  display: inline;
+  padding: 10px 0;
+}
+
+
+.nav-logo-link {
+  display: flex;
+  justify-content: end;
+}
+
+.nav__ginoplogo-container {
+  /* display: inline; */
+/* width: 100vw; */
+background-color: var(--bg-dark);
+/* background-image: linear-gradient(to right, white, var(--bg-dark)); */
+}
+
+
 /* NAVIGATION BAR */
 
 .nav__container {
@@ -22,13 +46,18 @@
 }
 
 .nav__logo-warper {
-  flex-grow: 5;
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 9;
+
 }
 
 .nav__logo-img {
+  display: inline;
   height: 35px;
   padding: 25px;
   width: 108px;
+  min-width: 108px;
 }
 .nav__logo-img:hover,
 .nav__logo-img:focus {
@@ -65,7 +94,22 @@
   padding: 25px;
 }
 
-@media screen and (max-width: 700px) {
+.nav__list {
+  min-width: 52rem;
+}
+
+@media screen and (max-width: 990px) {
+  .nav-logo-link {
+    justify-content: end;
+
+  }
+  .nav__logo-img {
+    padding: 25px 0;
+    margin-right: 10rem;
+  }
+  .nav__logo-warper {
+    flex-grow: 0;
+  }
   .nav__list {
     display: none;
     flex-direction: column;
@@ -126,5 +170,10 @@
     display: block;
     height: initial;
     transition: all 1s ease-out;
+  }
+}
+@media screen and (max-width: 390px) {
+  .nav__logo-img {
+    display: none;
   }
 }

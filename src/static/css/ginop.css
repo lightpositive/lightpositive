@@ -1,0 +1,21 @@
+.ginop__content {
+    max-width: 128rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.WordSection1 {
+    padding: 50px;
+}
+.ginop__logo {
+    max-width: 386px;
+    max-height: 100px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 5%;
+
+}
