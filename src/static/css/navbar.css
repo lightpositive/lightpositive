@@ -67,6 +67,7 @@ background-color: var(--bg-dark);
 
 .nav__list-item {
   padding: 25px;
+    max-width: 100vw;
 }
 .nav__list-link {
   text-transform: uppercase;
@@ -92,6 +93,7 @@ background-color: var(--bg-dark);
 .nav__button-image {
   height: 27px;
   padding: 25px;
+  width: fit-content;
 }
 
 .nav__list {
@@ -172,7 +174,7 @@ background-color: var(--bg-dark);
     transition: all 1s ease-out;
   }
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 425px) {
   .nav__logo-img {
     display: none;
   }
