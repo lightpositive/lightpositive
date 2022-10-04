@@ -20,7 +20,6 @@ background-color: var(--bg-dark);
 
 .nav-ginoplogo-link {
   height: fit-content;
-  
 }
 
 
@@ -84,9 +83,9 @@ background-color: var(--bg-dark);
 }
 .nav__button {
   display: none;
-  /* background-color: rgba(0, 0, 0, 0); */
   margin: 0;
   padding: 0;
+  background-color: var(--bg-dark);
 }
 
 .nav__button-image:hover,
@@ -96,9 +95,10 @@ background-color: var(--bg-dark);
 }
 .nav__button-image {
   height: 27px;
-  padding: 25px;
+  padding: 0;
+  margin: 25px;
   width: 27px;
-  background-color: var(--bg-dark);
+  /* background-color: var(--bg-dark); */
 }
 
 .nav__list {
@@ -108,7 +108,7 @@ background-color: var(--bg-dark);
 @media screen and (max-width: 990px) {
   .nav-logo-link {
     justify-content: end;
-
+    height: fit-content;
   }
   .nav__logo-img {
     padding: 25px 0;
@@ -131,7 +131,7 @@ background-color: var(--bg-dark);
   }
   .nav__container {
     position: sticky;
-    top: -180px;
+    top: -90px;
     transition: all 0.3s ease-out;
   }
   .nav__list-container {
@@ -184,24 +184,14 @@ background-color: var(--bg-dark);
     margin-right: 0;
   }
   .nav__nav {
-
-    height: 180px;
-
-  }
-  .nav__logo-warper {
-  
-  }
-  .nav__logo-img {
-    /* justify-content: center; */
+    height: 172px;
+    padding: 0;
+    margin: 0;
   }
   .nav-logo-link {
     justify-content: center;
-
   }
   .nav__logo-warper {
     flex-wrap: wrap;
-  }
-  .nav__container {
-
   }
 }
