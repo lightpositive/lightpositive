@@ -1,10 +1,8 @@
 {
   "scripts": {
-    "start": "npm-run-all --parallel eleventy browsersync",
-    "eleventy": "eleventy --watch",
+    "start": "npx @11ty/eleventy --serve --port=8081",
     "debug": "set DEBUG=* & eleventy",
-    "build": "cross-env NODE_ENV=production eleventy && cross-env NODE_ENV=production",
-    "browsersync": "browser-sync start --server '_site' --files '_site' --port 8080 --no-notify --no-open"
+    "build": "cross-env NODE_ENV=production eleventy && cross-env NODE_ENV=production"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
