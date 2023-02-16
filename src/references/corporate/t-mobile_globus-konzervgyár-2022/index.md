@@ -1,5 +1,5 @@
 ---
-title: T-Mobile_Globus konzervgyár 2022
+title: T-Mobile forgatás - Globus konzervgyár - 2022
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1676555155/uploads/T-Mobile_Globus%20konzervgy%C3%A1r%202022/20221124_090531_2.jpg
 date: 2023-02-16T13:42:59.646Z
