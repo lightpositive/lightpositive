@@ -1,5 +1,5 @@
 ---
-title: Brain Bar 2022
+title: Brain Bar - Magyar Zene Háza - 2022
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1676555649/uploads/T-Mobile_Globus%20konzervgy%C3%A1r%202022/KIOSK-Max%20and%20Future-HPE%20kar%C3%A1csony%202022/Brain%20Bar%202022/309827835_2527775330697944_8715186633043173801_n.jpg
 date: 2023-02-16T13:53:26.024Z
