@@ -1,5 +1,5 @@
 ---
-title: ForrásPont
+title: ForrásPont 2022
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1676550270/uploads/Forr%C3%A1spont%202022/szeptember_18.jpg
 date: 2023-02-16T12:20:59.817Z
