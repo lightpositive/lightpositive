@@ -1,5 +1,5 @@
 ---
-title: Zhoja divatbemutató-Continental Citygolf Club 2022
+title: Zhoja divatbemutató-Continental Citygolf Club - 2022
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1676556249/uploads/T-Mobile_Globus%20konzervgy%C3%A1r%202022/KIOSK-Max%20and%20Future-HPE%20kar%C3%A1csony%202022/Brain%20Bar%202022/Forr%C3%A1spont%202022/Dunai%20Regatta%202022/Nemzeti%20M%C3%BAzeum%202022/Zhoja%20divatbemutat%C3%B3-Continental%20Citygolf%20Club%202022/20221129_162055.jpg
 date: 2023-02-16T14:02:37.733Z
