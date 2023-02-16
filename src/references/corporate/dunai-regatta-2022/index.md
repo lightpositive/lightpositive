@@ -1,5 +1,5 @@
 ---
-title: Dunai Regatta 2022
+title: Dunai Regatta - 2022
 coverImage:
   - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1676555871/uploads/T-Mobile_Globus%20konzervgy%C3%A1r%202022/KIOSK-Max%20and%20Future-HPE%20kar%C3%A1csony%202022/Brain%20Bar%202022/Forr%C3%A1spont%202022/Dunai%20Regatta%202022/309756626_526231199506162_8876374824374461506_n.jpg
 date: 2023-02-16T13:57:05.590Z
