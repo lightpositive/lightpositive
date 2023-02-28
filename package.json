@@ -1,10 +1,6 @@
 {
   "scripts": {
-<<<<<<< HEAD
-    "start": "npx @11ty/eleventy --serve --port=8081",
-=======
     "start": "npx @11ty/eleventy --serve --port=8080",
->>>>>>> dev
     "debug": "set DEBUG=* & eleventy",
     "build": "cross-env NODE_ENV=production eleventy && cross-env NODE_ENV=production"
   },
