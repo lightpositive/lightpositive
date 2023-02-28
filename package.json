@@ -1,12 +1,16 @@
 {
   "scripts": {
+<<<<<<< HEAD
     "start": "npx @11ty/eleventy --serve --port=8081",
+=======
+    "start": "npx @11ty/eleventy --serve --port=8080",
+>>>>>>> dev
     "debug": "set DEBUG=* & eleventy",
     "build": "cross-env NODE_ENV=production eleventy && cross-env NODE_ENV=production"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
-    "browser-sync": "^2.27.7",
+    "@11ty/eleventy": "^1.0.2",
+    "browser-sync": "^2.27.10",
     "cross-env": "^7.0.3",
     "debug": "^4.3.3",
     "eleventy-plugin-lazyimages": "^2.1.2",
