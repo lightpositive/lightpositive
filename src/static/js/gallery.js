@@ -80,10 +80,12 @@ scrollMobile.addEventListener("scroll", getScrollIndex );
 //   },
 //   false
 // );
+let currentUrl = "/references/festivals"
+if (window.location.href.includes("corporate")) currentUrl = "/references/corporate/"
 
 let BackLink = document.createElement("a");
 let buttonMid = document.createElement("button");
-BackLink.setAttribute("href", "/references/festivals");
+BackLink.setAttribute("href", currentUrl);
 BackLink.textContent = "X";
 buttonMid.className = "post__button-mid";
 buttonMid.appendChild(BackLink);
