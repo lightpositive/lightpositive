@@ -1,13 +1,27 @@
 window.scrollTo(0, window.innerHeight);
 
 //check dvice type for content match
-let isDesktop = true;
-if (
-  "ontouchstart" in document.documentElement &&
-  /mobi/i.test(navigator.userAgent)
-) {
-  isDesktop = false;
+let hasTouchScreen = false;
+if ("maxTouchPoints" in navigator) {
+  hasTouchScreen = navigator.maxTouchPoints > 0;
+} else if ("msMaxTouchPoints" in navigator) {
+  hasTouchScreen = navigator.msMaxTouchPoints > 0;
+} else {
+  const mQ = matchMedia?.("(pointer:coarse)");
+  if (mQ?.media === "(pointer:coarse)") {
+    hasTouchScreen = !!mQ.matches;
+  } else if ("orientation" in window) {
+    hasTouchScreen = true; // deprecated, but good fallback
+  } else {
+    // Only as a last resort, fall back to user agent sniffing
+    const UA = navigator.userAgent;
+    hasTouchScreen =
+      /\b(BlackBerry|webOS|iPhone|IEMobile)\b/i.test(UA) ||
+      /\b(Android|Windows Phone|iPad|iPod)\b/i.test(UA);
+  }
 }
+
+
 
 // let currentIndex = { i: 0 };
 let currentIndex = 0;
@@ -91,95 +105,96 @@ buttonMid.className = "post__button-mid";
 buttonMid.appendChild(BackLink);
 postContent.appendChild(buttonMid);
 
-if (isDesktop) {
-  // scrollMobile.addEventListener("scroll", (e) => {
-  //   currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
-  // });
-  // add navigation buttons
-  let div1 = document.createElement("div");
-  let div2 = document.createElement("div");
 
-  let buttonLeft = document.createElement("button");
-  buttonLeft.className = "post__button-left";
-  buttonLeft.appendChild(div1);
-  div1.textContent = "<";
-  postContent.appendChild(buttonLeft);
+if (!hasTouchScreen) {
+// scrollMobile.addEventListener("scroll", (e) => {
+//   currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
+// });
+// add navigation buttons
+let div1 = document.createElement("div");
+let div2 = document.createElement("div");
 
-  let buttonRight = document.createElement("button");
-  buttonRight.className = "post__button-right";
-  buttonRight.appendChild(div2);
-  div2.textContent = ">";
-  postContent.appendChild(buttonRight);
+let buttonLeft = document.createElement("button");
+buttonLeft.className = "post__button-left";
+buttonLeft.appendChild(div1);
+div1.textContent = "<";
+postContent.appendChild(buttonLeft);
 
-  // button navigation
-  buttonRight.addEventListener("click", (e) => {
-    scrollMobile.scrollBy({
-      top: 0,
-      left: window.innerWidth,
-      behavior: "smooth",
-    });
+let buttonRight = document.createElement("button");
+buttonRight.className = "post__button-right";
+buttonRight.appendChild(div2);
+div2.textContent = ">";
+postContent.appendChild(buttonRight);
+
+// button navigation
+buttonRight.addEventListener("click", (e) => {
+  scrollMobile.scrollBy({
+    top: 0,
+    left: window.innerWidth,
+    behavior: "smooth",
   });
-  buttonLeft.addEventListener("click", (e) => {
-    scrollMobile.scrollBy({
-      top: 0,
-      left: -window.innerWidth,
-      behavior: "smooth",
-    });
+});
+buttonLeft.addEventListener("click", (e) => {
+  scrollMobile.scrollBy({
+    top: 0,
+    left: -window.innerWidth,
+    behavior: "smooth",
   });
-  // hide navigation buttons
-  let timer;
-  let isMooseOver = false;
+});
+// hide navigation buttons
+let timer;
+let isMooseOver = false;
+timer = setTimeout(() => {
+  buttonLeft.classList.add("fade");
+  buttonMid.classList.add("fade");
+  buttonRight.classList.add("fade");
+}, 2000);
+buttonLeft.addEventListener("mouseover", (e) => {
+  isMooseOver = true;
+});
+buttonLeft.addEventListener("mouseout", (e) => {
+  isMooseOver = false;
+});
+buttonRight.addEventListener("mouseover", (e) => {
+  isMooseOver = true;
+});
+buttonRight.addEventListener("mouseout", (e) => {
+  isMooseOver = false;
+});
+buttonMid.addEventListener("mouseover", (e) => {
+  isMooseOver = true;
+});
+buttonMid.addEventListener("mouseout", (e) => {
+  isMooseOver = false;
+});
+scrollMobile.addEventListener("click", (e) => {
+  buttonLeft.classList.remove("fade");
+  buttonMid.classList.remove("fade");
+  buttonRight.classList.remove("fade");
+  clearTimeout(timer);
   timer = setTimeout(() => {
     buttonLeft.classList.add("fade");
     buttonMid.classList.add("fade");
     buttonRight.classList.add("fade");
   }, 2000);
-  buttonLeft.addEventListener("mouseover", (e) => {
-    isMooseOver = true;
-  });
-  buttonLeft.addEventListener("mouseout", (e) => {
-    isMooseOver = false;
-  });
-  buttonRight.addEventListener("mouseover", (e) => {
-    isMooseOver = true;
-  });
-  buttonRight.addEventListener("mouseout", (e) => {
-    isMooseOver = false;
-  });
-  buttonMid.addEventListener("mouseover", (e) => {
-    isMooseOver = true;
-  });
-  buttonMid.addEventListener("mouseout", (e) => {
-    isMooseOver = false;
-  });
-  scrollMobile.addEventListener("click", (e) => {
+});
+const mouse = window.addEventListener("mousemove", (e) => {
+  buttonLeft.classList.remove("fade");
+  buttonMid.classList.remove("fade");
+  buttonRight.classList.remove("fade");
+  if (isMooseOver) {
+    clearTimeout(timer);
     buttonLeft.classList.remove("fade");
     buttonMid.classList.remove("fade");
     buttonRight.classList.remove("fade");
+  }
+  if (!isMooseOver) {
     clearTimeout(timer);
     timer = setTimeout(() => {
       buttonLeft.classList.add("fade");
       buttonMid.classList.add("fade");
       buttonRight.classList.add("fade");
     }, 2000);
-  });
-  const mouse = window.addEventListener("mousemove", (e) => {
-    buttonLeft.classList.remove("fade");
-    buttonMid.classList.remove("fade");
-    buttonRight.classList.remove("fade");
-    if (isMooseOver) {
-      clearTimeout(timer);
-      buttonLeft.classList.remove("fade");
-      buttonMid.classList.remove("fade");
-      buttonRight.classList.remove("fade");
-    }
-    if (!isMooseOver) {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        buttonLeft.classList.add("fade");
-        buttonMid.classList.add("fade");
-        buttonRight.classList.add("fade");
-      }, 2000);
-    }
-  });
+  }
+});
 }
