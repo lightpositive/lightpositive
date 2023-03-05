@@ -111,6 +111,8 @@ if (!hasTouchScreen) {
 //   currentIndex.i = Math.round(e.target.scrollLeft / window.innerWidth);
 // });
 // add navigation buttons
+
+
 let div1 = document.createElement("div");
 let div2 = document.createElement("div");
 
@@ -125,6 +127,31 @@ buttonRight.className = "post__button-right";
 buttonRight.appendChild(div2);
 div2.textContent = ">";
 postContent.appendChild(buttonRight);
+
+// key navigation
+document.addEventListener('keydown', (e) => {
+  e.preventDefault();
+  if (e.key === "ArrowRight") {
+    scrollMobile.scrollBy({
+      top: 0,
+      left: window.innerWidth,
+      behavior: "smooth",
+    });
+  } else if (e.key === "ArrowLeft") {
+    scrollMobile.scrollBy({
+      top: 0,
+      left: -window.innerWidth,
+      behavior: "smooth",
+    });
+  } else if (e.key === "Escape") {
+    window.location = '../';
+  } else if (e.key === "ArrowDown") {
+    window.location = '../';
+  } else if (e.key === "ArrowUp") {
+    window.location = '../';
+  }
+});
+
 
 // button navigation
 buttonRight.addEventListener("click", (e) => {

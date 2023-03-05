@@ -23,3 +23,10 @@ layout: posts_corporate
   {% endif %}
   {% endfor %}
 </section>
+<script>
+  postsCorporateGalleryScroollY = sessionStorage.getItem("postsCorporateGalleryScroollY") || 0;
+  window.scrollTo(window.scrollX,postsCorporateGalleryScroollY)
+  addEventListener("scroll", (e) => {
+    sessionStorage.setItem("postsCorporateGalleryScroollY", window.scrollY);
+  });
+</script>

@@ -8,6 +8,8 @@ layout: default
 <style>
   {{ css | safe }}
 </style>
+{% gallery %}
+{% endgallery %}
 <section class="post__content">
   <div class="post__image-extra-mobile">
     <div class="post__image-selected-mobile">
@@ -16,7 +18,6 @@ layout: default
       {% set images = post.data.galleryImages %} 
       {% for image in images %} 
       {% if page.url == post.url %}
-
       <div class="post__card-mobile">
         <img
           src="{{image}}"

@@ -23,4 +23,10 @@ layout: posts_festival
   {% endif %}
   {% endfor %}  
 </section>
-
+<script>
+  postsFestivalGalleryScroollY = sessionStorage.getItem("postsFestivalGalleryScroollY") || 0;
+  window.scrollTo(window.scrollX,postsFestivalGalleryScroollY)
+  addEventListener("scroll", (e) => {
+    sessionStorage.setItem("postsFestivalGalleryScroollY", window.scrollY);
+  });
+</script>
