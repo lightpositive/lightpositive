@@ -4,10 +4,10 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = ["default-src 'self';"
-    "script-src 'self' https://lightpositive.hu/ https://www.lightpositive.hu/ https://identity.netlify.com https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com/ https://www.gstatic.com/ 'unsafe-inline';" 
-    "img-src 'self' *.cloudinary.com/ *.lightpositive.hu/ data:;"
-    "style-src 'self' https://fonts.googleapis.com 'unsafe-inline';"
-    "font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;"
-    "frame-src 'self' https://www.google.com/;"
-    "connect-src 'self' https://www.google-analytics.com https://www.google.com/ https://www.gstatic.com/ region1.google-analytics.com"]
+    Content-Security-Policy = [default-src 'self',
+    script-src 'self' https://lightpositive.hu/ https://www.lightpositive.hu/ https://identity.netlify.com https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com/ https://www.gstatic.com/ 'unsafe-inline',
+    img-src 'self' *.cloudinary.com/ *.lightpositive.hu/ data:,
+    style-src 'self' https://fonts.googleapis.com 'unsafe-inline',
+    font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com,
+    frame-src 'self' https://www.google.com/,
+    connect-src 'self' https://www.google-analytics.com https://www.google.com/ https://www.gstatic.com/ region1.google-analytics.com]
