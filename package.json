@@ -2,7 +2,7 @@
   "scripts": {
     "start": "npx @11ty/eleventy --serve --port=8080",
     "debug": "set DEBUG=* & eleventy",
-    "build": "cross-env NODE_ENV=production eleventy && cross-env NODE_ENV=production"
+    "build": "npx @11ty/eleventy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
