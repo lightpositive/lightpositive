@@ -5,9 +5,7 @@ coverImage:
 date: 2020-02-24 13:37:48
 galleryImages: 
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561184/uploads/Margaret%20Island%20-%202019/mi5.jpg
-layout: galleryLayout_festival.html
----
-tive/image/upload/v1647561181/uploads/Margaret%20Island%20-%202019/mi.jpg
+  - https://res.cloudinary.com/lightpositive/image/upload/v1647561181/uploads/Margaret%20Island%20-%202019/mi.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561182/uploads/Margaret%20Island%20-%202019/mi7.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561183/uploads/Margaret%20Island%20-%202019/mi12.jpg
   - https://res.cloudinary.com/lightpositive/image/upload/v1647561183/uploads/Margaret%20Island%20-%202019/mi4.jpg
