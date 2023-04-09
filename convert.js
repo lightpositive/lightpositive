@@ -9,7 +9,7 @@ const festivalDirs = fs.readdirSync(rootDirFestivals).filter(file => {
     return fs.statSync(`${rootDirFestivals}/${file}`).isDirectory();
   });
 
-  const corporateDirs = fs.readdirSync(rootDirCorporate).filter(file => {
+const corporateDirs = fs.readdirSync(rootDirCorporate).filter(file => {
     return fs.statSync(`${rootDirCorporate}/${file}`).isDirectory();
   });
 
@@ -22,10 +22,6 @@ const corporateContents = corporateDirs.map((dir) => {
     return fs.readFileSync(`${rootDirCorporate}/${dir}/index.md`, 'utf8')
 })
 
-// console.dir(festivalContents, { depth: null, maxArrayLength: null});
-
-// console.dir(corporateContents, { depth: null, maxArrayLength: null});
-
 const festivalYmlContents = festivalContents.map(fileContent => {
     return yaml.loadAll(fileContent);
 });
@@ -34,8 +30,18 @@ const corporateYmlContents = corporateContents.map(fileContent => {
     return yaml.loadAll(fileContent);
 });
 
-
-// console.dir(festivalYmlContents, { depth: null, maxArrayLength: null});
-
-console.dir(corporateYmlContents, { depth: null, maxArrayLength: null});
-
+// corporateYmlContents.forEach(e => console.log(e[0].date.getFullYear()))
+const corporateUpdatedUrls = corporateYmlContents.map(fileContent => {
+    const yearToAdd = fileContent[0].date.getFullYear()
+    fileContent[0].coverImage[0] = fileContent[0].coverImage[0].replace(/(uploads\/)/, `$1${yearToAdd}/`);
+    fileContent[0].galleryImages = fileContent[0].galleryImages.map(imageUrl => imageUrl.replace(/(uploads\/)/, `$1${yearToAdd}/`))
+    return fileContent;
+})
+const festivalUpdatedUrls = festivalYmlContents.map(fileContent => {
+    const yearToAdd = fileContent[0].date.getFullYear()
+    fileContent[0].coverImage[0] = fileContent[0].coverImage[0].replace(/(uploads\/)/, `$1${yearToAdd}/`);
+    fileContent[0].galleryImages = fileContent[0].galleryImages.map(imageUrl => imageUrl.replace(/(uploads\/)/, `$1${yearToAdd}/`))
+    return fileContent;
+})
+console.log(festivalUpdatedUrls[0][0])
+console.log(corporateUpdatedUrls[0][0])
