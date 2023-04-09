@@ -4,10 +4,11 @@ const yaml = require('js-yaml');
 const cloudinary = require('cloudinary').v2;
 
 cloudinary.config({
-    cloud_name: '',
-    api_key: '',
-    api_secret: '',
+  cloud_name: '',
+  api_key: '',
+  api_secret: '',
 });
+
 
 
 // Working with .md files 
@@ -87,49 +88,49 @@ const festivalUpdatedUrls = festivalYmlContents.map(fileContent => {
   
 //   moveFolders();
 
-const yearToAdd = '2019';
-const rootFolder = 'test/';
+// const yearToAdd = '2019';
+// const rootFolder = 'test/';
 
-async function getAllPublicIds() {
-    try {
-    // Get a list of all the folders in the root folder
-    const result = await cloudinary.api.sub_folders(rootFolder);
-    const folders = result.folders;
+// async function getAllPublicIds() {
+//     try {
+//     // Get a list of all the folders in the root folder
+//     const result = await cloudinary.api.sub_folders(rootFolder);
+//     const folders = result.folders;
   
-    // Loop through each folder
-    for (const folder of folders) {
-      console.log(`Folder: ${folder.path}`);
+//     // Loop through each folder
+//     for (const folder of folders) {
+//       console.log(`Folder: ${folder.path}`);
   
-      // Get a list of all the images in the folder
-      const imagesResult = await cloudinary.search
-        .expression(`folder:${folder.path}/*`)
-        .execute();
+//       // Get a list of all the images in the folder
+//       const imagesResult = await cloudinary.search
+//         .expression(`folder:${folder.path}/*`)
+//         .execute();
   
-      const images = imagesResult.resources;
+//       const images = imagesResult.resources;
   
-      // Loop through each image and log its public ID
-      for (const image of images) {
-        console.log(`  Public ID: ${image.public_id}`);
-        const publicId = image.public_id
-        const newPublicId = publicId.replace(/(test\/)/, `$1${yearToAdd}/`)
+//       // Loop through each image and log its public ID
+//       for (const image of images) {
+//         console.log(`  Public ID: ${image.public_id}`);
+//         const publicId = image.public_id
+//         const newPublicId = publicId.replace(/(test\/)/, `$1${yearToAdd}/`)
 
-        // Call the rename method to move the image to the target folder
-        cloudinary.uploader.rename(publicId, newPublicId, (error, result) => {
-            if (error) {
-            console.error(error);
-            } else {
-            console.log(result);
-            }
-        });
+//         // Call the rename method to move the image to the target folder
+//         cloudinary.uploader.rename(publicId, newPublicId, (error, result) => {
+//             if (error) {
+//             console.error(error);
+//             } else {
+//             console.log(result);
+//             }
+//         });
 
-      }
-    }
-    } catch (error) {
-    console.error(error);
-  }
-  }
+//       }
+//     }
+//     } catch (error) {
+//     console.error(error);
+//   }
+//   }
   
-  getAllPublicIds();
+//   getAllPublicIds();
 
 
 //   // Define the source and target folders
@@ -154,24 +155,57 @@ async function getAllPublicIds() {
 
 
 
-const rootDirCorporate = 'src/references/corporate';
 
-const corporateDirs = fs.readdirSync(rootDirCorporate).filter(file => {
-    return fs.statSync(`${rootDirCorporate}/${file}`).isDirectory();
-  });
+const rootFolder = 'test/';
 
-const corporateContents = corporateDirs.map((dir) => {
-    return fs.readFileSync(`${rootDirCorporate}/${dir}/index.md`, 'utf8')
-})
 
-const corporateYmlContents = corporateContents.map(fileContent => {
-    return yaml.loadAll(fileContent);
-});
+async function getAllPublicIds() {
+  try {
+    // Get the contents of the YAML file and extract the year to add
+    const rootDirCorporate = 'src/references/corporate';
+    const corporateContents = fs.readFileSync(`${rootDirCorporate}/teszt/index.md`, 'utf8');
+    const corporateYmlContents = yaml.loadAll(corporateContents);
+    const yearToAdd = corporateYmlContents[0].date.getFullYear();
+    
+    // Update the image URLs in the YAML file
+    corporateYmlContents[0].coverImage[0] = corporateYmlContents[0].coverImage[0].replace(/(uploads\/)/, `$1${yearToAdd}/`);
+    corporateYmlContents[0].galleryImages = corporateYmlContents[0].galleryImages.map(imageUrl => imageUrl.replace(/(uploads\/)/, `$1${yearToAdd}/`));
+    
+    // Get a list of all the folders in the root folder
+    const result = await cloudinary.api.sub_folders(rootFolder);
+    const folders = result.folders;
+  
+    // Loop through each folder
+    for (const folder of folders) {
+      console.log(`Folder: ${folder.path}`);
+  
+      // Get a list of all the images in the folder
+      const imagesResult = await cloudinary.search
+        .expression(`folder:${folder.path}/*`)
+        .execute();
+  
+      const images = imagesResult.resources;
+  
+      // Loop through each image and log its public ID
+      for (const image of images) {
+        console.log(`  Public ID: ${image.public_id}`);
+        const publicId = image.public_id;
+        const newPublicId = publicId.replace(/(test\/)/, `$1${yearToAdd}/`);
 
-// corporateYmlContents.forEach(e => console.log(e[0].date.getFullYear()))
-const corporateUpdatedUrls = corporateYmlContents.map(fileContent => {
-    const yearToAdd = fileContent[0].date.getFullYear()
-    fileContent[0].coverImage[0] = fileContent[0].coverImage[0].replace(/(uploads\/)/, `$1${yearToAdd}/`);
-    fileContent[0].galleryImages = fileContent[0].galleryImages.map(imageUrl => imageUrl.replace(/(uploads\/)/, `$1${yearToAdd}/`))
-    return fileContent;
-})
+        // Call the rename method to move the image to the target folder
+        cloudinary.uploader.rename(publicId, newPublicId, (error, result) => {
+            if (error) {
+            console.error(error);
+            } else {
+            console.log(result);
+            }
+        });
+
+      }
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+getAllPublicIds()
