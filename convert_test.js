@@ -199,7 +199,7 @@ const corporateBackToYmlContents = corporateUpdatedUrls.map(fileContent => {
   return '---\n' + yaml.dump(fileContent,{
     flowLevel: 3,
     indent: 1,
-  }).replace(/^(-\s+)/, '');
+  }).replace(/^(-\s+)/, '').replace('- null','');
 });
 console.log(corporateBackToYmlContents[0])
 // wteing only the test case
