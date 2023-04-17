@@ -198,16 +198,14 @@ const corporateUpdatedUrls = corporateYmlContents.map(fileContent => {
 const corporateBackToYmlContents = corporateUpdatedUrls.map(fileContent => {
   return '---\n' + yaml.dump(fileContent,{
     flowLevel: 3,
-    indent: 1,
-  }).replace(/^(-\s+)/, '').replace('- null','');
+  }).replace(/^(-\s+)/, '').replace(/^  /gm, '').replace('- null','');
 });
-console.log(corporateBackToYmlContents[0])
-// wteing only the test case
+console.log(corporateBackToYmlContents)
+// writeing only the test case
 
 // select only the test case
 const getTest = corporateBackToYmlContents.filter(fileContent => fileContent.includes('NSZ_Front_sponsorTower.jpg'));
 // console.log(getTest)
-
 
 fs.writeFile(`${rootDirCorporate}/test/index.md`, getTest[0], (err) => {
   if (err) throw err;
