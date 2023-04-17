@@ -193,11 +193,15 @@ const corporateUpdatedUrls = corporateYmlContents.map(fileContent => {
   return fileContent;
 })
 
+
 // convert objects back to yaml format array items 
 const corporateBackToYmlContents = corporateUpdatedUrls.map(fileContent => {
-  return yaml.dump(fileContent);
+  return '---\n' + yaml.dump(fileContent,{
+    flowLevel: 3,
+    indent: 1,
+  }).replace(/^(-\s+)/, '');
 });
-
+console.log(corporateBackToYmlContents[0])
 // wteing only the test case
 
 // select only the test case
