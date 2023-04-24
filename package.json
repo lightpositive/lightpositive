@@ -1,6 +1,7 @@
 {
   "scripts": {
     "start": "npx @11ty/eleventy --serve --port=8080",
+    "backend": "npx netlify-cms-proxy-server", 
     "debug": "set DEBUG=* & eleventy",
     "build": "npx @11ty/eleventy"
   },
