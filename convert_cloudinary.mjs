@@ -10,7 +10,10 @@ cloudinary.config({
 });
 
 // result yearsAndTitles after modifying the index.md files
-const yearsAndTitle = modifyfiles();
+const yearsAndTitles = modifyfiles();
+const years = yearsAndTitles.map(item => item.year);
+const titles = yearsAndTitles.map(item => item.title);
+
 
 // Working with Cloudinary
 
@@ -44,7 +47,8 @@ async function getAllPublicIds() {
       // console.log(`Public ID: ${image.public_id}`);
       // console.log(`Folder with uploads: ${image.folder}`);
       // console.log(`Folder name: ${image.folder.slice(8)}`);
-      console.log(yearsAndTitle.includes(image.folder.slice(8)));
+
+      console.log(titles.includes(image.folder.slice(8)));
       const publicId = image.public_id;
 
       // modify public ID
