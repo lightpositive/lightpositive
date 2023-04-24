@@ -35,8 +35,9 @@ const modifyfiles = function() {
     const updatedUrls = ymlContents.map(fileContent => {
       const yearToAdd = fileContent[0].date.getFullYear()
       const titleToAdd = fileContent[0].title
+      const coverImageToAdd = fileContent[0].coverImage[0]
     
-      yearsAndTitle.push({'year': yearToAdd, 'title': titleToAdd});
+      yearsAndTitle.push({'year': yearToAdd, 'title': titleToAdd, 'coverImage': coverImageToAdd});
     
       fileContent[0].coverImage[0] = fileContent[0].coverImage[0].replace(/(uploads\/)/, `$1${yearToAdd}/`);
       fileContent[0].galleryImages = fileContent[0].galleryImages.map(imageUrl => imageUrl.replace(/(uploads\/)/, `$1${yearToAdd}/`))

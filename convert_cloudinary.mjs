@@ -41,15 +41,17 @@ async function getAllPublicIds() {
       images.push(...imagesResult.resources);
     }
       
-      
+    
     // Loop through each image and log its public ID
     for (const image of images) {
+      console.log(image);
       // console.log(`Public ID: ${image.public_id}`);
       // console.log(`Folder with uploads: ${image.folder}`);
       // console.log(`Folder name: ${image.folder.slice(8)}`);
 
-      console.log(titles.includes(image.folder.slice(8)));
-      const publicId = image.public_id;
+      // console.log(titles.includes(image.folder.slice(8)));
+      // console.log(titles[titles.indexOf(image.folder.slice(8))], image.folder.slice(8));
+      // const publicId = image.public_id;
 
       // modify public ID
       // const newPublicId = publicId.replace(/(uploads\/)/, `$1${years[index]}/`);
