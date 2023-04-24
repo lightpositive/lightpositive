@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "npx @11ty/eleventy --serve --port=8080",
-    "backend": "npx netlify-cms-proxy-server", 
+    "backend": "npx netlify-cms-proxy-server",
     "debug": "set DEBUG=* & eleventy",
     "build": "npx @11ty/eleventy"
   },
@@ -11,6 +11,7 @@
     "cloudinary": "^1.35.0",
     "cross-env": "^7.0.3",
     "debug": "^4.3.3",
+    "dotenv": "^16.0.3",
     "eleventy-plugin-lazyimages": "^2.1.2",
     "js-yaml": "^4.1.0",
     "luxon": "^2.3.0",
