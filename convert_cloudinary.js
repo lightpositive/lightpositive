@@ -1,5 +1,6 @@
 require('dotenv').config();
 const cloudinary = require('cloudinary').v2;
+import { modifyfiles } from './convert_files.js';
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -7,6 +8,8 @@ cloudinary.config({
   api_secret: process.env.API_SECRET,
 });
 
+// result yearsAndTitles after modifying the index.md files
+// const modified = modifyfiles();
 
 // Working with Cloudinary
 
