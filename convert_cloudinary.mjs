@@ -1,5 +1,6 @@
 import * as dotenv from 'dotenv';
-import { v2 as cloudinary } from 'cloudinary'
+dotenv.config();
+import { v2 as cloudinary } from 'cloudinary';
 import { modifyfiles } from './convert_files.mjs';
 
 cloudinary.config({
