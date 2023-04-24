@@ -52,17 +52,6 @@ const corporateBackToYmlContents = corporateUpdatedUrls.map(fileContent => {
 // console.log(corporateBackToYmlContents)
 
 
-// writeing only the test case
-
-          // // select only the test case
-          // const getTest = corporateBackToYmlContents.filter(fileContent => fileContent.includes('NSZ_Front_sponsorTower.jpg'));
-          // // console.log(getTest)
-
-          // fs.writeFile(`${rootDirCorporate}/test/index.md`, getTest[0], (err) => {
-          //   if (err) throw err;
-          //   console.log('The file has been saved!');
-          // });
-
 // overwriteing all the index.md files in it's directory
 corporateDirs.map((dir, i) => {
   return fs.writeFile(`${rootDirCorporate}/${dir}/index.md`, corporateBackToYmlContents[i], (err) => {
@@ -74,7 +63,7 @@ corporateDirs.map((dir, i) => {
 
 
 
-// latest cloudinray setup:
+// Working with Cloudinary
 
 const rootFolder = 'test/';
 
@@ -86,9 +75,11 @@ async function getAllPublicIds() {
     // Get a list of all the folders in the root folder
     const result = await cloudinary.api.sub_folders(rootFolder);
     const folders = result.folders;
+
+    let index = 0;
     
     // Loop through each folder
-    folders.forEach((folder, i) => {
+    for (const folder of folders) {
       console.log(`Folder: ${folder.path}`);
   
       // Get a list of all the images in the folder
@@ -102,7 +93,7 @@ async function getAllPublicIds() {
       for (const image of images) {
         console.log(`  Public ID: ${image.public_id}`);
         const publicId = image.public_id;
-        const newPublicId = publicId.replace(/(test\/)/, `$1${years[i]}/`);
+        const newPublicId = publicId.replace(/(test\/)/, `$1${years[index]}/`);
 
         // Call the rename method to move the image to the target folder
         cloudinary.uploader.rename(publicId, newPublicId, (error, result) => {
@@ -114,7 +105,10 @@ async function getAllPublicIds() {
         });
 
       }
-    })
+
+      index++;
+
+    }
   } catch (error) {
     console.error(error);
   }
