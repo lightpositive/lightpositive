@@ -1,5 +1,5 @@
-const fs = require('fs');
-const yaml = require('js-yaml');
+import * as fs from "fs";
+import * as yaml from "js-yaml";
 
 
 // Working with .md files 

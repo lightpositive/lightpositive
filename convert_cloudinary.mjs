@@ -1,5 +1,5 @@
-require('dotenv').config();
-const cloudinary = require('cloudinary').v2;
+import * as dotenv from 'dotenv';
+import { v2 as cloudinary } from 'cloudinary'
 import { modifyfiles } from './convert_files.mjs';
 
 cloudinary.config({
