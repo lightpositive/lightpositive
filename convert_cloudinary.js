@@ -1,0 +1,65 @@
+require('dotenv').config();
+const cloudinary = require('cloudinary').v2;
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
+});
+
+
+// Working with Cloudinary
+
+const rootFolderCloudinary = 'uploads/';
+
+async function getAllPublicIds() {
+  try {
+    // add year to images url paths
+    
+    // Get a list of all the folders in the root folder
+    const result = await cloudinary.api.sub_folders(rootFolderCloudinary);
+    const folders = result.folders;
+
+    let index = 0;
+    const images = [];
+
+    // Loop through each folder
+    for (const folder of folders) {
+      // console.log(`Folder with uploads: ${folder.path}`);
+      // console.log(`Folder name: ${folder.path.slice(8)}`);
+
+      // Get a list of all the images in the folder
+      const imagesResult = await cloudinary.search
+      .expression(`folder:${folder.path}/*`)
+      .execute();
+      images.push(...imagesResult.resources);
+    }
+      
+      
+    // Loop through each image and log its public ID
+    for (const image of images) {
+      console.log(`Public ID: ${image.public_id}`);
+      console.log(`Folder with uploads: ${image.folder}`);
+      console.log(`Folder name: ${image.folder.slice(8)}`);
+      const publicId = image.public_id;
+
+      // modify public ID
+      // const newPublicId = publicId.replace(/(uploads\/)/, `$1${years[index]}/`);
+
+      // Call the rename method to move the image to the target folder
+      // cloudinary.uploader.rename(publicId, newPublicId, (error, result) => {
+      //     if (error) {
+      //     console.error(error);
+      //     } else {
+      //     console.log(result);
+      //     }
+      // });
+
+    }
+
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+getAllPublicIds()
