@@ -4,6 +4,11 @@ const yaml = require('js-yaml');
 
 // Working with .md files 
 
+
+// add an array for collect the years from every index.md file
+const yearsAndTitle = [];
+
+
 const rootDirs = ['src/references/corporate','src/references/festivals'];
 
 for (const rootDir of rootDirs) {
@@ -23,8 +28,6 @@ for (const rootDir of rootDirs) {
     return yaml.loadAll(fileContent);
   });
   
-  // add an array for collect the years from every index.md file
-  const yearsAndTitle = [];
   
   // add year to images url paths
   const updatedUrls = ymlContents.map(fileContent => {
