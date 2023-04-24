@@ -1,6 +1,6 @@
 require('dotenv').config();
 const cloudinary = require('cloudinary').v2;
-import { modifyfiles } from './convert_files.js';
+import { modifyfiles } from './convert_files.mjs';
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -9,7 +9,7 @@ cloudinary.config({
 });
 
 // result yearsAndTitles after modifying the index.md files
-// const modified = modifyfiles();
+const yearsAndTitle = modifyfiles();
 
 // Working with Cloudinary
 
@@ -23,7 +23,6 @@ async function getAllPublicIds() {
     const result = await cloudinary.api.sub_folders(rootFolderCloudinary);
     const folders = result.folders;
 
-    let index = 0;
     const images = [];
 
     // Loop through each folder
@@ -41,9 +40,10 @@ async function getAllPublicIds() {
       
     // Loop through each image and log its public ID
     for (const image of images) {
-      console.log(`Public ID: ${image.public_id}`);
-      console.log(`Folder with uploads: ${image.folder}`);
-      console.log(`Folder name: ${image.folder.slice(8)}`);
+      // console.log(`Public ID: ${image.public_id}`);
+      // console.log(`Folder with uploads: ${image.folder}`);
+      // console.log(`Folder name: ${image.folder.slice(8)}`);
+      console.log(yearsAndTitle.includes(image.folder.slice(8)));
       const publicId = image.public_id;
 
       // modify public ID
