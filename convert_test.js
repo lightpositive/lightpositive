@@ -200,19 +200,32 @@ const corporateBackToYmlContents = corporateUpdatedUrls.map(fileContent => {
     flowLevel: 3,
   }).replace(/^(-\s+)/, '').replace(/^  /gm, '').replace('- null','');
 });
-console.log(corporateBackToYmlContents)
+// console.log(corporateBackToYmlContents)
+
+
 // writeing only the test case
 
-// select only the test case
-const getTest = corporateBackToYmlContents.filter(fileContent => fileContent.includes('NSZ_Front_sponsorTower.jpg'));
-// console.log(getTest)
+          // // select only the test case
+          // const getTest = corporateBackToYmlContents.filter(fileContent => fileContent.includes('NSZ_Front_sponsorTower.jpg'));
+          // // console.log(getTest)
 
-fs.writeFile(`${rootDirCorporate}/test/index.md`, getTest[0], (err) => {
-  if (err) throw err;
-  console.log('The file has been saved!');
-});
+          // fs.writeFile(`${rootDirCorporate}/test/index.md`, getTest[0], (err) => {
+          //   if (err) throw err;
+          //   console.log('The file has been saved!');
+          // });
+
+// overwriteing all the index.md files in it's directory
+corporateDirs.map((dir, i) => {
+  return fs.writeFile(`${rootDirCorporate}/${dir}/index.md`, corporateBackToYmlContents[i], (err) => {
+    if (err) throw err;
+    console.log(`${rootDirCorporate}/${dir}/index.md has been saved!`);
+  });
+})
 
 
+
+
+// latest cloudinray setup:
 
 // const rootFolder = 'test/';
 
