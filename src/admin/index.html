@@ -23,8 +23,8 @@
           });
           
           window.netlifyIdentity.on('login', () => {
-            window.location.href = "/collections/corporate";
-          });
+            window.location.href = "/admin/#/collections/corporate?nocache=" + Date.now(); 
+        });
   
           window.netlifyIdentity.on('logout', () => {
             window.location.href = '/';
