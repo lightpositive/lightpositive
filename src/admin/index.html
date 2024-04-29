@@ -15,29 +15,24 @@
       src="https://identity.netlify.com/v1/netlify-identity-widget.js"
     ></script>
     <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          if (user) {
-            redirectToAdmin();
-          }
-        });
-
-        window.netlifyIdentity.on("login", redirectToAdmin);
-        window.netlifyIdentity.on("logout", () => {
-          window.location.href = "/admin/";
-        });
-
-        function redirectToAdmin() {
-          const adminPath = "/admin/#/collections/corporate";
-          if (window.location.hash !== "#/collections/corporate") {
-            window.location.href = adminPath;
-          } else {
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on('init', user => {
+            if (user) {
+              window.location.href = "/admin/#/collections/corporate";
+            }
+          });
+          
+          window.netlifyIdentity.on('login', () => {
+            window.location.href = "/admin/#/collections/corporate";
             window.location.reload();
-          }
+          });
+  
+          window.netlifyIdentity.on('logout', () => {
+            window.location.href = '/';
+          });
+  
+          window.netlifyIdentity.init();
         }
-
-        window.netlifyIdentity.init();
-      }
-    </script>
+      </script>
   </body>
 </html>
