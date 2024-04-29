@@ -9,7 +9,3 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Content-Security-Policy = "default-src 'self'; frame-ancestors 'none'; script-src 'self' 'unsafe-eval' https://lightpositive.hu/ https://www.lightpositive.hu/ https://identity.netlify.com https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com/ https://www.gstatic.com/ https://unpkg.com/ https://media-library.cloudinary.com/ https://production-customactions.cloudinary.com/ 'unsafe-inline'; img-src 'self' *.cloudinary.com *.lightpositive.hu data:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; frame-src 'self' *.google.com *.cloudinary.com https://cloudinary.com/; connect-src 'self' https://www.netlifystatus.com/ https://www.google-analytics.com https://www.google.com/ https://www.gstatic.com/ region1.google-analytics.com"
-[[redirects]]
-   from = "/admin/#*"
-   to = "/admin/index.html"
-   status = 200
