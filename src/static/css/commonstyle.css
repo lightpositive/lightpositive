@@ -117,6 +117,7 @@ html, body {
 body {
   margin: 0;
   background-color: var(--bg-mid);
+  overflow-x: clip;
   /* overscroll-behavior-y: none;
   overscroll-behavior-block: none;
   -webkit-overflow-scrolling: touch; */
