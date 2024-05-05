@@ -1,0 +1,47 @@
+---
+layout: default
+title: Ginop támogatás1
+path: ginop
+---
+
+<!-- prettier-ignore -->
+<!-- capture the CSS content as a Nunjucks variable -->
+{% set css %} {% include "src/static/css/ginop.css" %} {% endset %}
+<!-- feed it through our cssmin filter to minify -->
+<style>
+  {{ css | safe }}
+</style>
+<div class="ginop__body">
+  <div class="ginop__content">
+    <img class="ginop__logo" src="/static/img/szechenyi-2020.svg" alt="Támogatói logó">
+    <div class=WordSection1>
+
+      <p class=MsoNormal><b>Projekt azonosító:</b> </p>
+      
+      <p class=MsoNormal style='margin-left:35.4pt'>GINOP-9.1.1-21</p>
+      
+      <p class=MsoNormal style='text-align:justify'><b>Projekt címe:</b>    </p>
+      
+      <p class=MsoNormal style='margin-left:35.4pt;text-align:justify'>COVID-19 világjárvány
+
+        okozta károk enyhítése</p>
+      
+      <p class=MsoNormal><b>kedvezményezett: </b></p>
+      
+      <p class=MsoNormal style='margin-left:35.4pt'>LIGHT POSITIVE Fény- és
+      Hangtechnikai Szolgáltató Korlátolt Felelõsségû Társaság (Székhely: 1239
+      Budapest, Nagykõrösi út 353. 25. ép.; cégjegyzékszám: 01-09-717990; adószám:
+      13085337-2-43)</p>
+    
+      <p class=MsoNormal><b>Visszatérítendő hitel összege:</b> </p>
+      
+      <p class=MsoNormal style='margin-left:35.4pt'>10.000.000 Ft </p>
+      
+      <p class=MsoNormal><b>A projekt azonosító száma: </b></p>
+      
+      <p class=MsoNormal style='margin-left:35.4pt'>H-EUGY1/085661/2021/428853/001 A finanszírozás a COVID19-világjárványra </p>
+      
+      </div>
+    </div>
+  </div>
+</div>
