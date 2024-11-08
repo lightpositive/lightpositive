@@ -6,6 +6,7 @@ node_modules/
 *git/
 package-lock.json
 .env
+.lazyimages.json
 
 # Local Netlify folder
 .netlify
