@@ -1,14 +1,21 @@
 /* NAVIGATION GINOP LOGO */
 
-.nav__ginoplogo {
-  height: 64px;
-  width: 125px;
+.nav__ginoplogo1 {
+  height: 84px;
+  width: 300px;
   display: inline;
-  margin: 13px 0;
   background-color: var(--font-white);
-  padding: 0 3px;
 }
 
+.nav__ginoplogo2 {
+  position: relative;
+  height: 64px;
+  width: 300px;
+  display: inline;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: var(--font-white);
+}
 
 .nav-logo-link {
   display: flex;
@@ -48,15 +55,14 @@ background-color: var(--bg-dark);
 }
 
 .nav__ginop-warper {
-  min-width: 490px;
-  max-width: 100%;
+  width: 600px;
   display: inline;
 }
 
 .nav__logo-warper {
   display: flex;
   justify-content: space-between;
-  margin-left: 64px;
+  /* margin-left: 64px; */
 }
 
 .nav__logo-img {
@@ -70,6 +76,11 @@ background-color: var(--bg-dark);
 .nav__logo-img:focus {
   transition: all 0.5s ease-out;
   filter: drop-shadow(0px 0px 6px var(--font-orange));
+}
+
+.nav__list-conatiner {
+  margin-top: 2px;
+
 }
 
 .nav__list-item {
@@ -111,18 +122,40 @@ background-color: var(--bg-dark);
 }
 
 @media screen and (max-width: 1279px) {
+  .nav-menu__conteiner {
+    position: absolute;
+    top: 94px;
+    right: 0;
+  }
+  .nav__logo-warper {
+    width: 100%;
+    margin-left: 0;
+  }
+  .nav__nav {
+    height: 173px;
+    padding: 0;
+    margin: 0;
+  }
   .nav-logo-link {
-    justify-content: end;
-    height: fit-content;
+    width: 100%;
+  }
+  .nav__logo-warper {
+    flex-wrap: wrap;
+    /* flex-grow: 0; */
+  }
+  .nav-logo-link {
+    justify-content: center;
+    /* justify-content: end;
+    height: fit-content; */
+  }
+  .nav__ginop-warper {
+
   }
   .nav__logo-img {
     padding: 25px 0;
-    margin-right: 10rem;
+    /* margin-right: 10rem; */
   }
-  .nav__logo-warper {
-    flex-grow: 0;
-    width: fit-content;
-  }
+
   .nav__list {
     display: none;
     flex-direction: column;
@@ -185,30 +218,26 @@ background-color: var(--bg-dark);
     transition: all 1s ease-out;
   }
 }
-@media screen and (max-width: 1200px) {
+
+@media screen and (max-width: 680px) {
   .nav-menu__conteiner {
-    position: absolute;
     top: 94px;
-    right: 0;
   }
-  .nav__logo-warper {
-    width: 100%;
-    margin-left: 0;
-  }
-  .nav__logo-img {
-    margin-right: 0;
+}
+
+@media screen and (max-width: 598px) {
+  .nav-menu__conteiner {
+    top: 188px;
   }
   .nav__nav {
-    height: 173px;
-    padding: 0;
-    margin: 0;
+    height: 265px;
   }
-  .nav-logo-link {
-    width: 100%;
-    justify-content: center;
+  .nav__container {
+    top: -180px;
   }
-  .nav__logo-warper {
-    flex-wrap: wrap;
+  .nav__list-conatiner {
+    margin-top: 7px;
+  
   }
 }
 
