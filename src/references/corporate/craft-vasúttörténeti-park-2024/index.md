@@ -1,7 +1,7 @@
 ---
 title: Craft - Vasúttörténeti Park 2024
 coverImage:
-  - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1732194571/uploads/Craft%20Vas%C3%BAtt%C3%B6rt%C3%A9neti%20Park%202024/Ke%CC%81pernyo%CC%8Bfoto%CC%81_2024-11-21_-_14.08.50.png
+  - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1732194767/uploads/Craft%20Vas%C3%BAtt%C3%B6rt%C3%A9neti%20Park%202024/Ke%CC%81pernyo%CC%8Bfoto%CC%81_2024-11-21_-_14.12.13.png
 date: 2024-07-17T08:30:55.654Z
 galleryImages:
   - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1719819121/uploads/Craft%20Vas%C3%BAtt%C3%B6rt%C3%A9neti%20Park%202024/IMG_4285.jpg
