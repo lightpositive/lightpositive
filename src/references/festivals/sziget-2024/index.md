@@ -1,7 +1,7 @@
 ---
 title: SZIGET 2024
 coverImage:
-  - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1732200296/uploads/SZIGET%202024/Ke%CC%81pernyo%CC%8Bfoto%CC%81_2024-11-21_-_15.44.37.png
+  - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1732199785/uploads/SZIGET%202024/IMG_7461.jpg
 date: 2024-11-21T14:34:11.355Z
 galleryImages:
   - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1732199798/uploads/SZIGET%202024/IMG_7771.jpg
