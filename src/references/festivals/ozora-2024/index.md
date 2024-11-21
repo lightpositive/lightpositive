@@ -1,7 +1,7 @@
 ---
 title: Ozora 2024
 coverImage:
-  - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1732196850/uploads/Ozora%202024/IMG_6922.jpg
+  - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1732196843/uploads/Ozora%202024/IMG_6878.jpg
 date: 2024-11-21T13:46:20.656Z
 galleryImages:
   - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1732196828/uploads/Ozora%202024/IMG_6497.jpg
