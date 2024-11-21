@@ -1,7 +1,7 @@
 ---
 title: BCEFW 2024
 coverImage:
-  - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1732194224/uploads/BCEFW%202024/IMG_9734.jpg
+  - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1732194229/uploads/BCEFW%202024/IMG_9600.jpg
 date: 2024-11-21T13:02:31.024Z
 galleryImages:
   - https://res.cloudinary.com/lightpositive/image/upload/f_auto,q_auto/v1732194229/uploads/BCEFW%202024/IMG_9600.jpg
