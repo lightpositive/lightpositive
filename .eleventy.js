@@ -1,14 +1,15 @@
 // jshint esversion: 6
 const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
-const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
+// const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
 
 
 // Access Eleventy configuration object
 module.exports = function (eleventyConfig) {
 
   // include lazy loading of images via plugin:  https://github.com/liamfiddler/eleventy-plugin-lazyimages
-  eleventyConfig.addPlugin(lazyImagesPlugin);
+  // Disabled due to compatibility issues with newer Node versions
+  // eleventyConfig.addPlugin(lazyImagesPlugin);
 
   // Disable automatic use of your .gitignore
   eleventyConfig.setUseGitIgnore(false);

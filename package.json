@@ -1,4 +1,7 @@
 {
+  "name": "lightpositive",
+  "version": "1.0.0",
+  "description": "Light Positive website",
   "scripts": {
     "start": "npx @11ty/eleventy --serve --port=8080",
     "debug": "set DEBUG=* & eleventy",
@@ -16,6 +19,6 @@
     "npm-run-all": "^2.1.0"
   },
   "engines": {
-    "node": "20.17.0"
+    "node": ">=20.17.0 <21"
   }
 }

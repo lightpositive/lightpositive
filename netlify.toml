@@ -1,6 +1,11 @@
 [build]
   publish = "_site"
   command = "npm run build"
+
+# Node.js version specification for Netlify
+[build.environment]
+  NODE_VERSION = "20.17.0"
+
 [[headers]]
   for = "/*"
   [headers.values]

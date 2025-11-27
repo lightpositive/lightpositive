@@ -130,24 +130,28 @@ postContent.appendChild(buttonRight);
 
 // key navigation
 document.addEventListener('keydown', (e) => {
-  e.preventDefault();
   if (e.key === "ArrowRight") {
+    e.preventDefault();
     scrollMobile.scrollBy({
       top: 0,
       left: window.innerWidth,
       behavior: "smooth",
     });
   } else if (e.key === "ArrowLeft") {
+    e.preventDefault();
     scrollMobile.scrollBy({
       top: 0,
       left: -window.innerWidth,
       behavior: "smooth",
     });
   } else if (e.key === "Escape") {
+    // Don't prevent default on Escape - allow fullscreen exit
     window.location = '../';
   } else if (e.key === "ArrowDown") {
+    e.preventDefault();
     window.location = '../';
   } else if (e.key === "ArrowUp") {
+    e.preventDefault();
     window.location = '../';
   }
 });
